@@ -1,24 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Using react-router-dom to link to other content in the SPA
 
-import "./navbar.scss";
 import NavbarOption from "./NavbarOption";
+import "./navbar.scss";
 
 export default function Navbar() {
   return (
     <div className="navbar">
-      <div className="logo-container">
+      <Link className="logo-container" to="/">
         <span className="logo-text navbar-text">Help Me Fish</span>
-      </div>
+      </Link>
       <span className="vertical-bar" />
       <div className="navbar-options">
-        <NavbarOption
-          text="Freshwater"
-          onClick={() => console.log("load Freshwater content")}
-        />
-        <NavbarOption
-          text="Saltwater"
-          onClick={() => console.log("load Saltwater content")}
-        />
+        <NavbarOption text="Freshwater" to="/freshwater" />
+        <NavbarOption text="Saltwater" to="/saltwater" />
       </div>
     </div>
   );

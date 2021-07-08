@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Using react-router-dom to link to other content in the SPA
 
 import "./welcome.scss";
 
@@ -26,18 +27,12 @@ export default function Welcome() {
         </div>
 
         <div className="water-buttons-container">
-          <div
-            className="button"
-            onClick={() => console.log("load Freshwater content")}
-          >
+          <Link className="button" to="/freshwater">
             Freshwater
-          </div>
-          <div
-            className="button"
-            onClick={() => console.log("load Saltwater content")}
-          >
+          </Link>
+          <Link className="button" to="/saltwater">
             Saltwater
-          </div>
+          </Link>
         </div>
       </div>
     </div>

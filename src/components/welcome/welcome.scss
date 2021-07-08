@@ -43,9 +43,11 @@ $imgKey: random(3);
       width: 100%;
 
       .button {
-        transition: all .25s;
+        transition: all 0.25s;
         background-color: $primaryColor;
         border-radius: 0.75rem;
+        color: white;
+        text-decoration: none;
         padding: 1rem;
       }
 

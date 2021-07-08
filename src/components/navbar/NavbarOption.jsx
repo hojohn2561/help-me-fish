@@ -1,14 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Using react-router-dom to link to other content in the SPA
 
 import "./navbarOption.scss";
 
-export default function NavbarOption({ text, onClick }) {
+export default function NavbarOption({ text, to }) {
   return (
-    <div className="navbar-option navbar-text">
-      <span className="option-text" onClick={onClick}>
-        {text}
-      </span>
+    <Link className="navbar-option navbar-text" to={to}>
+      <span className="option-text">{text}</span>
       <span className="underline" />
-    </div>
+    </Link>
   );
 }
