@@ -1,0 +1,30 @@
+.navbar-option {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5rem;
+
+  .option-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .underline {
+    transition: all 0.2s;
+    background-color: white;
+    height: 0.1rem;
+    width: 0%;
+  }
+
+  .option-text:hover .underline {
+    width: 100%;
+  }
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+// Changing the css of the child. navbar-option is the parent, .underline (className) is the child. On parent hover, change the child width to 100%
+.navbar-option:hover .underline {
+  width: 100%;
+}

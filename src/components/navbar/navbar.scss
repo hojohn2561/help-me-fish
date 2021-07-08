@@ -1,0 +1,41 @@
+@import "../../global.scss";
+
+.navbar {
+  align-items: center;
+  background-color: $primaryColor;
+  display: flex;
+  flex-direction: row;
+  height: 7vh;
+  padding: 0 2vw;
+
+  .navbar-text {
+    color: white;
+  }
+
+  .logo-container {
+    display: flex;
+    margin-right: 1.5rem;
+    width: fit-content;
+
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .vertical-bar {
+    background-color: white;
+    height: 55%;
+    margin-right: 1.5rem;
+    width: 0.025rem;
+  }
+
+  .navbar-options {
+    display: flex;
+    flex-direction: row;
+  }
+}

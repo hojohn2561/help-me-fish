@@ -1,0 +1,58 @@
+@import "../../global.scss";
+
+// Random value only changes when the Sass is compiled, which won't necessarily be every time page is visited
+$imgKey: random(3);
+
+.content {
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("background#{$imgKey}.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: column;
+  height: 100vh - 7vh; // -7vh to account for navbar height and margin
+  justify-content: center;
+
+  .welcome-container {
+    color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .welcome-header {
+      font-weight: 500;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-text,
+    .getting-started {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .water-buttons-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      .button {
+        transition: all .25s;
+        background-color: $primaryColor;
+        border-radius: 0.75rem;
+        padding: 1rem;
+      }
+
+      :hover {
+        cursor: pointer;
+        background-color: $secondaryColor;
+      }
+    }
+  }
+}
