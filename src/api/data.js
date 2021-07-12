@@ -9,8 +9,6 @@ const getFish = async (waterType) => {
     const fishName = doc.id;
     const fishData = doc.data();
 
-    console.log(fishName);
-
     freshwaterFishesData[fishName] = { ...fishData };
   });
 
