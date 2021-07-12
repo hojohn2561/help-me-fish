@@ -25,33 +25,11 @@ export default function Assistant({ fishes }) {
   const [values, setValues] = useState({
     hasTargetSpecies: null,
     targetSpecies: null,
+    airTemperature: null,
+    waterTemperature: null,
     cloudCondition: null,
     waterClarity: null,
   });
-
-  const updateHasTargetSpecies = (hasTargetSpecies) => {
-    setValues({ ...values, hasTargetSpecies });
-  };
-
-  const updateTargetSpecies = (targetSpecies) => {
-    setValues({ ...values, targetSpecies });
-  };
-
-  const updateAirTemperature = (airTemperature) => {
-    setValues({ ...values, airTemperature });
-  };
-
-  const updateWaterTemperature = (waterTemperature) => {
-    setValues({ ...values, waterTemperature });
-  };
-
-  const updateCloudConditions = (cloudCondition) => {
-    setValues({ ...values, cloudCondition });
-  };
-
-  const updateWaterClarity = (waterClarity) => {
-    setValues({ ...values, waterClarity });
-  };
 
   const assistantForm = {
     haveTargetSpecies: {
@@ -61,32 +39,34 @@ export default function Assistant({ fishes }) {
           {/* Same name, so only one radio button can be checked at a time */}
           <label>
             <input
-              name="haveTargetSpecies"
+              name="hasTargetSpecies"
               type="radio"
               value={true}
-              onChange={() => updateHasTargetSpecies(true)}
+              onChange={(event) => updateValues(event.target.name, true)}
             />
             Yes
           </label>
           <label>
             <input
-              name="haveTargetSpecies"
+              name="hasTargetSpecies"
               type="radio"
               value={false}
-              onChange={() => updateHasTargetSpecies(false)}
+              onChange={(event) => updateValues(event.target.name, false)}
             />
             No
           </label>
         </div>
       ),
     },
-    setSpecies: {
+    targetSpecies: {
       prompt: "Select a species.",
       responseContainer: (
         <div className="response-container">
           <select
             name="targetSpecies"
-            onChange={(event) => updateTargetSpecies(event.target.value)}
+            onChange={(event) =>
+              updateValues(event.target.name, event.target.value)
+            }
           >
             <option disabled selected value>
               Select Species
@@ -106,7 +86,9 @@ export default function Assistant({ fishes }) {
         <div className="response-container">
           <select
             name="airTemperature"
-            onChange={(event) => updateAirTemperature(event.target.value)}
+            onChange={(event) =>
+              updateValues(event.target.name, event.target.value)
+            }
           >
             <option disabled selected value>
               Select Air Temperature (°F)
@@ -126,7 +108,9 @@ export default function Assistant({ fishes }) {
         <div className="response-container">
           <select
             name="waterTemperature"
-            onChange={(event) => updateWaterTemperature(event.target.value)}
+            onChange={(event) =>
+              updateValues(event.target.name, event.target.value)
+            }
           >
             <option disabled selected value>
               Select Water Temperature (°F)
@@ -145,8 +129,10 @@ export default function Assistant({ fishes }) {
       responseContainer: (
         <div className="response-container">
           <select
-            name="cloudConditions"
-            onChange={(event) => updateCloudConditions(event.target.value)}
+            name="cloudCondition"
+            onChange={(event) =>
+              updateValues(event.target.name, event.target.value)
+            }
           >
             <option disabled selected value>
               Select Cloud Condition
@@ -166,7 +152,9 @@ export default function Assistant({ fishes }) {
         <div className="response-container">
           <select
             name="waterClarity"
-            onChange={(event) => updateWaterClarity(event.target.value)}
+            onChange={(event) =>
+              updateValues(event.target.name, event.target.value)
+            }
           >
             <option disabled selected value>
               Select Water Clarity
@@ -182,9 +170,20 @@ export default function Assistant({ fishes }) {
     },
   };
 
+  const updateValues = (fieldName, fieldValue) => {
+    setValues({ ...values, [fieldName]: fieldValue });
+  };
+
   const getHelp = (event) => {
     event.preventDefault();
     console.log(values);
+    if (values.hasTargetSpecies) {
+      console.log(`Show tips for ${values.targetSpecies}`);
+    } else {
+      console.log(
+        `Suggest what to species to target, what to use, and techniques`
+      );
+    }
   };
 
   return (
@@ -192,8 +191,8 @@ export default function Assistant({ fishes }) {
       <div className="assistant-card">
         {Object.keys(assistantForm).map((key) =>
           // Only need user to select a species if they have a target species in mind.
-          // If key === "setSpecies"
-          key === "setSpecies" ? (
+          // If key === "targetSpecies"
+          key === "targetSpecies" ? (
             // If hasTargetSpecies is true
             values.hasTargetSpecies ? (
               // Make prompt to select a species visible
@@ -204,7 +203,7 @@ export default function Assistant({ fishes }) {
             ) : // Otherwise, make prompt to select a species invisible
             null
           ) : (
-            // key !== "setSpecies", so just return the prompt and choices
+            // key !== "targetSpecies", so just return the prompt and choices
             <div key={key}>
               <h2>{assistantForm[key].prompt}</h2>
               {assistantForm[key].responseContainer}
