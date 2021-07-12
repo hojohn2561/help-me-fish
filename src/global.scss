@@ -1,3 +1,18 @@
 $primaryColor: #1c5fc9;
 $secondaryColor: #114cab;
 $backgroundColor: #f5f5dc;
+
+// Basio button styling. If want to add effect such as hover, do it in the style that contains the button
+.button {
+  transition: all 0.2s;
+  background-color: $primaryColor;
+  border-radius: 0.75rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem;
+
+  &:hover {
+    background-color: $secondaryColor;
+    cursor: pointer;
+  }
+}

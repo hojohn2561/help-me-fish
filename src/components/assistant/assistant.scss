@@ -20,13 +20,6 @@ $backgroundOpacity: 0.25;
         rgba(0, 0, 0, $backgroundOpacity)
       ),
       url("freshwater-background.jpg");
-
-    .assistant-card {
-      border-radius: 15px;
-      background-color: rgba($color: $backgroundColor, $alpha: 0.95);
-      height: 45vh;
-      width: 75vw;
-    }
   }
 
   .saltwater-assistant-container {
@@ -35,6 +28,37 @@ $backgroundOpacity: 0.25;
         rgba(0, 0, 0, $backgroundOpacity)
       ),
       url("saltwater-background.jpg");
+  }
+
+  .freshwater-assistant-container,
+  .saltwater-assistant-container {
+    .assistant-card {
+      align-items: center;
+      background-color: rgba($color: $backgroundColor, $alpha: 0.95);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+      h1 {
+        font-size: 2.5rem;
+        color: $primaryColor;
+        margin-bottom: 2.5rem;
+      }
+
+      .options-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+
+        .yes-no-button {
+          width: 5rem;
+          text-align: center;
+        }
+      }
+    }
   }
 
   .fish-data-container {
@@ -46,58 +70,13 @@ $backgroundOpacity: 0.25;
     .fish-data-content {
       width: 75vw;
 
-      .fish-cards {
+      .fish-cards-container {
         align-items: center;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-
-        .fish-card {
-          height: 25rem;
-          width: 20rem;
-          padding: 0.75rem;
-          // So that padding doesn't affect div width/height.
-          // This will force the browser to calculate the width according to the
-          // "outer"-width of the div, it means the padding will be subtracted from the width.
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-
-          .fish-card-content {
-            background-color: $backgroundColor;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            height: 100%;
-            padding: 0.75rem;
-            border-radius: 1rem;
-            // So that padding doesn't affect div width/height.
-            // This will force the browser to calculate the width according to the
-            // "outer"-width of the div, it means the padding will be subtracted from the width.
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-
-            .fish-card-image-container {
-              background-color: skyblue;
-              border-top-left-radius: 1rem;
-              border-top-right-radius: 1rem;
-              height: 70%;
-              width: 100%;
-              margin-bottom: 0.75rem;
-              overflow: hidden;
-
-              .fish-card-image {
-                height: 100%;
-                width: 100%;
-              }
-            }
-
-            .fish-card-body {
-              font-size: 1.25rem;
-            }
-          }
-        }
       }
     }
   }

@@ -19,10 +19,6 @@
   .option-text:hover .underline {
     width: 100%;
   }
-
-  :hover {
-    cursor: pointer;
-  }
 }
 
 // Changing the css of the child. navbar-option is the parent, .underline (className) is the child. On parent hover, change the child width to 100%

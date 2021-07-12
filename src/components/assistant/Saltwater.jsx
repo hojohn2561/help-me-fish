@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import data from "../../api/data";
+import FishCard from "./FishCard";
 import "./assistant.scss";
 
 export default function Saltwater() {
@@ -19,24 +20,16 @@ export default function Saltwater() {
 
   return (
     <div className="content-container">
-      <div className="assistant-container saltwater-assistant-container"></div>
+      <div className="assistant-container saltwater-assistant-container">
+        <div className="assistant-card"></div>
+      </div>
+
       <div className="fish-data-container">
         <div className="fish-data-content">
           <h1 className="fish-data-header">What We Know So Far:</h1>
-          <div className="fish-cards">
+          <div className="fish-cards-container">
             {Object.keys(fishesData).map((key) => (
-              <div className="fish-card" key={key}>
-                <div className="fish-card-content">
-                  <div className="fish-card-image-container">
-                    <img
-                      alt={key}
-                      className="fish-card-image"
-                      src={fishesData[key].fishImageUrl}
-                    />
-                  </div>
-                  <div className="fish-card-body">{key}</div>
-                </div>
-              </div>
+              <FishCard name={key} imageUrl={fishesData[key].fishImageUrl} />
             ))}
           </div>
         </div>

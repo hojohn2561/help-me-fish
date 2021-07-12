@@ -38,20 +38,6 @@
       display: flex;
       justify-content: space-evenly;
       width: 100%;
-
-      .button {
-        transition: all 0.2s;
-        background-color: $primaryColor;
-        border-radius: 0.75rem;
-        color: white;
-        text-decoration: none;
-        padding: 1rem;
-      }
-
-      :hover {
-        cursor: pointer;
-        background-color: $secondaryColor;
-      }
     }
   }
 }
