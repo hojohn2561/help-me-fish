@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import data from "../../api/data";
-import "./assistant.scss";
+import Assistant from "./Assistant";
 import FishCard from "./FishCard";
+import data from "../../api/data";
+
+import "./mainScreen.scss";
 
 export default function Freshwater() {
   const [fishesData, setFishesData] = useState();
@@ -21,13 +23,7 @@ export default function Freshwater() {
   return (
     <div className="content-container">
       <div className="assistant-container freshwater-assistant-container">
-        <div className="assistant-card">
-          <h1>Do you have a target species in mind?</h1>
-          <div className="options-container">
-            <div className="button yes-no-button">Yes</div>
-            <div className="button yes-no-button">No</div>
-          </div>
-        </div>
+        <Assistant fishes={fishesData} />
       </div>
 
       <div className="fish-data-container">

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import data from "../../api/data";
+import Assistant from "./Assistant";
 import FishCard from "./FishCard";
-import "./assistant.scss";
+import data from "../../api/data";
+
+import "./mainScreen.scss";
 
 export default function Saltwater() {
   const [fishesData, setFishesData] = useState();
@@ -21,7 +23,7 @@ export default function Saltwater() {
   return (
     <div className="content-container">
       <div className="assistant-container saltwater-assistant-container">
-        <div className="assistant-card"></div>
+        <Assistant fishes={fishesData} />
       </div>
 
       <div className="fish-data-container">
