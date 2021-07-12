@@ -5,8 +5,8 @@ import "./welcome.scss";
 
 export default function Welcome() {
   return (
-    <div className="content">
-      <div className="welcome-container">
+    <div className="welcome-container">
+      <div className="welcome-content">
         <div className="welcome-header">WELCOME</div>
         <div className="welcome-text">
           <p>

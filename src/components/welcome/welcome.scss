@@ -1,22 +1,19 @@
 @import "../../global.scss";
 
-// Random value only changes when the Sass is compiled, which won't necessarily be every time page is visited
-$imgKey: random(3);
-
-.content {
+.welcome-container {
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("background#{$imgKey}.jpg");
+    url("background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-color: $backgroundColor;
   display: flex;
   flex-direction: column;
-  height: 100vh - 7vh; // -7vh to account for navbar height and margin
+  height: 100vh - 7vh; // -7vh to account for navbar height
   justify-content: center;
 
-  .welcome-container {
+  .welcome-content {
     color: white;
     align-items: center;
     display: flex;
@@ -43,7 +40,7 @@ $imgKey: random(3);
       width: 100%;
 
       .button {
-        transition: all 0.25s;
+        transition: all 0.2s;
         background-color: $primaryColor;
         border-radius: 0.75rem;
         color: white;
