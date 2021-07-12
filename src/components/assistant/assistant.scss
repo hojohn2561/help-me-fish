@@ -6,7 +6,7 @@
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  padding: 2.5rem;
+  padding: 2.75rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   h1 {
@@ -24,6 +24,10 @@
     .yes-no-button {
       width: 5rem;
       text-align: center;
+
+      &:hover {
+        transform: scale(1.115);
+      }
     }
   }
 }
