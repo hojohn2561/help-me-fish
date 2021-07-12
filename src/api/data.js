@@ -26,4 +26,8 @@ const getCollectionName = (waterType) => {
   }
 };
 
-export default { getFish };
+const exports = {
+  getFish,
+};
+
+export default exports;

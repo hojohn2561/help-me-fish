@@ -44,12 +44,10 @@ $backgroundOpacity: 0.25;
     padding-bottom: 10vh;
 
     .fish-data-content {
-      background-color: orchid;
       width: 75vw;
 
       .fish-cards {
         align-items: center;
-        background-color: crimson;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -69,6 +67,7 @@ $backgroundOpacity: 0.25;
 
           .fish-card-content {
             background-color: $backgroundColor;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             height: 100%;
             padding: 0.75rem;
             border-radius: 1rem;
@@ -79,13 +78,19 @@ $backgroundOpacity: 0.25;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
 
-            .fish-card-image {
+            .fish-card-image-container {
               background-color: skyblue;
               border-top-left-radius: 1rem;
               border-top-right-radius: 1rem;
               height: 70%;
               width: 100%;
               margin-bottom: 0.75rem;
+              overflow: hidden;
+
+              .fish-card-image {
+                height: 100%;
+                width: 100%;
+              }
             }
 
             .fish-card-body {

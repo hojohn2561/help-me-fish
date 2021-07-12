@@ -30,7 +30,13 @@ export default function Freshwater() {
             {Object.keys(fishesData).map((key) => (
               <div className="fish-card" key={key}>
                 <div className="fish-card-content">
-                  <div className="fish-card-image"></div>
+                  <div className="fish-card-image-container">
+                    <img
+                      alt={key}
+                      className="fish-card-image"
+                      src={fishesData[key].fishImageUrl}
+                    />
+                  </div>
                   <div className="fish-card-body">{key}</div>
                 </div>
               </div>
