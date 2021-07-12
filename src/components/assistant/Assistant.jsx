@@ -25,7 +25,6 @@ export default function Assistant({ fishes }) {
   const [values, setValues] = useState({
     hasTargetSpecies: null,
     targetSpecies: null,
-    airTemperature: null,
     waterTemperature: null,
     cloudCondition: null,
     waterClarity: null,
@@ -74,28 +73,6 @@ export default function Assistant({ fishes }) {
             {Object.keys(fishes).map((species) => (
               <option value={species} key={species}>
                 {species}
-              </option>
-            ))}
-          </select>
-        </div>
-      ),
-    },
-    setAirTemp: {
-      prompt: "What is the air temperature (°F) on the day of your trip?",
-      responseContainer: (
-        <div className="response-container">
-          <select
-            name="airTemperature"
-            onChange={(event) =>
-              updateValues(event.target.name, event.target.value)
-            }
-          >
-            <option disabled selected value>
-              Select Air Temperature (°F)
-            </option>
-            {temperatureValues.map((airTemp) => (
-              <option value={airTemp} key={airTemp}>
-                {airTemp}
               </option>
             ))}
           </select>
