@@ -152,22 +152,44 @@ export default function Assistant({ fishes }) {
   };
 
   const updateValues = (fieldName, fieldValue) => {
-    setFormResponses({ ...formResponses, [fieldName]: fieldValue });
+    // If user set hasTargetSpecies to No (false), reset targetSpecies too
+    if (fieldName === "hasTargetSpecies" && !fieldValue)
+      setFormResponses({
+        ...formResponses,
+        [fieldName]: fieldValue,
+        targetSpecies: null,
+      });
+    // Otherwise, just update the form state normally
+    else setFormResponses({ ...formResponses, [fieldName]: fieldValue });
   };
 
   const getHelp = (event) => {
     event.preventDefault();
     console.log(formResponses);
 
-    // If form contains no null values (in other words, all fields have a response)
-    if (!Object.values(formResponses).includes(null)) {
-      if (formResponses.hasTargetSpecies)
+    // User had a target species in mind
+    if (formResponses.hasTargetSpecies) {
+      // If form contains no null values (in other words, all fields have a response)
+      if (!Object.values(formResponses).includes(null)) {
         console.log(`Show tips for ${formResponses.targetSpecies}`);
-      else
+      }
+      // Form had a null value
+      else console.log("null values in form, can't provide help yet (1)");
+    }
+    // User did not have a target species in mind
+    else {
+      // If user filled out everything in form except target species
+      if (
+        formResponses.waterTemperature &&
+        formResponses.cloudCondition &&
+        formResponses.waterClarity
+      )
         console.log(
           `Suggest what to species to target, what to use, and techniques`
         );
-    } else console.log("null values in form, can't provide help yet");
+      // Form had a null value other than target species
+      else console.log("null values in form, can't provide help yet (2)");
+    }
   };
 
   return (
