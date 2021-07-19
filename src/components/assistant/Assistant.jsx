@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import AssistantModal from "./AssistantModal";
+
 import "./assistant.scss";
 
 const temperatureValues = [
@@ -29,6 +31,7 @@ export default function Assistant({ fishes }) {
     cloudCondition: null,
     waterClarity: null,
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const assistantForm = {
     haveTargetSpecies: {
@@ -164,7 +167,7 @@ export default function Assistant({ fishes }) {
   };
 
   const getHelp = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // To prevent page from reloading on submission
     console.log(formResponses);
 
     // User had a target species in mind
@@ -172,6 +175,7 @@ export default function Assistant({ fishes }) {
       // If form contains no null values (in other words, all fields have a response)
       if (!Object.values(formResponses).includes(null)) {
         console.log(`Show tips for ${formResponses.targetSpecies}`);
+        setIsModalOpen(true);
       }
       // Form had a null value
       else console.log("null values in form, can't provide help yet (1)");
@@ -183,45 +187,55 @@ export default function Assistant({ fishes }) {
         formResponses.waterTemperature &&
         formResponses.cloudCondition &&
         formResponses.waterClarity
-      )
+      ) {
         console.log(
           `Suggest what to species to target, what to use, and techniques`
         );
+        setIsModalOpen(true);
+      }
       // Form had a null value other than target species
       else console.log("null values in form, can't provide help yet (2)");
     }
   };
 
   return (
-    <form onSubmit={(event) => getHelp(event)}>
-      <div className="assistant-card">
-        {Object.keys(assistantForm).map((key) =>
-          // Only need user to select a species if they have a target species in mind.
-          // If key === "targetSpecies"
-          key === "targetSpecies" ? (
-            // If hasTargetSpecies is true
-            formResponses.hasTargetSpecies ? (
-              // Make prompt to select a species visible
+    <>
+      <form onSubmit={(event) => getHelp(event)}>
+        <div className="assistant-card">
+          {Object.keys(assistantForm).map((key) =>
+            // Only need user to select a species if they have a target species in mind.
+            // If key === "targetSpecies"
+            key === "targetSpecies" ? (
+              // If hasTargetSpecies is true
+              formResponses.hasTargetSpecies ? (
+                // Make prompt to select a species visible
+                <div key={key}>
+                  <h2>{assistantForm[key].prompt}</h2>
+                  {assistantForm[key].responseContainer}
+                </div>
+              ) : // Otherwise, make prompt to select a species invisible
+              null
+            ) : (
+              // key !== "targetSpecies", so just return the prompt and choices
               <div key={key}>
                 <h2>{assistantForm[key].prompt}</h2>
                 {assistantForm[key].responseContainer}
               </div>
-            ) : // Otherwise, make prompt to select a species invisible
-            null
-          ) : (
-            // key !== "targetSpecies", so just return the prompt and choices
-            <div key={key}>
-              <h2>{assistantForm[key].prompt}</h2>
-              {assistantForm[key].responseContainer}
-            </div>
-          )
-        )}
-        <div className="submit-button-container">
-          <button className="button submit-button" type="submit">
-            HELP ME
-          </button>
+            )
+          )}
+          <div className="submit-button-container">
+            <button className="button submit-button" type="submit">
+              HELP ME
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+
+      <AssistantModal
+        formResponses={formResponses}
+        isVisible={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 }

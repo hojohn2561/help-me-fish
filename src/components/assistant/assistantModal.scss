@@ -1,0 +1,8 @@
+@import "../../global.scss";
+
+.help-content {
+  display: flex;
+  height: inherit; // Inherits height from the Modal base component
+  flex-direction: column;
+  overflow-y: scroll;
+}
