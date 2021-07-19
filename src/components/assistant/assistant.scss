@@ -8,8 +8,8 @@
   padding: 1.5rem;
 
   h2 {
-    font-size: 1.25rem;
     color: $primaryColor;
+    font-size: 1.25rem;
     margin-bottom: 0.25rem;
   }
 
@@ -19,19 +19,31 @@
     &.radio-group {
       display: flex;
       flex-direction: column;
+      font-size: 1rem;
+
+      input {
+        margin-right: 0.5rem;
+      }
+    }
+
+    select {
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      padding: 0.25rem;
     }
   }
 
   .submit-button-container {
-    margin-top: 2rem;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
     width: 100%;
 
     .submit-button {
+      border-style: none;
+      font-size: 1rem;
       text-align: center;
       width: 30%;
-      border-style: none;
     }
   }
 }

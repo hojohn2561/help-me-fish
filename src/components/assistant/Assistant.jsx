@@ -22,7 +22,7 @@ const waterClarities = ["Clear", "Partly Stained", "Stained"];
 
 export default function Assistant({ fishes }) {
   // State variable for form values
-  const [values, setValues] = useState({
+  const [formResponses, setFormResponses] = useState({
     hasTargetSpecies: null,
     targetSpecies: null,
     waterTemperature: null,
@@ -62,12 +62,13 @@ export default function Assistant({ fishes }) {
       responseContainer: (
         <div className="response-container">
           <select
+            defaultValue="Select Species"
             name="targetSpecies"
             onChange={(event) =>
               updateValues(event.target.name, event.target.value)
             }
           >
-            <option disabled selected value>
+            <option disabled value="Select Species">
               Select Species
             </option>
             {Object.keys(fishes).map((species) => (
@@ -84,12 +85,13 @@ export default function Assistant({ fishes }) {
       responseContainer: (
         <div className="response-container">
           <select
+            defaultValue="Select Water Temperature (°F)"
             name="waterTemperature"
             onChange={(event) =>
               updateValues(event.target.name, event.target.value)
             }
           >
-            <option disabled selected value>
+            <option disabled value="Select Water Temperature (°F)">
               Select Water Temperature (°F)
             </option>
             {temperatureValues.map((waterTemp) => (
@@ -106,12 +108,13 @@ export default function Assistant({ fishes }) {
       responseContainer: (
         <div className="response-container">
           <select
+            defaultValue="Select Cloud Condition"
             name="cloudCondition"
             onChange={(event) =>
               updateValues(event.target.name, event.target.value)
             }
           >
-            <option disabled selected value>
+            <option disabled value="Select Cloud Condition">
               Select Cloud Condition
             </option>
             {cloudConditions.map((cloudCondition) => (
@@ -128,12 +131,13 @@ export default function Assistant({ fishes }) {
       responseContainer: (
         <div className="response-container">
           <select
+            defaultValue="Select Water Clarity"
             name="waterClarity"
             onChange={(event) =>
               updateValues(event.target.name, event.target.value)
             }
           >
-            <option disabled selected value>
+            <option disabled value="Select Water Clarity">
               Select Water Clarity
             </option>
             {waterClarities.map((waterClarity) => (
@@ -148,19 +152,22 @@ export default function Assistant({ fishes }) {
   };
 
   const updateValues = (fieldName, fieldValue) => {
-    setValues({ ...values, [fieldName]: fieldValue });
+    setFormResponses({ ...formResponses, [fieldName]: fieldValue });
   };
 
   const getHelp = (event) => {
     event.preventDefault();
-    console.log(values);
-    if (values.hasTargetSpecies) {
-      console.log(`Show tips for ${values.targetSpecies}`);
-    } else {
-      console.log(
-        `Suggest what to species to target, what to use, and techniques`
-      );
-    }
+    console.log(formResponses);
+
+    // If form contains no null values (in other words, all fields have a response)
+    if (!Object.values(formResponses).includes(null)) {
+      if (formResponses.hasTargetSpecies)
+        console.log(`Show tips for ${formResponses.targetSpecies}`);
+      else
+        console.log(
+          `Suggest what to species to target, what to use, and techniques`
+        );
+    } else console.log("null values in form, can't provide help yet");
   };
 
   return (
@@ -171,7 +178,7 @@ export default function Assistant({ fishes }) {
           // If key === "targetSpecies"
           key === "targetSpecies" ? (
             // If hasTargetSpecies is true
-            values.hasTargetSpecies ? (
+            formResponses.hasTargetSpecies ? (
               // Make prompt to select a species visible
               <div key={key}>
                 <h2>{assistantForm[key].prompt}</h2>
