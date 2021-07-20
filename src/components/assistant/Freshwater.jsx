@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Assistant from "./Assistant";
 import FishCard from "./FishCard";
-import data from "../../api/data";
+import useFreshwaterFishData from "../../hooks/useFreshwaterFishData";
 
 import "./mainScreen.scss";
 
 export default function Freshwater() {
-  const [fishesData, setFishesData] = useState();
-
-  useEffect(() => {
-    getFreshwaterFish();
-  }, []);
-
-  const getFreshwaterFish = async () => {
-    const freshwaterFishData = await data.getFish("freshwater");
-    setFishesData(freshwaterFishData);
-  };
+  const { freshwaterFishData: fishesData } = useFreshwaterFishData();
 
   if (!fishesData) return null;
 

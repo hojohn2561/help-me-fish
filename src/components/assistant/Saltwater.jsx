@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Assistant from "./Assistant";
 import FishCard from "./FishCard";
-import data from "../../api/data";
+import useSaltwaterFishData from "../../hooks/useSaltwaterFishData";
 
 import "./mainScreen.scss";
 
 export default function Saltwater() {
-  const [fishesData, setFishesData] = useState();
-
-  useEffect(() => {
-    getFreshwaterFish();
-  }, []);
-
-  const getFreshwaterFish = async () => {
-    const freshwaterFishData = await data.getFish("saltwater");
-    setFishesData(freshwaterFishData);
-  };
+  const { saltwaterFishData: fishesData } = useSaltwaterFishData();
 
   if (!fishesData) return null;
 
@@ -31,7 +22,11 @@ export default function Saltwater() {
           <h1 className="fish-data-header">What We Know So Far:</h1>
           <div className="fish-cards-container">
             {Object.keys(fishesData).map((key) => (
-              <FishCard name={key} imageUrl={fishesData[key].fishImageUrl} />
+              <FishCard
+                key={key}
+                name={key}
+                imageUrl={fishesData[key].fishImageUrl}
+              />
             ))}
           </div>
         </div>
