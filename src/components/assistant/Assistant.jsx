@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import AssistantModal from "./AssistantModal";
+import AssistantModal from "../modal/AssistantModal";
 
 import "./assistant.scss";
 

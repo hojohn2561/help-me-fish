@@ -41,12 +41,10 @@ $backgroundOpacity: 0.25;
       width: 75vw;
 
       .fish-cards-container {
-        align-items: center;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        width: 100%;
       }
     }
   }
