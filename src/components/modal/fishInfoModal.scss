@@ -7,11 +7,44 @@
   overflow-y: scroll;
   padding-right: 1rem;
 
-  h1 {
+  h1,
+  h2 {
     margin-bottom: 1rem;
   }
 
-  p {
-    margin-bottom: 0.75rem;
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    img {
+      width: 35%;
+    }
+  }
+
+  .info {
+    .info-paragraph {
+      margin-bottom: 0.75rem;
+    }
+    margin-bottom: 3rem;
+  }
+
+  .sources {
+    ul {
+      list-style-type: none;
+
+      li {
+        margin-bottom: 0.25rem;
+
+        a {
+          color: skyblue;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }

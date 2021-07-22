@@ -6,7 +6,8 @@
   background-color: $primaryColor;
   border-radius: 0.5rem;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
+  top: 15vh;
   transition: all 0.5s;
   z-index: 2;
   -webkit-box-sizing: border-box;

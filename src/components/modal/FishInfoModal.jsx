@@ -21,12 +21,34 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
     <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
       <div className="info-content">
         <h1>{name}</h1>
+        <div className="image-container">
+          <img
+            alt={name}
+            className="fish-card-image"
+            src={fishData.fishImageUrl}
+          />
+        </div>
+        <div className="info">
+          <p className="info-paragraph">{fishData.intro}</p>
+          <p className="info-paragraph">{fishData.fishingTips}</p>
+          <p className="info-paragraph">{fishData.spawnBehavior}</p>
+          <p className="info-paragraph">{fishData.identification}</p>
+        </div>
+        <div className="sources">
+          <h2>Sources</h2>
 
-        {fishData.generalInfo
-          ? fishData.generalInfo.map((paragraph, index) => (
-              <p key={`${name}-fish-info-${index}`}>{paragraph}</p>
-            ))
-          : null}
+          <ul>
+            {fishData.sources
+              ? fishData.sources.map((source, index) => (
+                  <li>
+                    <a key={`${name}-source-${index}`} href={source}>
+                      {source}
+                    </a>
+                  </li>
+                ))
+              : null}
+          </ul>
+        </div>
       </div>
     </Modal>
   );
