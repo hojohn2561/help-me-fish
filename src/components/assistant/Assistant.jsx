@@ -75,7 +75,7 @@ export default function Assistant({ fishes }) {
               Select Species
             </option>
             {Object.keys(fishes).map((species) => (
-              <option value={species} key={species}>
+              <option key={species} value={species}>
                 {species}
               </option>
             ))}
@@ -98,7 +98,7 @@ export default function Assistant({ fishes }) {
               Select Water Temperature (°F)
             </option>
             {temperatureValues.map((waterTemp) => (
-              <option value={waterTemp} key={waterTemp}>
+              <option key={waterTemp} value={waterTemp}>
                 {waterTemp}
               </option>
             ))}
@@ -121,7 +121,7 @@ export default function Assistant({ fishes }) {
               Select Cloud Condition
             </option>
             {cloudConditions.map((cloudCondition) => (
-              <option value={cloudCondition} key={cloudCondition}>
+              <option key={cloudCondition} value={cloudCondition}>
                 {cloudCondition}
               </option>
             ))}
@@ -144,7 +144,7 @@ export default function Assistant({ fishes }) {
               Select Water Clarity
             </option>
             {waterClarities.map((waterClarity) => (
-              <option value={waterClarity} key={waterClarity}>
+              <option key={waterClarity} value={waterClarity}>
                 {waterClarity}
               </option>
             ))}

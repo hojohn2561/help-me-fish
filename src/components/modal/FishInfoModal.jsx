@@ -15,8 +15,8 @@ export default function FishInfoModal({ name, isVisible, onClose }) {
         <h1>{name}</h1>
 
         {freshwaterFishData[name].generalInfo
-          ? freshwaterFishData[name].generalInfo.map((paragraph) => (
-              <p>{paragraph}</p>
+          ? freshwaterFishData[name].generalInfo.map((paragraph, index) => (
+              <p key={`${name}-fish-info-${index}`}>{paragraph}</p>
             ))
           : null}
       </div>
