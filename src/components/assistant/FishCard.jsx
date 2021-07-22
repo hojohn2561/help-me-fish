@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Modal from "../modal/Modal";
 
-import "./fishCard.scss";
 import FishInfoModal from "./../modal/FishInfoModal";
 
-export default function FishCard({ name, imageUrl }) {
+import "./fishCard.scss";
+
+export default function FishCard({ imageUrl, name, fishData }) {
   const [isFishInfoModalOpen, setIsFishInfoModalOpen] = useState(false);
 
   return (
@@ -21,6 +21,7 @@ export default function FishCard({ name, imageUrl }) {
         </div>
       </div>
       <FishInfoModal
+        fishData={fishData}
         name={name}
         isVisible={isFishInfoModalOpen}
         onClose={() => setIsFishInfoModalOpen(false)}

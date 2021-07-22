@@ -21,13 +21,16 @@ export default function Freshwater() {
         <div className="fish-data-content">
           <h1 className="fish-data-header">What We Know So Far:</h1>
           <div className="fish-cards-container">
-            {Object.keys(fishesData).map((key) => (
-              <FishCard
-                key={key}
-                name={key}
-                imageUrl={fishesData[key].fishImageUrl}
-              />
-            ))}
+            {Object.keys(fishesData).map((key) => {
+              return (
+                <FishCard
+                  key={key}
+                  imageUrl={fishesData[key].fishImageUrl}
+                  name={key}
+                  fishData={fishesData[key]}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
