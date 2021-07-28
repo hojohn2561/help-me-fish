@@ -233,6 +233,7 @@ export default function Assistant({ fishes }) {
 
       <AssistantModal
         formResponses={formResponses}
+        fishData={fishes[formResponses.targetSpecies]}
         isVisible={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

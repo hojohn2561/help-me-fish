@@ -4,8 +4,6 @@ import Modal from "./Modal";
 import "./fishInfoModal.scss";
 
 export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
-  console.log(fishData);
-
   // Fish data doesn't exist, just return blank modal
   if (!fishData)
     return (
@@ -40,10 +38,8 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
           <ul>
             {fishData.sources
               ? fishData.sources.map((source, index) => (
-                  <li>
-                    <a key={`${name}-source-${index}`} href={source}>
-                      {source}
-                    </a>
+                  <li key={`${name}-source-${index}`}>
+                    <a href={source}>{source}</a>
                   </li>
                 ))
               : null}

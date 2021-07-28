@@ -5,4 +5,18 @@
   height: inherit; // Inherits height from the Modal base component
   flex-direction: column;
   overflow-y: scroll;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    img {
+      width: 40%;
+    }
+  }
 }
