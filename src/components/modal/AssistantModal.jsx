@@ -1,8 +1,9 @@
 import React from "react";
 import Modal from "./Modal";
 
+import { getFreshwaterHelp } from "../utility/freshwaterHelp";
+
 import "./assistantModal.scss";
-import { getSpecificHelp, getLures } from "../utility/freshwaterHelp";
 
 export default function AssistantModal({
   isVisible,
@@ -20,14 +21,16 @@ export default function AssistantModal({
   )
     return null;
 
-  let lureInfo = getLures(
+  const help = getFreshwaterHelp(
     formResponses.targetSpecies,
-    formResponses.waterClarity,
-    formResponses.waterTemperature
+    fishData.idealCloudConditions,
+    fishData.idealTemperatureRange,
+    formResponses.cloudCondition,
+    formResponses.waterTemperature,
+    formResponses.waterClarity
   );
 
-  console.log(lureInfo);
-
+  console.log(help);
   // If user had a target species, display info about that particular species
   if (formResponses.targetSpecies)
     return (
@@ -42,23 +45,14 @@ export default function AssistantModal({
             />
           </div>
           <div className="help-text">
-            <p>
-              {getSpecificHelp(
-                formResponses.targetSpecies,
-                fishData.idealCloudConditions,
-                fishData.idealTemperatureRange,
-                formResponses.cloudCondition,
-                formResponses.waterTemperature,
-                formResponses.waterClarity
-              )}
-            </p>
+            <p>{help.intro}</p>
             <br />
-            <p>{lureInfo.intro}</p>
+            <p>{help.lures.intro}</p>
             <br />
-            {Object.keys(lureInfo.types).map((key) => (
-              <div>
+            {Object.keys(help.lures.types).map((key) => (
+              <div key={key}>
                 <h3>{key}</h3>
-                <p>{lureInfo.types[key]}</p>
+                <p>{help.lures.types[key]}</p>
                 <br />
               </div>
             ))}
