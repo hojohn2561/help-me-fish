@@ -23,7 +23,7 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
           <img
             alt={name}
             className="fish-card-image"
-            src={fishData.fishImageUrl}
+            src={fishData.fishImageUrls[0]}
           />
         </div>
         <div className="info">

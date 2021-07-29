@@ -12,7 +12,6 @@ export default function AssistantModal({
   fishData,
 }) {
   console.log(formResponses);
-  // console.log(fishData);
 
   if (
     !formResponses.waterTemperature ||
@@ -37,16 +36,37 @@ export default function AssistantModal({
       <Modal isVisible={isVisible} onClose={onClose} height="65%" width="65%">
         <div className="help-content">
           <h1>{formResponses.targetSpecies}</h1>
-          <div className="image-container">
-            <img
-              alt={formResponses.targetSpecies}
-              className="fish-card-image"
-              src={fishData.fishImageUrl}
-            />
+          <div className="images-container">
+            {fishData.fishImageUrls.map((imageUrl) => (
+              <div className="image-container">
+                <img
+                  alt={formResponses.targetSpecies}
+                  className="fish-card-image"
+                  src={imageUrl}
+                />
+              </div>
+            ))}
+            {/* <div className="image-container">
+              <img
+                alt={formResponses.targetSpecies}
+                className="fish-card-image"
+                src={fishData.fishImageUrls[0]}
+              />
+            </div>
+            <div className="image-container">
+              <img
+                alt={formResponses.targetSpecies}
+                className="fish-card-image"
+                src={fishData.fishImageUrls[0]}
+              />
+            </div> */}
           </div>
           <div className="help-text">
+            <h2>Your Fishing Conditions:</h2>
             <p>{help.intro}</p>
             <br />
+            <br />
+            <h2>Lure Options:</h2>
             <p>{help.lures.intro}</p>
             <br />
             {Object.keys(help.lures.types).map((key) => (

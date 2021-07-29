@@ -25,7 +25,7 @@ export default function Saltwater() {
               <FishCard
                 key={key}
                 name={key}
-                imageUrl={fishesData[key].fishImageUrl}
+                imageUrl={fishesData[key].fishImageUrls[0]}
               />
             ))}
           </div>

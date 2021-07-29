@@ -1,22 +1,31 @@
 @import "../../global.scss";
 
 .help-content {
-  display: flex;
+  display: block;
   height: inherit; // Inherits height from the Modal base component
-  flex-direction: column;
+  overflow: hidden;
   overflow-y: scroll;
+  padding-right: 1rem;
 
   h1 {
     margin-bottom: 1rem;
   }
 
-  .image-container {
+  .images-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     margin-bottom: 1rem;
+    width: 100%;
+    overflow-x: auto;
 
-    img {
-      width: 40%;
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-right: 1rem;
+
+      img {
+        width: 12rem;
+      }
     }
   }
 }

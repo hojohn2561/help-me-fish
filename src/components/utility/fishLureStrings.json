@@ -2,7 +2,7 @@
     "Largemouth Bass": {
         "intro": "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water.",
         "Crankbait": {
-            "general": "Crankbaits are as versatile as they come and can work in any type of weather condition, at any depth of water.", 
+            "general": "Crankbaits can be used year-round and are as versatile as they come. They come in a variety of shapes, sizes, weights, and running depth, so what's important is choosing the right crankbait for the right conditions.", 
             "prioritzed": "", 
             "dismissed": "", 
             "maybe": "" 
@@ -18,6 +18,18 @@
             "prioritzed": "Jerkbaits would work well given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish. Weather conditions aren't that important when using a jerkbait.", 
             "dismissed": "We wouldn't advise using a jerkbait given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish. Weather conditions aren't that important when using a jerkbait.", 
             "maybe": "Jerkbaits might work in the conditions you specified. Of course, you never know until you try! However, we'd say save the jerkbaits for when the water is clear or cold, or when the bass are actively feeding on baitfish." 
+        },
+        "Jig": {
+            "general": "Jigs can be fished year-round, but the spring and summer months work the best. They may also work well when the water temperature is cold and fishing has slowed down. It is best to cast jigs around structure or natural cover (logs, grass, etc.).", 
+            "prioritzed": "", 
+            "dismissed": "", 
+            "maybe": "" 
+        },
+        "Spinnerbait": {
+            "general": "Spinnerbaits can be used year-round. They are very durable and aren't prone to snagging, so you can use them to get to hard to reach places where bass may be hiding. It is best to cast them around structure or natural cover (logs, grass, etc.).", 
+            "prioritzed": "", 
+            "dismissed": "", 
+            "maybe": "" 
         }
     }
 }

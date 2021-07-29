@@ -13,7 +13,7 @@ function getSpecificInfo(
 
   // Selected water temperature is inside the fish's ideal range
   if (isIdealTemp) {
-    helpStr += `is a good idea Because largemouth bass are cold-blooded creatures, they tend to be more active when the water is warmer. `;
+    helpStr += `is a good idea. Because largemouth bass are cold-blooded creatures, they tend to be more active when the water is warmer. `;
 
     // Selected cloud condition is one of the ideal cloud conditions for this fish
     if (idealCloudConditions.includes(cloudCondition))
@@ -54,15 +54,24 @@ function getSpecificLures(waterClarity, waterTemperature) {
     waterTemperature < 55
   ) {
     lureTypes = {
-      Jerkbait:
+      [constants.lures.jerkbait]:
         fishLureStrings[constants.species.largemouthBass].Jerkbait.prioritzed,
-      Crankbait:
+      [constants.lures.crankbait]:
         fishLureStrings[constants.species.largemouthBass].Crankbait.general,
-      "Rubber Worm":
+      [constants.lures.rubberWorm]:
         fishLureStrings[constants.species.largemouthBass]["Rubber Worm"]
           .general,
+      [constants.lures.jig]:
+        fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
+          .general,
+      [constants.lures.spinnerbait]:
+        fishLureStrings[constants.species.largemouthBass][
+          constants.lures.spinnerbait
+        ].general,
     };
-  } else if (
+  }
+  // Jerkbait dismissed
+  else if (
     waterClarity !== constants.waterClarities.clear &&
     waterTemperature > 60
   ) {
@@ -74,6 +83,13 @@ function getSpecificLures(waterClarity, waterTemperature) {
       [constants.lures.rubberWorm]:
         fishLureStrings[constants.species.largemouthBass][
           constants.lures.rubberWorm
+        ].general,
+      [constants.lures.jig]:
+        fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
+          .general,
+      [constants.lures.spinnerbait]:
+        fishLureStrings[constants.species.largemouthBass][
+          constants.lures.spinnerbait
         ].general,
     };
   }
@@ -87,6 +103,13 @@ function getSpecificLures(waterClarity, waterTemperature) {
       [constants.lures.rubberWorm]:
         fishLureStrings[constants.species.largemouthBass][
           constants.lures.rubberWorm
+        ].general,
+      [constants.lures.jig]:
+        fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
+          .general,
+      [constants.lures.spinnerbait]:
+        fishLureStrings[constants.species.largemouthBass][
+          constants.lures.spinnerbait
         ].general,
     };
   }

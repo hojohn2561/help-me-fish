@@ -5,7 +5,9 @@
     "lures": {
         "jerkbait": "Jerkbait",
         "crankbait": "Crankbait",
-        "rubberWorm": "Rubber Worm"
+        "rubberWorm": "Rubber Worm",
+        "jig": "Jig",
+        "spinnerbait": "Spinnerbait"
     },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",

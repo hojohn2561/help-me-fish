@@ -25,7 +25,7 @@ export default function Freshwater() {
               return (
                 <FishCard
                   key={key}
-                  imageUrl={fishesData[key].fishImageUrl}
+                  imageUrl={fishesData[key].fishImageUrls[0]}
                   name={key}
                   fishData={fishesData[key]}
                 />
