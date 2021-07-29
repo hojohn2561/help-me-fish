@@ -1,4 +1,12 @@
 {
+    "species": {
+        "largemouthBass": "Largemouth Bass"
+    },
+    "lures": {
+        "jerkbait": "Jerkbait",
+        "crankbait": "Crankbait",
+        "rubberWorm": "Rubber Worm"
+    },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",
         "partlyCloudy": "Partly Cloudy",

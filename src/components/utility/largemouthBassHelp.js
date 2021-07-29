@@ -42,7 +42,7 @@ function getSpecificInfo(
 
 function getSpecificLures(waterClarity, waterTemperature) {
   let luresInfo = {
-    intro: fishLureStrings["Largmouth Bass"].intro,
+    intro: fishLureStrings[constants.species.largemouthBass].intro,
     types: {},
   };
 
@@ -54,26 +54,40 @@ function getSpecificLures(waterClarity, waterTemperature) {
     waterTemperature < 55
   ) {
     lureTypes = {
-      Jerkbait: fishLureStrings["Largmouth Bass"].Jerkbait.prioritzed,
-      Crankbait: fishLureStrings["Largmouth Bass"].Crankbait.general,
-      "Rubber Worm": fishLureStrings["Largmouth Bass"]["Rubber Worm"].general,
+      Jerkbait:
+        fishLureStrings[constants.species.largemouthBass].Jerkbait.prioritzed,
+      Crankbait:
+        fishLureStrings[constants.species.largemouthBass].Crankbait.general,
+      "Rubber Worm":
+        fishLureStrings[constants.species.largemouthBass]["Rubber Worm"]
+          .general,
     };
   } else if (
     waterClarity !== constants.waterClarities.clear &&
     waterTemperature > 60
   ) {
     lureTypes = {
-      Jerkbait: fishLureStrings["Largmouth Bass"].Jerkbait.dismissed,
-      Crankbait: fishLureStrings["Largmouth Bass"].Crankbait.general,
-      "Rubber Worm": fishLureStrings["Largmouth Bass"]["Rubber Worm"].general,
+      [constants.lures.jerkbait]:
+        fishLureStrings[constants.species.largemouthBass].Jerkbait.dismissed,
+      [constants.lures.crankbait]:
+        fishLureStrings[constants.species.largemouthBass].Crankbait.general,
+      [constants.lures.rubberWorm]:
+        fishLureStrings[constants.species.largemouthBass][
+          constants.lures.rubberWorm
+        ].general,
     };
   }
   // Default largemouth bass lures
   else {
     lureTypes = {
-      Crankbait: fishLureStrings["Largmouth Bass"].Jerkbait.general,
-      Jerkbait: fishLureStrings["Largmouth Bass"].Crankbait.general,
-      "Rubber Worm": fishLureStrings["Largmouth Bass"]["Rubber Worm"].general,
+      [constants.lures.crankbait]:
+        fishLureStrings[constants.species.largemouthBass].Jerkbait.general,
+      [constants.lures.jerkbait]:
+        fishLureStrings[constants.species.largemouthBass].Crankbait.general,
+      [constants.lures.rubberWorm]:
+        fishLureStrings[constants.species.largemouthBass][
+          constants.lures.rubberWorm
+        ].general,
     };
   }
 
