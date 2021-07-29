@@ -1,0 +1,16 @@
+{
+    "cloudConditions": {
+        "mostlySunny": "Mostly Sunny",
+        "partlyCloudy": "Partly Cloudy",
+        "mostlyCloudy": "Mostly Cloudy",
+        "lightShowers": "Light Showers",
+        "heavyRain": "Heavy Rain",
+        "thunderstorms": "Thunderstorms",
+        "snow": "Snow"
+    },
+    "waterClarities": {
+        "clear": "Clear",
+        "partlyStained": "Partly Stained",
+        "stained": "Stained"
+    }
+}

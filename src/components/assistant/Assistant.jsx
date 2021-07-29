@@ -3,24 +3,29 @@ import React, { useState } from "react";
 import AssistantModal from "../modal/AssistantModal";
 
 import "./assistant.scss";
+import constants from "../utility/constants.json";
 
 const temperatureValues = [
   "< 50",
-  ...Array.from(Array(100).keys()).splice(51, 100), // Generate array of numbers from 51 to 99
-  "> 100",
+  ...Array.from(Array(85).keys()).splice(51, 85), // Generate array of numbers from 51 to 99
+  "> 85",
 ];
 
 const cloudConditions = [
-  "Mostly Sunny",
-  "Partly Cloudy",
-  "Mostly Cloudy",
-  "Light Showers",
-  "Heavy Rain",
-  "Thunderstorms",
-  "Snow",
+  constants.cloudConditions.mostlySunny,
+  constants.cloudConditions.partlyCloudy,
+  constants.cloudConditions.mostlyCloudy,
+  constants.cloudConditions.lightShowers,
+  constants.cloudConditions.heavyRain,
+  constants.cloudConditions.thunderstorms,
+  constants.cloudConditions.snow,
 ];
 
-const waterClarities = ["Clear", "Partly Stained", "Stained"];
+const waterClarities = [
+  constants.waterClarities.clear,
+  constants.waterClarities.partlyStained,
+  constants.waterClarities.stained,
+];
 
 export default function Assistant({ fishes }) {
   // State variable for form values

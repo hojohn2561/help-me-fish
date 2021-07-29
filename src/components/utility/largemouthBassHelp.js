@@ -1,3 +1,6 @@
+import fishLureStrings from "./fishLureStrings.json";
+import constants from "./constants.json";
+
 function getSpecificInfo(
   cloudCondition,
   waterClarity,
@@ -39,33 +42,38 @@ function getSpecificInfo(
 
 function getSpecificLures(waterClarity, waterTemperature) {
   let luresInfo = {
-    intro:
-      "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water,\
-       and temperature of the water.",
+    intro: fishLureStrings["Largmouth Bass"].intro,
     types: {},
   };
 
-  const crankbaitInfoStr = `Crankbaits work in almost all types of weather and can be used in a variety of depths of water.`;
-  const rubberWormsInfoStr = `Rubber worms can be used in a wide variety of conditions, which is why they are so popular.\
-  They can be rigged in many ways, allowing them to be used in both deep and shallow water.`;
-  const jerkbaitInfoStr = `Jerkbaits would work well given the conditions you specified. They work well in clear water, colder water,\
-  or when bass are actively feeding on baitfish. They are useful in a variety of weather and conditions.`;
   let lureTypes = {};
 
   // Jerkbait prioritized
-  if (waterClarity === "Clear" && waterTemperature < 55) {
+  if (
+    waterClarity === constants.waterClarities.clear &&
+    waterTemperature < 55
+  ) {
     lureTypes = {
-      Crankbait: crankbaitInfoStr,
-      "Rubber Worms": rubberWormsInfoStr,
-      Jerkbait: jerkbaitInfoStr,
+      Jerkbait: fishLureStrings["Largmouth Bass"].Jerkbait.prioritzed,
+      Crankbait: fishLureStrings["Largmouth Bass"].Crankbait.general,
+      "Rubber Worm": fishLureStrings["Largmouth Bass"]["Rubber Worm"].general,
+    };
+  } else if (
+    waterClarity !== constants.waterClarities.clear &&
+    waterTemperature > 60
+  ) {
+    lureTypes = {
+      Jerkbait: fishLureStrings["Largmouth Bass"].Jerkbait.dismissed,
+      Crankbait: fishLureStrings["Largmouth Bass"].Crankbait.general,
+      "Rubber Worm": fishLureStrings["Largmouth Bass"]["Rubber Worm"].general,
     };
   }
   // Default largemouth bass lures
   else {
     lureTypes = {
-      Crankbait: crankbaitInfoStr,
-      Jerkbait: jerkbaitInfoStr,
-      "Rubber Worms": rubberWormsInfoStr,
+      Crankbait: fishLureStrings["Largmouth Bass"].Jerkbait.general,
+      Jerkbait: fishLureStrings["Largmouth Bass"].Crankbait.general,
+      "Rubber Worm": fishLureStrings["Largmouth Bass"]["Rubber Worm"].general,
     };
   }
 
