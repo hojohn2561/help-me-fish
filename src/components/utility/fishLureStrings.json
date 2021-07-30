@@ -1,4 +1,13 @@
 {
+    "Brown Trout": {
+        "intro": ""
+    },
+    "Channel Catfish": {
+        "intro": ""
+    },
+    "Common Carp": {
+        "intro": ""
+    },
     "Largemouth Bass": {
         "intro": "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water.",
         "Crankbait": {
@@ -31,5 +40,14 @@
             "dismissed": "", 
             "maybe": "" 
         }
+    },
+    "Northern Snakehead": {
+        "intro": ""
+    },
+    "Rainbow Trout": {
+        "intro": ""
+    },
+    "Smallmouth Bass": {
+        "intro": ""
     }
 }

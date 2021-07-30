@@ -32,19 +32,19 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
           <p className="info-paragraph">{fishData.spawnBehavior}</p>
           <p className="info-paragraph">{fishData.identification}</p>
         </div>
-        <div className="sources">
-          <h2>Sources</h2>
+        {fishData.sources ? (
+          <div className="sources">
+            <h2>Sources</h2>
 
-          <ul>
-            {fishData.sources
-              ? fishData.sources.map((source, index) => (
-                  <li key={`${name}-source-${index}`}>
-                    <a href={source}>{source}</a>
-                  </li>
-                ))
-              : null}
-          </ul>
-        </div>
+            <ul>
+              {fishData.sources.map((source, index) => (
+                <li key={`${name}-source-${index}`}>
+                  <a href={source}>{source}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
     </Modal>
   );

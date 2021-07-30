@@ -1,5 +1,7 @@
 import { isTemperatureInRange } from "./temperature";
-import { getSpecificInfo, getSpecificLures } from "./largemouthBassHelp";
+import * as largemouthBassHelp from "./largemouthBassHelp";
+
+import constants from "./constants.json";
 
 function getFreshwaterHelp(
   speciesName,
@@ -18,8 +20,14 @@ function getFreshwaterHelp(
   );
 
   switch (speciesName) {
-    case "Largemouth Bass":
-      help.intro = getSpecificInfo(
+    case constants.species.brownTrout:
+      return;
+    case constants.species.channelCatfish:
+      return;
+    case constants.species.commonCarp:
+      return;
+    case constants.species.largemouthBass:
+      help.intro = largemouthBassHelp.getSpecificInfo(
         cloudCondition,
         waterClarity,
         waterTemperature,
@@ -27,8 +35,17 @@ function getFreshwaterHelp(
         idealCloudConditions,
         idealTemperatureRange
       );
-      help.lures = getSpecificLures(waterClarity, waterTemperature);
+      help.lures = largemouthBassHelp.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       return help;
+    case constants.species.northernSnakehead:
+      return;
+    case constants.species.rainbowTrout:
+      return;
+    case constants.species.smnallmouthBass:
+      return;
   }
 }
 

@@ -38,7 +38,7 @@ export default function AssistantModal({
           <h1>{formResponses.targetSpecies}</h1>
           <div className="images-container">
             {fishData.fishImageUrls.map((imageUrl) => (
-              <div className="image-container">
+              <div className="image-container" key={imageUrl}>
                 <img
                   alt={formResponses.targetSpecies}
                   className="fish-card-image"
@@ -66,7 +66,7 @@ export default function AssistantModal({
             <p>{help.intro}</p>
             <br />
             <br />
-            <h2>Lure Options:</h2>
+            <h2>Bait/Lure Options:</h2>
             <p>{help.lures.intro}</p>
             <br />
             {Object.keys(help.lures.types).map((key) => (

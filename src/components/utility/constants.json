@@ -1,6 +1,12 @@
 {
     "species": {
-        "largemouthBass": "Largemouth Bass"
+        "brownTrout": "Brown Trout",
+        "channelCatfish": "Channel Catfish",
+        "commonCarp": "Common Carp",
+        "largemouthBass": "Largemouth Bass",
+        "northernSnakehead": "Northern Snakehead",
+        "rainbowTrout": "Rainbow Trout",
+        "smnallmouthBass": "Smallmouth Bass"
     },
     "lures": {
         "jerkbait": "Jerkbait",
