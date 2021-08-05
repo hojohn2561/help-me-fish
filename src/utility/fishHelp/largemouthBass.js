@@ -1,7 +1,7 @@
 import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
-import checkmark from "../../../images/checkmark.svg";
-import x from "../../../images/x.svg";
+import checkmark from "../../images/checkmark.svg";
+import x from "../../images/x.svg";
 
 // Called when user selected in form that they DID NOT have a target species in mind
 function getGeneralHelpIntro() {

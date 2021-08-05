@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import AssistantModal from "../modal/AssistantModal";
 
 import "./assistant.scss";
-import constants from "../utility/constants.json";
+import constants from "../../utility/constants.json";
 
 const temperatureValues = [
   "< 50",

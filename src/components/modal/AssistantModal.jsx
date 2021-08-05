@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
 
-import { getFreshwaterHelp } from "../utility/freshwaterHelp";
+import { getFreshwaterHelp } from "../../utility/freshwaterHelp";
 
 import "./assistantModal.scss";
 
@@ -45,7 +45,7 @@ export default function AssistantModal({
     // If user had a target species, display info about that particular species
     if (selectedTargetSpecies)
       return (
-        <Modal isVisible={isVisible} onClose={onClose} height="65%" width="65%">
+        <Modal isVisible={isVisible} onClose={onClose} height="65%" width="55%">
           <div className="help-content">
             <h1>{selectedTargetSpecies}</h1>
             <div className="images-container">
