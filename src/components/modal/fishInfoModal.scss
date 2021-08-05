@@ -30,6 +30,8 @@
   }
 
   .sources {
+    overflow-wrap: break-word;
+
     ul {
       list-style-type: none;
 
@@ -37,9 +39,10 @@
         margin-bottom: 0.25rem;
 
         a {
-          color: skyblue;
+          color: rgb(38, 121, 154);
           text-decoration: none;
 
+          flex-wrap: wrap;
           &:hover {
             text-decoration: underline;
           }

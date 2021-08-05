@@ -1,7 +1,9 @@
 import fishLureStrings from "./fishLureStrings.json";
 import constants from "./constants.json";
+import checkmark from "../../images/checkmark.svg";
+import x from "../../images/x.svg";
 
-function getSpecificInfo(
+function getSpecificInfoIntro(
   cloudCondition,
   waterClarity,
   waterTemperature,
@@ -48,69 +50,116 @@ function getSpecificLures(waterClarity, waterTemperature) {
 
   let lureTypes = {};
 
-  // Jerkbait prioritized
+  // Jerkbait prioritized (water clarity clear, water temp < 55)
   if (
     waterClarity === constants.waterClarities.clear &&
     waterTemperature < 55
   ) {
     lureTypes = {
-      [constants.lures.jerkbait]:
-        fishLureStrings[constants.species.largemouthBass].Jerkbait.prioritzed,
-      [constants.lures.crankbait]:
-        fishLureStrings[constants.species.largemouthBass].Crankbait.general,
-      [constants.lures.rubberWorm]:
-        fishLureStrings[constants.species.largemouthBass]["Rubber Worm"]
-          .general,
-      [constants.lures.jig]:
-        fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
-          .general,
-      [constants.lures.spinnerbait]:
-        fishLureStrings[constants.species.largemouthBass][
-          constants.lures.spinnerbait
-        ].general,
+      [constants.lures.jerkbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass].Jerkbait
+            .prioritized,
+        image: checkmark,
+      },
+      [constants.lures.crankbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass].Crankbait.general,
+        image: checkmark,
+      },
+      [constants.lures.rubberWorm]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][
+            constants.lures.rubberWorm
+          ].general,
+        image: checkmark,
+      },
+      [constants.lures.jig]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
+            .general,
+        image: checkmark,
+      },
+      [constants.lures.spinnerbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][
+            constants.lures.spinnerbait
+          ].general,
+        image: checkmark,
+      },
     };
   }
-  // Jerkbait dismissed
+  // Jerkbait dismissed  (water clarity clear, water temp > 60)
   else if (
     waterClarity !== constants.waterClarities.clear &&
     waterTemperature > 60
   ) {
     lureTypes = {
-      [constants.lures.jerkbait]:
-        fishLureStrings[constants.species.largemouthBass].Jerkbait.dismissed,
-      [constants.lures.crankbait]:
-        fishLureStrings[constants.species.largemouthBass].Crankbait.general,
-      [constants.lures.rubberWorm]:
-        fishLureStrings[constants.species.largemouthBass][
-          constants.lures.rubberWorm
-        ].general,
-      [constants.lures.jig]:
-        fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
-          .general,
-      [constants.lures.spinnerbait]:
-        fishLureStrings[constants.species.largemouthBass][
-          constants.lures.spinnerbait
-        ].general,
+      [constants.lures.jerkbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass].Jerkbait.dismissed,
+        image: x,
+      },
+      [constants.lures.crankbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass].Crankbait.general,
+        image: checkmark,
+      },
+      [constants.lures.rubberWorm]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][
+            constants.lures.rubberWorm
+          ].general,
+        image: checkmark,
+      },
+      [constants.lures.jig]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
+            .general,
+        image: checkmark,
+      },
+      [constants.lures.spinnerbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][
+            constants.lures.spinnerbait
+          ].general,
+        image: checkmark,
+      },
     };
   }
   // Default largemouth bass lures
   else {
     lureTypes = {
-      [constants.lures.crankbait]:
-        fishLureStrings[constants.species.largemouthBass].Jerkbait.general,
-      [constants.lures.jerkbait]:
-        fishLureStrings[constants.species.largemouthBass].Crankbait.general,
-      [constants.lures.rubberWorm]:
-        fishLureStrings[constants.species.largemouthBass][
-          constants.lures.rubberWorm
-        ].general,
-      [constants.lures.jig]:
-        fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
-          .general,
-      [constants.lures.spinnerbait]:
-        fishLureStrings[constants.species.largemouthBass][
-          constants.lures.spinnerbait
-        ].general,
+      [constants.lures.crankbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass].Crankbait.general,
+        image: checkmark,
+      },
+      [constants.lures.jerkbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass].Jerkbait.general,
+        image: checkmark,
+      },
+      [constants.lures.rubberWorm]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][
+            constants.lures.rubberWorm
+          ].general,
+        image: checkmark,
+      },
+      [constants.lures.jig]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
+            .general,
+        image: checkmark,
+      },
+      [constants.lures.spinnerbait]: {
+        message:
+          fishLureStrings[constants.species.largemouthBass][
+            constants.lures.spinnerbait
+          ].general,
+        image: checkmark,
+      },
     };
   }
 
@@ -119,4 +168,4 @@ function getSpecificLures(waterClarity, waterTemperature) {
   return luresInfo;
 }
 
-export { getSpecificInfo, getSpecificLures };
+export { getSpecificInfoIntro, getSpecificLures };

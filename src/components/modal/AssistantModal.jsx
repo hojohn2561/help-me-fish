@@ -71,8 +71,14 @@ export default function AssistantModal({
             <br />
             {Object.keys(help.lures.types).map((key) => (
               <div key={key}>
-                <h3>{key}</h3>
-                <p>{help.lures.types[key]}</p>
+                <span className="lure-header">
+                  <h3 className="lure-header-text">{key}</h3>
+                  <img
+                    className="status-image"
+                    src={help.lures.types[key].image}
+                  />
+                </span>
+                <p>{help.lures.types[key].message}</p>
                 <br />
               </div>
             ))}

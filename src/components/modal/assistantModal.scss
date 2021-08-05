@@ -1,5 +1,17 @@
 @import "../../global.scss";
 
+// Scroll bar styling for modal
+div::-webkit-scrollbar {
+  width: 0.5rem; // width of the scrollbar
+}
+div::-webkit-scrollbar-track {
+  background: $backgroundColor; // color of the scrollbar background area
+}
+div::-webkit-scrollbar-thumb {
+  background-color: grey; // color of the scroll thumb
+  border-radius: 20px; // roundness of the scroll thumb
+}
+
 .help-content {
   display: block;
   height: inherit; // Inherits height from the Modal base component
@@ -17,6 +29,7 @@
     margin-bottom: 1rem;
     width: 100%;
     overflow-x: auto;
+    padding-bottom: 0.25rem;
 
     .image-container {
       display: flex;
@@ -24,8 +37,35 @@
       margin-right: 1rem;
 
       img {
-        width: 12rem;
+        height: 12rem;
       }
     }
+  }
+
+  .help-text {
+    .lure-header {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .lure-header-text {
+      margin-right: 2rem;
+    }
+
+    .status-image {
+      height: 1rem;
+    }
+  }
+
+  // Scroll bar styling for images-container className
+  .images-container::-webkit-scrollbar {
+    height: 0.5rem; // width of the scrollbar
+  }
+  .images-container::-webkit-scrollbar-track {
+    background: $backgroundColor; // color of the scrollbar background area
+  }
+  .images-container::-webkit-scrollbar-thumb {
+    background-color: grey; // color of the scroll thumb
+    border-radius: 20px; // roundness of the scroll thumb
   }
 }

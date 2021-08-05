@@ -27,7 +27,7 @@ function getFreshwaterHelp(
     case constants.species.commonCarp:
       return;
     case constants.species.largemouthBass:
-      help.intro = largemouthBassHelp.getSpecificInfo(
+      help.intro = largemouthBassHelp.getSpecificInfoIntro(
         cloudCondition,
         waterClarity,
         waterTemperature,

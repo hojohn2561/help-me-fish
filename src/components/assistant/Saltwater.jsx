@@ -24,8 +24,9 @@ export default function Saltwater() {
             {Object.keys(fishesData).map((key) => (
               <FishCard
                 key={key}
-                name={key}
                 imageUrl={fishesData[key].fishImageUrls[0]}
+                name={key}
+                fishData={fishesData[key]}
               />
             ))}
           </div>
