@@ -13,6 +13,7 @@ export default function AssistantModal({
 }) {
   console.log(formResponses);
 
+  // If form still has null values, don't display the modal yet
   if (
     !formResponses.waterTemperature ||
     !formResponses.cloudCondition ||
@@ -20,29 +21,38 @@ export default function AssistantModal({
   )
     return null;
 
+  // If execution reaches this point, form has been filled to completion
+  // Destructuring formResponses object so don't have to keep using dot notation
+  const {
+    targetSpecies: selectedTargetSpecies,
+    cloudCondition: selectedCloudCondition,
+    waterTemperature: selectedWaterTemperature,
+    waterClarity: selectedWaterClarity,
+  } = formResponses;
+
   // If fishData exists, target species was selected
   if (fishData) {
     const help = getFreshwaterHelp(
-      formResponses.targetSpecies,
+      selectedTargetSpecies,
+      selectedCloudCondition,
+      selectedWaterTemperature,
+      selectedWaterClarity,
       fishData.idealCloudConditions,
-      fishData.idealTemperatureRange,
-      formResponses.cloudCondition,
-      formResponses.waterTemperature,
-      formResponses.waterClarity
+      fishData.idealTemperatureRange
     );
 
     console.log(help);
     // If user had a target species, display info about that particular species
-    if (formResponses.targetSpecies)
+    if (selectedTargetSpecies)
       return (
         <Modal isVisible={isVisible} onClose={onClose} height="65%" width="65%">
           <div className="help-content">
-            <h1>{formResponses.targetSpecies}</h1>
+            <h1>{selectedTargetSpecies}</h1>
             <div className="images-container">
               {fishData.fishImageUrls.map((imageUrl) => (
                 <div className="image-container" key={imageUrl}>
                   <img
-                    alt={formResponses.targetSpecies}
+                    alt={selectedTargetSpecies}
                     className="fish-card-image"
                     src={imageUrl}
                   />
@@ -62,6 +72,7 @@ export default function AssistantModal({
                   <span className="lure-header">
                     <h3 className="lure-header-text">{key}</h3>
                     <img
+                      alt={key}
                       className="status-image"
                       src={help.lures.types[key].image}
                     />
@@ -74,27 +85,24 @@ export default function AssistantModal({
           </div>
         </Modal>
       );
-
-    // Otherwise, no target species, display general info
-    return (
-      <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
-        <div className="help-content">
-          <div>{formResponses.waterTemperature}</div>
-          <div>{formResponses.cloudCondition}</div>
-          <div>{formResponses.waterClarity}</div>
-        </div>
-      </Modal>
-    );
   }
 
-  // fishData prop DOES NOT exist, target species WAS NOT selected
+  // fishData prop DOES NOT exist, meaning a target species WAS NOT selected
   else {
+    const help = getFreshwaterHelp(
+      selectedTargetSpecies,
+      selectedCloudCondition,
+      selectedWaterTemperature,
+      selectedWaterClarity
+    );
+
     return (
       <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
         <div className="help-content">
-          <div>{formResponses.waterTemperature}</div>
-          <div>{formResponses.cloudCondition}</div>
-          <div>{formResponses.waterClarity}</div>
+          <div>{help.intro}</div>
+          <div>{selectedWaterTemperature}</div>
+          <div>{selectedCloudCondition}</div>
+          <div>{selectedWaterClarity}</div>
         </div>
       </Modal>
     );

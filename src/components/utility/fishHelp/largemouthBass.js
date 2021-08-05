@@ -5,7 +5,7 @@ import x from "../../../images/x.svg";
 
 // Called when user selected in form that they DID NOT have a target species in mind
 function getGeneralHelpIntro() {
-  return "HI";
+  return "GENERAL LMB HELP INFO";
 }
 
 // Called when user selected in form that they have a target species in mind
