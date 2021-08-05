@@ -14,6 +14,7 @@ function getSpecificHelpIntro(
   waterClarity,
   waterTemperature,
   isIdealTemp,
+  // Can't use context to get these two parameter values because module method outside component, so needs to get passed as an argument.
   idealCloudConditions,
   idealTemperatureRange
 ) {

@@ -18,7 +18,7 @@ function getSpecificHelpIntro(
   idealCloudConditions,
   idealTemperatureRange
 ) {
-  let helpStr = `Fishing for brown trout when the water temperature is ${waterTemperature}°F `;
+  let helpStr = `Fishing for channel catfish when the water temperature is ${waterTemperature}°F `;
 
   return helpStr;
 }

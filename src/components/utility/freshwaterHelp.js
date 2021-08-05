@@ -1,6 +1,7 @@
 import { isTemperatureInRange } from "./temperature";
-import * as largemouthBass from "./fishHelp/largemouthBass";
 import * as brownTrout from "./fishHelp/brownTrout";
+import * as channelCatfish from "./fishHelp/channelCatfish";
+import * as largemouthBass from "./fishHelp/largemouthBass";
 
 import constants from "./constants.json";
 
@@ -11,7 +12,8 @@ function getFreshwaterHelp(
   cloudCondition,
   waterTemperature,
   waterClarity,
-  // Fish's ideal data (optional, not needed if speciesName is null)
+  // Fish's ideal data (optional parameters, not needed if speciesName is null).
+  // Can't use context to get because module outside component, so needs to get passed as an argument.
   idealCloudConditions,
   idealTemperatureRange
 ) {
@@ -32,11 +34,21 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
-      return help;
+      break;
     case constants.species.channelCatfish:
-      return;
+      help.intro = channelCatfish.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange
+      );
+      help.lures = { types: [] };
+      break;
     case constants.species.commonCarp:
-      return;
+      help.lures = { types: [] };
+      break;
     case constants.species.largemouthBass:
       help.intro = largemouthBass.getSpecificHelpIntro(
         cloudCondition,
@@ -50,18 +62,23 @@ function getFreshwaterHelp(
         waterClarity,
         waterTemperature
       );
-      return help;
+      break;
     case constants.species.northernSnakehead:
-      return;
+      help.lures = { types: [] };
+      break;
     case constants.species.rainbowTrout:
-      return;
+      help.lures = { types: [] };
+      break;
     case constants.species.smnallmouthBass:
-      return;
+      help.lures = { types: [] };
+      break;
     default:
       // Logic to determine what fish help info to show depending on the user's responses to the form
       help.intro = largemouthBass.getGeneralHelpIntro();
-      return help;
+      break;
   }
+
+  return help;
 }
 
 export { getFreshwaterHelp };
