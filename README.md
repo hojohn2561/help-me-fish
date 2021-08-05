@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1>Help Me Fish</h1>
+</div>
+<div align="center">
+  A small web app designed to help fishermen decide what fish to target, what bait/lures to use, and just learn more about fish and fishing.</br>
+  This project was built using <a href="https://reactjs.org/">React</a>.
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>Running in Dev</h2>
+<ul>
+  <li>
+    <p>To run locally, navigate to project's root directory and run</p>
+    <pre>npm start</pre>
+  </li>
+</ul>
 
-## Available Scripts
+<h2>Adding a Fish</h2>
 
-In the project directory, you can run:
+1. Create its document in Firestore, with the name of the document being the fish species</br>
 
-### `yarn start`
+2. Create the document fields:</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <i>fishImageUrls</i> (array containing URLS to images for the fish)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <i>fishingTips</i> (string containing information about fishing tips for the fish)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <i>idealCloudConditions</i> (array containing fish's ideal cloud conditions)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. <i>idealTemperatureRange</i> (string representing fish's ideal temperature range, e.g., '55°F-75°F')</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. <i>identification</i> (string containing information on how to identify the fish)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6. <i>intro</i> (string containing introductory paragraph about the fish)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. <i>sources</i> (array containing sources used for information)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8. <i>spawnBehavior</i> (string for paragraph about fish's spawning behavior)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9. <i>waterType</i> (string: either 'freshwater' or 'saltwater')</br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Create corresponding module in `/public/src/utility/fishHelp`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Define the three functions `getGeneralHelpIntro` `getSpecificHelpIntro` `getSpecificLures`, used to create the help info strings, and export them.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. In either `freshwaterHelp.js` or `saltwaterHelp.js`, depending on the fish, add its case to the switch statement to call and create the help info string when appropriate.
+ 
