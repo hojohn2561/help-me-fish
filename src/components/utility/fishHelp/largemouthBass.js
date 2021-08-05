@@ -1,9 +1,15 @@
-import fishLureStrings from "./fishLureStrings.json";
-import constants from "./constants.json";
-import checkmark from "../../images/checkmark.svg";
-import x from "../../images/x.svg";
+import fishLureStrings from "../fishLureStrings.json";
+import constants from "../constants.json";
+import checkmark from "../../../images/checkmark.svg";
+import x from "../../../images/x.svg";
 
-function getSpecificInfoIntro(
+// Called when user selected in form that they DID NOT have a target species in mind
+function getGeneralHelpIntro() {
+  return "HI";
+}
+
+// Called when user selected in form that they have a target species in mind
+function getSpecificHelpIntro(
   cloudCondition,
   waterClarity,
   waterTemperature,
@@ -168,4 +174,4 @@ function getSpecificLures(waterClarity, waterTemperature) {
   return luresInfo;
 }
 
-export { getSpecificInfoIntro, getSpecificLures };
+export { getGeneralHelpIntro, getSpecificHelpIntro, getSpecificLures };

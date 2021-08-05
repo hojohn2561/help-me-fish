@@ -185,6 +185,7 @@ export default function Assistant({ fishes }) {
       // Form had a null value
       else console.log("null values in form, can't provide help yet (1)");
     }
+
     // User did not have a target species in mind
     else {
       // If user filled out everything in form except target species
