@@ -14,7 +14,7 @@ export default function Saltwater() {
   return (
     <div className="content-container">
       <div className="assistant-container saltwater-assistant-container">
-        <Assistant fishes={fishesData} />
+        <Assistant fishesData={fishesData} />
       </div>
 
       <div className="fish-data-container">
