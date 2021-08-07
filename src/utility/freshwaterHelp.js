@@ -5,7 +5,9 @@ import * as largemouthBass from "./fishHelp/largemouthBass";
 import * as northernSnakehead from "./fishHelp/northernSnakehead";
 import * as rainbowTrout from "./fishHelp/rainbowTrout";
 import * as smallmouthBass from "./fishHelp/smallmouthBass";
+import { isCloudConditionIdeal } from "./cloudCondition";
 import { isTemperatureInRange } from "./temperature";
+import { isWaterClarityIdeal } from "./waterClarity";
 
 import constants from "./constants.json";
 
@@ -138,6 +140,10 @@ function getFreshwaterGeneralHelp(
     isTempInFishIdealRange(
       waterTemperature,
       fishesData[constants.species.brownTrout]
+    ) &&
+    isCloudConditionIdeal(
+      cloudCondition,
+      fishesData[constants.species.brownTrout].idealCloudConditions
     )
   ) {
     help.push({
@@ -151,6 +157,10 @@ function getFreshwaterGeneralHelp(
     isTempInFishIdealRange(
       waterTemperature,
       fishesData[constants.species.channelCatfish]
+    ) &&
+    isCloudConditionIdeal(
+      cloudCondition,
+      fishesData[constants.species.brownTrout].idealCloudConditions
     )
   ) {
     help.push({
@@ -165,6 +175,10 @@ function getFreshwaterGeneralHelp(
     isTempInFishIdealRange(
       waterTemperature,
       fishesData[constants.species.largemouthBass]
+    ) &&
+    isCloudConditionIdeal(
+      cloudCondition,
+      fishesData[constants.species.brownTrout].idealCloudConditions
     )
   ) {
     help.push({
@@ -178,6 +192,10 @@ function getFreshwaterGeneralHelp(
     isTempInFishIdealRange(
       waterTemperature,
       fishesData[constants.species.rainbowTrout]
+    ) &&
+    isCloudConditionIdeal(
+      cloudCondition,
+      fishesData[constants.species.brownTrout].idealCloudConditions
     )
   ) {
     help.push({
