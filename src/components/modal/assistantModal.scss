@@ -57,6 +57,14 @@ div::-webkit-scrollbar-thumb {
     }
   }
 
+  .suggestion-header-container {
+    text-align: center;
+  }
+
+  .fish-help-section {
+    margin-bottom: 3rem;
+  }
+
   // Scroll bar styling for images-container className
   .images-container::-webkit-scrollbar {
     height: 0.5rem; // width of the scrollbar

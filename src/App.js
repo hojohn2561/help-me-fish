@@ -14,26 +14,27 @@ function App() {
     <div className="app">
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Welcome} />
-        {/* Instead of passing a component prop to Route, using the implicit children prop. This way, can use the context providers */}
-        {/* 
-        <FreshwaterFishDataProvider>
-          <Route path="/freshwater" component={Freshwater} />
-        </FreshwaterFishDataProvider>
+        {/* Provide entire web-app with all fish data because can't use context dynamic. Since not much data, cost shouldn't be much, and can just provide it and use what's necessary  */}
         <SaltwaterFishDataProvider>
-          <Route path="/saltwater" component={Saltwater} />
-        </SaltwaterFishDataProvider> 
-        */}
-        <Route path="/freshwater">
           <FreshwaterFishDataProvider>
-            <Freshwater />
+            <Route exact path="/" component={Welcome} />
+            {/* Instead of passing a component prop to Route, using the implicit children prop. This way, can use the context providers */}
+            {/* 
+            <FreshwaterFishDataProvider>
+              <Route path="/freshwater" component={Freshwater} />
+            </FreshwaterFishDataProvider>
+            <SaltwaterFishDataProvider>
+              <Route path="/saltwater" component={Saltwater} />
+            </SaltwaterFishDataProvider> 
+            */}
+            <Route path="/freshwater">
+              <Freshwater />
+            </Route>
+            <Route path="/saltwater">
+              <Saltwater />
+            </Route>
           </FreshwaterFishDataProvider>
-        </Route>
-        <Route path="/saltwater">
-          <SaltwaterFishDataProvider>
-            <Saltwater />
-          </SaltwaterFishDataProvider>
-        </Route>
+        </SaltwaterFishDataProvider>
       </Switch>
     </div>
   );

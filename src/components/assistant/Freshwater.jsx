@@ -14,7 +14,7 @@ export default function Freshwater() {
   return (
     <div className="content-container">
       <div className="assistant-container freshwater-assistant-container">
-        <Assistant fishes={fishesData} />
+        <Assistant fishesData={fishesData} />
       </div>
 
       <div className="fish-data-container">

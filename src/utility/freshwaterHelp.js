@@ -1,4 +1,3 @@
-import { isTemperatureInRange } from "./temperature";
 import * as brownTrout from "./fishHelp/brownTrout";
 import * as channelCatfish from "./fishHelp/channelCatfish";
 import * as commonCarp from "./fishHelp/commonCarp";
@@ -6,22 +5,22 @@ import * as largemouthBass from "./fishHelp/largemouthBass";
 import * as northernSnakehead from "./fishHelp/northernSnakehead";
 import * as rainbowTrout from "./fishHelp/rainbowTrout";
 import * as smallmouthBass from "./fishHelp/smallmouthBass";
+import { isTemperatureInRange } from "./temperature";
 
 import constants from "./constants.json";
 
-function getFreshwaterHelp(
-  // Inputted target species, will be null if not selected
+function getFreshwaterSpecificHelp(
+  // Inputted target species
   speciesName,
   // Inputted form data
   cloudCondition,
   waterTemperature,
   waterClarity,
-  // Fish's ideal data (optional parameters, not needed if speciesName is null).
-  // Can't use context to get because module outside component, so needs to get passed as an argument.
+  // Fish's ideal data. Can't use context to get them because this is a module outside component, so needs to get passed as an argument.
   idealCloudConditions,
   idealTemperatureRange
 ) {
-  const help = { intro: "", lures: {} };
+  const help = []; // Array to handle when multiple fish are returned
   const isIdealTemp = isTemperatureInRange(
     waterTemperature,
     idealTemperatureRange
@@ -40,6 +39,7 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
+      help.speciesName = constants.species.brownTrout;
       break;
     case constants.species.channelCatfish:
       help.intro = channelCatfish.getSpecificHelpIntro(
@@ -51,6 +51,7 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
+      help.speciesName = constants.species.channelCatfish;
       break;
     case constants.species.commonCarp:
       help.intro = commonCarp.getSpecificHelpIntro(
@@ -62,6 +63,7 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
+      help.speciesName = constants.species.commonCarp;
       break;
     case constants.species.largemouthBass:
       help.intro = largemouthBass.getSpecificHelpIntro(
@@ -76,6 +78,7 @@ function getFreshwaterHelp(
         waterClarity,
         waterTemperature
       );
+      help.speciesName = constants.species.largemouthBass;
       break;
     case constants.species.northernSnakehead:
       help.intro = northernSnakehead.getSpecificHelpIntro(
@@ -87,6 +90,7 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
+      help.speciesName = constants.species.northernSnakehead;
       break;
     case constants.species.rainbowTrout:
       help.intro = rainbowTrout.getSpecificHelpIntro(
@@ -98,6 +102,7 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
+      help.speciesName = constants.species.rainbowTrout;
       break;
     case constants.species.smallmouthBass:
       help.intro = smallmouthBass.getSpecificHelpIntro(
@@ -109,14 +114,84 @@ function getFreshwaterHelp(
         idealTemperatureRange
       );
       help.lures = { types: [] };
+      help.speciesName = constants.species.smallmouthBass;
       break;
     default:
-      // Logic to determine what fish help info to show depending on the user's responses to the form
-      help.intro = largemouthBass.getGeneralHelpIntro();
       break;
   }
 
   return help;
 }
 
-export { getFreshwaterHelp };
+function getFreshwaterGeneralHelp(
+  // Inputted form data
+  cloudCondition,
+  waterTemperature,
+  waterClarity,
+  // Data for all the freshwater/saltwater fish
+  fishesData
+) {
+  const help = []; // Array to handle when multiple fish are returned
+
+  // Conditions to suggest for brown trout
+  if (
+    isTempInFishIdealRange(
+      waterTemperature,
+      fishesData[constants.species.brownTrout]
+    )
+  ) {
+    help.push({
+      intro: brownTrout.getGeneralHelpIntro(),
+      lures: { types: [] },
+      speciesName: constants.species.brownTrout,
+    });
+  }
+  // Conditions to suggest for channel catfish
+  if (
+    isTempInFishIdealRange(
+      waterTemperature,
+      fishesData[constants.species.channelCatfish]
+    )
+  ) {
+    help.push({
+      intro: channelCatfish.getGeneralHelpIntro(),
+      lures: { types: [] },
+      speciesName: constants.species.channelCatfish,
+    });
+  }
+
+  // Conditions to suggest for largemouth bass
+  if (
+    isTempInFishIdealRange(
+      waterTemperature,
+      fishesData[constants.species.largemouthBass]
+    )
+  ) {
+    help.push({
+      intro: largemouthBass.getGeneralHelpIntro(),
+      lures: { types: [] },
+      speciesName: constants.species.largemouthBass,
+    });
+  }
+  // Conditions to suggest for brown trout
+  if (
+    isTempInFishIdealRange(
+      waterTemperature,
+      fishesData[constants.species.rainbowTrout]
+    )
+  ) {
+    help.push({
+      intro: rainbowTrout.getGeneralHelpIntro(),
+      lures: { types: [] },
+      speciesName: constants.species.rainbowTrout,
+    });
+  }
+
+  return help;
+}
+
+// Arrow function is cleaner to return just boolean for whether temperature is in fish's ideal range
+const isTempInFishIdealRange = (waterTemperature, fishData) =>
+  isTemperatureInRange(waterTemperature, fishData.idealTemperatureRange);
+
+export { getFreshwaterSpecificHelp, getFreshwaterGeneralHelp };

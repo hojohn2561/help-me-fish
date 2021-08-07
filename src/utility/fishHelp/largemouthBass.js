@@ -60,7 +60,7 @@ function getSpecificLures(waterClarity, waterTemperature) {
   // Jerkbait prioritized (water clarity clear, water temp < 55)
   if (
     waterClarity === constants.waterClarities.clear &&
-    waterTemperature < 55
+    parseInt(waterTemperature) < 55
   ) {
     lureTypes = {
       [constants.lures.jerkbait]: {
@@ -99,7 +99,7 @@ function getSpecificLures(waterClarity, waterTemperature) {
   // Jerkbait dismissed  (water clarity clear, water temp > 60)
   else if (
     waterClarity !== constants.waterClarities.clear &&
-    waterTemperature > 60
+    parseInt(waterTemperature) > 60
   ) {
     lureTypes = {
       [constants.lures.jerkbait]: {

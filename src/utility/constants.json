@@ -6,7 +6,7 @@
         "largemouthBass": "Largemouth Bass",
         "northernSnakehead": "Northern Snakehead",
         "rainbowTrout": "Rainbow Trout",
-        "smnallmouthBass": "Smallmouth Bass"
+        "smallmouthBass": "Smallmouth Bass"
     },
     "lures": {
         "jerkbait": "Jerkbait",
@@ -28,5 +28,9 @@
         "clear": "Clear",
         "partlyStained": "Partly Stained",
         "stained": "Stained"
+    },
+    "waterTypes": {
+        "freshwater": "freshwater",
+        "saltwater": "saltwater"
     }
 }

@@ -27,7 +27,7 @@ const waterClarities = [
   constants.waterClarities.stained,
 ];
 
-export default function Assistant({ fishes }) {
+export default function Assistant({ fishesData }) {
   // State variable for form values
   const [formResponses, setFormResponses] = useState({
     hasTargetSpecies: null,
@@ -35,6 +35,8 @@ export default function Assistant({ fishes }) {
     waterTemperature: null,
     cloudCondition: null,
     waterClarity: null,
+    // From the url, get the water type (needed to know what fish data to work with because fresh/saltwater share this component)
+    waterType: window.location.pathname.substr(1),
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -79,7 +81,7 @@ export default function Assistant({ fishes }) {
             <option disabled value="Select Species">
               Select Species
             </option>
-            {Object.keys(fishes).map((species) => (
+            {Object.keys(fishesData).map((species) => (
               <option key={species} value={species}>
                 {species}
               </option>
@@ -238,8 +240,9 @@ export default function Assistant({ fishes }) {
       </form>
 
       <AssistantModal
+        fishesData={fishesData}
         formResponses={formResponses}
-        fishData={fishes[formResponses.targetSpecies]}
+        targetFishData={fishesData[formResponses.targetSpecies]}
         isVisible={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

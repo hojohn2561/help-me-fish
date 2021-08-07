@@ -1,6 +1,6 @@
 // Called when user selected in form that they DID NOT have a target species in mind
 function getGeneralHelpIntro() {
-  return "GENERAL BROWN TROUT HELP INFO";
+  return "GENERAL CHANNEL CATFISH HELP INFO";
 }
 
 // Called when user selected in form that they have a target species in mind

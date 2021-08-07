@@ -1,16 +1,27 @@
 import React from "react";
 import Modal from "./Modal";
 
-import { getFreshwaterHelp } from "../../utility/freshwaterHelp";
+import constants from "../../utility/constants.json";
+import useFreshwaterFishData from "../../hooks/useFreshwaterFishData";
+import useSaltwaterFishData from "./../../hooks/useSaltwaterFishData";
+import {
+  getFreshwaterSpecificHelp,
+  getFreshwaterGeneralHelp,
+} from "../../utility/freshwaterHelp";
 
 import "./assistantModal.scss";
 
 export default function AssistantModal({
+  // Data for all the freshwater or saltwater fish
+  fishesData,
+  formResponses,
+  targetFishData,
   isVisible,
   onClose,
-  formResponses,
-  fishData,
 }) {
+  const { freshwaterFishData } = useFreshwaterFishData();
+  const { saltwaterFishData } = useSaltwaterFishData();
+
   console.log(formResponses);
 
   // If form still has null values, don't display the modal yet
@@ -28,20 +39,20 @@ export default function AssistantModal({
     cloudCondition: selectedCloudCondition,
     waterTemperature: selectedWaterTemperature,
     waterClarity: selectedWaterClarity,
+    waterType: selectedWaterType,
   } = formResponses;
 
   // If fishData exists, target species was selected
-  if (fishData) {
-    const help = getFreshwaterHelp(
+  if (targetFishData) {
+    const help = getFreshwaterSpecificHelp(
       selectedTargetSpecies,
       selectedCloudCondition,
       selectedWaterTemperature,
       selectedWaterClarity,
-      fishData.idealCloudConditions,
-      fishData.idealTemperatureRange
+      targetFishData.idealCloudConditions,
+      targetFishData.idealTemperatureRange
     );
 
-    console.log(help);
     // If user had a target species, display info about that particular species
     if (selectedTargetSpecies)
       return (
@@ -49,7 +60,7 @@ export default function AssistantModal({
           <div className="help-content">
             <h1>{selectedTargetSpecies}</h1>
             <div className="images-container">
-              {fishData.fishImageUrls.map((imageUrl) => (
+              {targetFishData.fishImageUrls.map((imageUrl) => (
                 <div className="image-container" key={imageUrl}>
                   <img
                     alt={selectedTargetSpecies}
@@ -61,23 +72,23 @@ export default function AssistantModal({
             </div>
             <div className="help-text">
               <h2>Your Fishing Conditions:</h2>
-              <p>{help.intro}</p>
+              <p>{help[0].intro}</p>
               <br />
               <br />
               <h2>Bait/Lure Options:</h2>
-              <p>{help.lures.intro}</p>
+              <p>{help[0].lures.intro}</p>
               <br />
-              {Object.keys(help.lures.types).map((key) => (
+              {Object.keys(help[0].lures.types).map((key) => (
                 <div key={key}>
                   <span className="lure-header">
                     <h3 className="lure-header-text">{key}</h3>
                     <img
                       alt={key}
                       className="status-image"
-                      src={help.lures.types[key].image}
+                      src={help[0].lures.types[key].image}
                     />
                   </span>
-                  <p>{help.lures.types[key].message}</p>
+                  <p>{help[0].lures.types[key].message}</p>
                   <br />
                 </div>
               ))}
@@ -89,20 +100,60 @@ export default function AssistantModal({
 
   // fishData prop DOES NOT exist, meaning a target species WAS NOT selected
   else {
-    const help = getFreshwaterHelp(
-      selectedTargetSpecies,
-      selectedCloudCondition,
-      selectedWaterTemperature,
-      selectedWaterClarity
-    );
+    let help;
+
+    // Get freshwater general fish help info
+    if (selectedWaterType === constants.waterTypes.freshwater) {
+      console.log("call getFreshwaterGeneralHelp");
+
+      help = getFreshwaterGeneralHelp(
+        selectedCloudCondition,
+        selectedWaterTemperature,
+        selectedWaterClarity,
+        fishesData
+      );
+    }
+    // Get saltwater general fish help info");
+    else {
+      help = getFreshwaterGeneralHelp(
+        selectedCloudCondition,
+        selectedWaterTemperature,
+        selectedWaterClarity,
+        fishesData
+      );
+    }
 
     return (
       <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
         <div className="help-content">
-          <div>{help.intro}</div>
-          <div>{selectedWaterTemperature}</div>
-          <div>{selectedCloudCondition}</div>
-          <div>{selectedWaterClarity}</div>
+          <div className="suggestion-header-container">
+            <h1 classname="suggestion-header">We Suggest</h1>
+          </div>
+          {help.map((fishHelp) => (
+            <div
+              key={`${fishHelp.speciesName}-help`}
+              className="fish-help-section"
+            >
+              <h1>{fishHelp.speciesName}</h1>
+              <div className="images-container">
+                {fishesData[fishHelp.speciesName].fishImageUrls.map(
+                  (imageUrl) => (
+                    <div className="image-container" key={imageUrl}>
+                      <img
+                        alt={fishHelp.speciesName}
+                        className="fish-card-image"
+                        src={imageUrl}
+                      />
+                    </div>
+                  )
+                )}
+              </div>
+              <div>{selectedWaterTemperature}</div>
+              <div>{selectedCloudCondition}</div>
+              <div>{selectedWaterClarity}</div>
+              <div>{fishHelp.intro}</div>
+            </div>
+          ))}
         </div>
       </Modal>
     );
