@@ -1,9 +1,11 @@
+import * as bluegill from "./fishHelp/bluegill";
 import * as brownTrout from "./fishHelp/brownTrout";
 import * as channelCatfish from "./fishHelp/channelCatfish";
 import * as commonCarp from "./fishHelp/commonCarp";
 import * as largemouthBass from "./fishHelp/largemouthBass";
 import * as northernSnakehead from "./fishHelp/northernSnakehead";
 import * as rainbowTrout from "./fishHelp/rainbowTrout";
+import * as redbreastSunfish from "./fishHelp/redbreastSunfish";
 import * as smallmouthBass from "./fishHelp/smallmouthBass";
 import { isCloudConditionIdeal } from "./cloudCondition";
 import { isTemperatureInRange } from "./temperature";
@@ -31,6 +33,18 @@ function getFreshwaterSpecificHelp(
   switch (speciesName) {
     // Find a way to remove this code duplication if possible.
     // Inheritance and overidding in the traditional sense of parent/child isn't possible/recommended in React because of components, and these aren't classes.
+    case constants.species.bluegill:
+      help.intro = bluegill.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange
+      );
+      help.lures = { types: [] };
+      help.speciesName = constants.species.bluegill;
+      break;
     case constants.species.brownTrout:
       help.intro = brownTrout.getSpecificHelpIntro(
         cloudCondition,
@@ -118,6 +132,18 @@ function getFreshwaterSpecificHelp(
       help.lures = { types: [] };
       help.speciesName = constants.species.smallmouthBass;
       break;
+    case constants.species.redbreastSunfish:
+      help.intro = redbreastSunfish.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange
+      );
+      help.lures = { types: [] };
+      help.speciesName = constants.species.redbreastSunfish;
+      break;
     default:
       break;
   }
@@ -136,6 +162,22 @@ function getFreshwaterGeneralHelp(
   const help = []; // Array to handle when multiple fish are returned
 
   // Conditions to suggest for brown trout
+  if (
+    isTempInFishIdealRange(
+      waterTemperature,
+      fishesData[constants.species.bluegill]
+    ) &&
+    isCloudConditionIdeal(
+      cloudCondition,
+      fishesData[constants.species.bluegill].idealCloudConditions
+    )
+  ) {
+    help.push({
+      intro: bluegill.getGeneralHelpIntro(),
+      lures: { types: [] },
+      speciesName: constants.species.bluegill,
+    });
+  }
   if (
     isTempInFishIdealRange(
       waterTemperature,

@@ -17,8 +17,8 @@
     justify-content: center;
     margin-bottom: 1rem;
 
-    img {
-      width: 40%;
+    .fish-modal-image {
+      height: 20rem; // All images will have same height, with varying widths
     }
   }
 

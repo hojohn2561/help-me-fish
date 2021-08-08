@@ -127,7 +127,7 @@ export default function AssistantModal({
       <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
         <div className="help-content">
           <div className="suggestion-header-container">
-            <h1 classname="suggestion-header">We Suggest</h1>
+            <h1 className="suggestion-header">We Suggest</h1>
           </div>
           {help.map((fishHelp) => (
             <div

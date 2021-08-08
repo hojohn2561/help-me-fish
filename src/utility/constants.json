@@ -1,11 +1,13 @@
 {
     "species": {
+        "bluegill": "Bluegill",
         "brownTrout": "Brown Trout",
         "channelCatfish": "Channel Catfish",
         "commonCarp": "Common Carp",
         "largemouthBass": "Largemouth Bass",
         "northernSnakehead": "Northern Snakehead",
         "rainbowTrout": "Rainbow Trout",
+        "redbreastSunfish": "Redbreast Sunfish",
         "smallmouthBass": "Smallmouth Bass"
     },
     "lures": {
