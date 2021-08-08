@@ -129,28 +129,34 @@ export default function AssistantModal({
           <div className="suggestion-header-container">
             <h1 className="suggestion-header">We Suggest</h1>
           </div>
-          {help.map((fishHelp) => (
-            <div
-              key={`${fishHelp.speciesName}-help`}
-              className="fish-help-section"
-            >
-              <h1>{fishHelp.speciesName}</h1>
-              <div className="images-container">
-                {fishesData[fishHelp.speciesName].fishImageUrls.map(
-                  (imageUrl) => (
-                    <div className="image-container" key={imageUrl}>
-                      <img
-                        alt={fishHelp.speciesName}
-                        className="fish-card-image"
-                        src={imageUrl}
-                      />
-                    </div>
-                  )
-                )}
+          {help.length > 0 ? (
+            help.map((fishHelp) => (
+              <div
+                key={`${fishHelp.speciesName}-help`}
+                className="fish-help-section"
+              >
+                <h1>{fishHelp.speciesName}</h1>
+                <div className="images-container">
+                  {fishesData[fishHelp.speciesName].fishImageUrls.map(
+                    (imageUrl) => (
+                      <div className="image-container" key={imageUrl}>
+                        <img
+                          alt={fishHelp.speciesName}
+                          className="fish-card-image"
+                          src={imageUrl}
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
+                <div>{fishHelp.intro}</div>
               </div>
-              <div>{fishHelp.intro}</div>
+            ))
+          ) : (
+            <div>
+              We don't have any suggestions for the given fishing conditions.
             </div>
-          ))}
+          )}
         </div>
       </Modal>
     );
