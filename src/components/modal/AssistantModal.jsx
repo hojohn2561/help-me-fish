@@ -124,7 +124,7 @@ export default function AssistantModal({
     }
 
     return (
-      <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
+      <Modal isVisible={isVisible} onClose={onClose} height="70%" width="70%">
         <div className="help-content">
           <div className="suggestion-header-container">
             <h1 className="suggestion-header">We Suggest</h1>

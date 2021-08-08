@@ -10,7 +10,7 @@ $backgroundOpacity: 0.25;
     background-position: center center;
     display: flex;
     flex-direction: column;
-    height: 100vh - 7vh - 20vh; // -7vh to account for navbar height and -10vh to show part of fish data below on initial viewport
+    height: 100vh - 7vh - 10vh; // -7vh to account for navbar height and -10vh to show part of fish data below on initial viewport
     justify-content: center;
     overflow: hidden;
     margin-bottom: 1rem;

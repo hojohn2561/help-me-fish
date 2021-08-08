@@ -202,7 +202,8 @@ function getFreshwaterGeneralHelp(
         waterTemperature,
         true, // == isIdealTemp
         fishesData[constants.species.brownTrout].idealCloudConditions,
-        fishesData[constants.species.brownTrout].idealTemperatureRange
+        fishesData[constants.species.brownTrout].idealTemperatureRange,
+        fishesData[constants.species.brownTrout].idealWaterClarities
       ),
       lures: { types: [] },
       speciesName: constants.species.brownTrout,
@@ -275,7 +276,8 @@ function getFreshwaterGeneralHelp(
         waterTemperature,
         true, // == isIdealTemp
         fishesData[constants.species.rainbowTrout].idealCloudConditions,
-        fishesData[constants.species.rainbowTrout].idealTemperatureRange
+        fishesData[constants.species.rainbowTrout].idealTemperatureRange,
+        fishesData[constants.species.rainbowTrout].idealWaterClarities
       ),
       lures: { types: [] },
       speciesName: constants.species.rainbowTrout,
