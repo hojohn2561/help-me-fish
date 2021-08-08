@@ -23,6 +23,7 @@ export default function AssistantModal({
   const { saltwaterFishData } = useSaltwaterFishData();
 
   console.log(formResponses);
+  console.log(targetFishData);
 
   // If form still has null values, don't display the modal yet
   if (
@@ -50,7 +51,8 @@ export default function AssistantModal({
       selectedWaterTemperature,
       selectedWaterClarity,
       targetFishData.idealCloudConditions,
-      targetFishData.idealTemperatureRange
+      targetFishData.idealTemperatureRange,
+      targetFishData.idealWaterClarities
     );
 
     // If user had a target species, display info about that particular species

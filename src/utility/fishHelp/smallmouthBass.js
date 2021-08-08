@@ -6,7 +6,8 @@ function getSpecificHelpIntro(
   isIdealTemp,
   // Can't use context to get these two parameter values because module method outside component, so needs to get passed as an argument.
   idealCloudConditions,
-  idealTemperatureRange
+  idealTemperatureRange,
+  idealWaterClarities
 ) {
   let helpStr = `Fishing for smallmouth bass when the water temperature is ${waterTemperature}°F `;
 

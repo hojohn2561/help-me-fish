@@ -11,7 +11,8 @@ function getSpecificHelpIntro(
   isIdealTemp,
   // Can't use context to get these two parameter values because module method outside component, so needs to get passed as an argument.
   idealCloudConditions,
-  idealTemperatureRange
+  idealTemperatureRange,
+  idealWaterClarities
 ) {
   let helpStr = `Fishing for largemouth bass when the water temperature is ${waterTemperature}°F `;
 
@@ -38,6 +39,7 @@ function getSpecificHelpIntro(
       helpStr += `It also doesn't help that the sky will be ${cloudCondition.toLowerCase()}. `;
   }
 
+  // Water clarity depends on water depth, which isn't asked for in the form, so just add a general statement about the water clarity
   helpStr += `As for water clarity, generally, the rule is the deeper the water you are fishing, the clearer you want it to be, and\
       the shallower the water, the more stained/dirty you want it to be.`;
 

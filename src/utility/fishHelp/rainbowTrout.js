@@ -20,11 +20,17 @@ function getSpecificHelpIntro(
       helpStr += `By that same reasoning, it's also good that the sky will be ${cloudCondition.toLowerCase()}. `;
     // Selected cloud condition is NOT one of the ideal cloud conditions for this fish
     else
-      helpStr += `It also doesn't help that the sky will be ${cloudCondition.toLowerCase()}. `;
+      helpStr += `It doesn't help that the sky will be ${cloudCondition.toLowerCase()} though because it will contribute in warming up the water. `;
   }
   // Selected water temperature is NOT inside the fish's ideal range
   else {
-    helpStr += `may be difficult. Ideally, you want the temperature to be ${idealTemperatureRange}. `;
+    helpStr += `may be difficult. Ideally, you want the temperature to be ${idealTemperatureRange}. Water temperatures higher than 67°F stresses rainbow trout out because there's less dissolved oxygen in the water. `;
+
+    // Selected cloud condition is one of the ideal cloud conditions for this fish
+    if (idealCloudConditions.includes(cloudCondition))
+      helpStr += `By that same reasoning, it's good that the sky will be ${cloudCondition.toLowerCase()} because it will help keep the water temperature a little lower. `;
+    else
+      helpStr += `It doesn't help that the sky will be ${cloudCondition.toLowerCase()} because it will contribute in warming up the water. `;
   }
 
   // Selected water clarity condition is one of the ideal water clarities for this fish
