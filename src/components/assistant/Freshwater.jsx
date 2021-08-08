@@ -19,7 +19,7 @@ export default function Freshwater() {
 
       <div className="fish-data-container">
         <div className="fish-data-content">
-          <h1 className="fish-data-header">What We Know So Far:</h1>
+          <h1 className="fish-data-header">What We Know So Far</h1>
           <div className="fish-cards-container">
             {Object.keys(fishesData).map((key) => (
               <FishCard
