@@ -3,12 +3,7 @@ import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import x from "../../images/x.svg";
 
-// Called when user selected in form that they DID NOT have a target species in mind
-function getGeneralHelpIntro() {
-  return "GENERAL LMB HELP INFO";
-}
-
-// Called when user selected in form that they have a target species in mind
+// Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
   cloudCondition,
   waterClarity,
@@ -175,4 +170,4 @@ function getSpecificLures(waterClarity, waterTemperature) {
   return luresInfo;
 }
 
-export { getGeneralHelpIntro, getSpecificHelpIntro, getSpecificLures };
+export { getSpecificHelpIntro, getSpecificLures };

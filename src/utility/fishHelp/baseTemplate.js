@@ -1,9 +1,4 @@
-// Called when user selected in form that they DID NOT have a target species in mind
-function getGeneralHelpIntro() {
-  return "GENERAL __________ HELP INFO";
-}
-
-// Called when user selected in form that they have a target species in mind
+// Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
   cloudCondition,
   waterClarity,

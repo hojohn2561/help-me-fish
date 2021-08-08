@@ -1,8 +1,3 @@
-// Called when user selected in form that they DID NOT have a target species in mind
-function getGeneralHelpIntro() {
-  return "GENERAL COMMON CARP HELP INFO";
-}
-
 // Called when user selected in form that they have a target species in mind
 function getSpecificHelpIntro(
   cloudCondition,
@@ -20,4 +15,4 @@ function getSpecificHelpIntro(
 
 function getSpecificLures(waterClarity, waterTemperature) {}
 
-export { getGeneralHelpIntro, getSpecificHelpIntro, getSpecificLures };
+export { getSpecificHelpIntro, getSpecificLures };

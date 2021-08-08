@@ -6,9 +6,9 @@ import "./assistant.scss";
 import constants from "../../utility/constants.json";
 
 const temperatureValues = [
-  "< 50",
-  ...Array.from(Array(85).keys()).splice(51, 85), // Generate array of numbers from 51 to 99
-  "> 85",
+  "< 40",
+  ...Array.from(Array(90).keys()).splice(41, 90), // Generate array of numbers from 51 to 99
+  "> 90",
 ];
 
 const cloudConditions = [

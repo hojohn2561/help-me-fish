@@ -148,9 +148,6 @@ export default function AssistantModal({
                   )
                 )}
               </div>
-              <div>{selectedWaterTemperature}</div>
-              <div>{selectedCloudCondition}</div>
-              <div>{selectedWaterClarity}</div>
               <div>{fishHelp.intro}</div>
             </div>
           ))}

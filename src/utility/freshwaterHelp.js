@@ -173,7 +173,14 @@ function getFreshwaterGeneralHelp(
     )
   ) {
     help.push({
-      intro: bluegill.getGeneralHelpIntro(),
+      intro: bluegill.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        true, // == isIdealTemp
+        fishesData[constants.species.bluegill].idealCloudConditions,
+        fishesData[constants.species.bluegill].idealTemperatureRange
+      ),
       lures: { types: [] },
       speciesName: constants.species.bluegill,
     });
@@ -189,7 +196,14 @@ function getFreshwaterGeneralHelp(
     )
   ) {
     help.push({
-      intro: brownTrout.getGeneralHelpIntro(),
+      intro: brownTrout.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        true, // == isIdealTemp
+        fishesData[constants.species.brownTrout].idealCloudConditions,
+        fishesData[constants.species.brownTrout].idealTemperatureRange
+      ),
       lures: { types: [] },
       speciesName: constants.species.brownTrout,
     });
@@ -206,7 +220,14 @@ function getFreshwaterGeneralHelp(
     )
   ) {
     help.push({
-      intro: channelCatfish.getGeneralHelpIntro(),
+      intro: channelCatfish.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        true, // == isIdealTemp
+        fishesData[constants.species.channelCatfish].idealCloudConditions,
+        fishesData[constants.species.channelCatfish].idealTemperatureRange
+      ),
       lures: { types: [] },
       speciesName: constants.species.channelCatfish,
     });
@@ -224,7 +245,14 @@ function getFreshwaterGeneralHelp(
     )
   ) {
     help.push({
-      intro: largemouthBass.getGeneralHelpIntro(),
+      intro: largemouthBass.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        true, // == isIdealTemp
+        fishesData[constants.species.largemouthBass].idealCloudConditions,
+        fishesData[constants.species.largemouthBass].idealTemperatureRange
+      ),
       lures: { types: [] },
       speciesName: constants.species.largemouthBass,
     });
@@ -241,7 +269,14 @@ function getFreshwaterGeneralHelp(
     )
   ) {
     help.push({
-      intro: rainbowTrout.getGeneralHelpIntro(),
+      intro: rainbowTrout.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        true, // == isIdealTemp
+        fishesData[constants.species.rainbowTrout].idealCloudConditions,
+        fishesData[constants.species.rainbowTrout].idealTemperatureRange
+      ),
       lures: { types: [] },
       speciesName: constants.species.rainbowTrout,
     });
