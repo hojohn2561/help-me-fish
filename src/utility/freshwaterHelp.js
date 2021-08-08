@@ -202,7 +202,7 @@ function getFreshwaterGeneralHelp(
     ) &&
     isCloudConditionIdeal(
       cloudCondition,
-      fishesData[constants.species.brownTrout].idealCloudConditions
+      fishesData[constants.species.channelCatfish].idealCloudConditions
     )
   ) {
     help.push({
@@ -220,7 +220,7 @@ function getFreshwaterGeneralHelp(
     ) &&
     isCloudConditionIdeal(
       cloudCondition,
-      fishesData[constants.species.brownTrout].idealCloudConditions
+      fishesData[constants.species.largemouthBass].idealCloudConditions
     )
   ) {
     help.push({
@@ -237,7 +237,7 @@ function getFreshwaterGeneralHelp(
     ) &&
     isCloudConditionIdeal(
       cloudCondition,
-      fishesData[constants.species.brownTrout].idealCloudConditions
+      fishesData[constants.species.rainbowTrout].idealCloudConditions
     )
   ) {
     help.push({
