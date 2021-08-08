@@ -26,7 +26,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <i>fishingTips</i> (string containing information about fishing tips for the fish)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <i>idealCloudConditions</i> (array containing fish's ideal cloud conditions)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. <i>idealTemperatureRange</i> (string representing fish's ideal temperature range, e.g., '55°F-75°F')</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <i>idealWaterClarity</i> (array containing fish's ideal water clarities)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <i>idealWaterClarities</i> (array containing fish's ideal water clarities)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. <i>identification</i> (string containing information on how to identify the fish)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6. <i>intro</i> (string containing introductory paragraph about the fish)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. <i>sources</i> (array containing sources used for information)</br>
