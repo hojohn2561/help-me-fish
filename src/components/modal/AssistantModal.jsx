@@ -126,34 +126,36 @@ export default function AssistantModal({
     }
 
     return (
-      <Modal isVisible={isVisible} onClose={onClose} height="70%" width="70%">
+      <Modal isVisible={isVisible} onClose={onClose} height="65%" width="60%">
         <div className="help-content">
-          <div className="suggestion-header-container">
-            <h1 className="suggestion-header">We Suggest</h1>
-          </div>
           {help.length > 0 ? (
-            help.map((fishHelp) => (
-              <div
-                key={`${fishHelp.speciesName}-help`}
-                className="fish-help-section"
-              >
-                <h1>{fishHelp.speciesName}</h1>
-                <div className="images-container">
-                  {fishesData[fishHelp.speciesName].fishImageUrls.map(
-                    (imageUrl) => (
-                      <div className="image-container" key={imageUrl}>
-                        <img
-                          alt={fishHelp.speciesName}
-                          className="fish-card-image"
-                          src={imageUrl}
-                        />
-                      </div>
-                    )
-                  )}
-                </div>
-                <div>{fishHelp.intro}</div>
+            <>
+              <div className="suggestion-header-container">
+                <h1 className="suggestion-header">We Suggest</h1>
               </div>
-            ))
+              {help.map((fishHelp) => (
+                <div
+                  key={`${fishHelp.speciesName}-help`}
+                  className="fish-help-section"
+                >
+                  <h1>{fishHelp.speciesName}</h1>
+                  <div className="images-container">
+                    {fishesData[fishHelp.speciesName].fishImageUrls.map(
+                      (imageUrl) => (
+                        <div className="image-container" key={imageUrl}>
+                          <img
+                            alt={fishHelp.speciesName}
+                            className="fish-card-image"
+                            src={imageUrl}
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
+                  <div>{fishHelp.intro}</div>
+                </div>
+              ))}
+            </>
           ) : (
             <div>
               We don't have any suggestions for the given fishing conditions.

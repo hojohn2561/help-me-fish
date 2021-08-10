@@ -6,8 +6,8 @@ import "./assistant.scss";
 import constants from "../../utility/constants.json";
 
 const temperatureValues = [
-  "< 40",
-  ...Array.from(Array(90).keys()).splice(41, 90), // Generate array of numbers from 51 to 99
+  "< 31",
+  ...Array.from(Array(90).keys()).splice(32, 90), // Generate array of numbers from 51 to 99
   "> 90",
 ];
 
