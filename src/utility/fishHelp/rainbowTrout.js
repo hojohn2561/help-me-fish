@@ -9,11 +9,12 @@ function getSpecificHelpIntro(
   idealTemperatureRange,
   idealWaterClarities
 ) {
-  let helpStr = `It's a good idea to fish for rainbow trout when the water temperature is ${waterTemperature}°F `;
+  let helpStr = `Fishing for rainbow trout when the water temperature is ${waterTemperature}°F `;
 
   // Selected water temperature is inside the fish's ideal range
   if (isIdealTemp) {
-    helpStr += `is a good idea. When the water temperature reaches higher than 67°F, that means less dissolved oxygen in the water. Rainbow trout will be more focused on surviving, and getting more oxygen, than they are eating. Enticing them to bite no matter what lure you use may be difficult. `;
+    helpStr += `is a good idea. When the water temperature reaches higher than 67°F, that means less dissolved oxygen in the water. Rainbow trout will be more focused on surviving, \
+    and getting more oxygen, than they are eating. Enticing them to bite no matter what lure you use may be difficult. `;
 
     // Selected cloud condition is one of the ideal cloud conditions for this fish
     if (idealCloudConditions.includes(cloudCondition))
@@ -24,11 +25,12 @@ function getSpecificHelpIntro(
   }
   // Selected water temperature is NOT inside the fish's ideal range
   else {
-    helpStr += `may be difficult. Ideally, you want the temperature to be ${idealTemperatureRange}. Water temperatures higher than 67°F stresses rainbow trout out because there's less dissolved oxygen in the water. `;
+    helpStr += `may be difficult. Ideally, you want the temperature to be ${idealTemperatureRange}. Water temperatures higher than 67°F stresses rainbow trout out because there's less \
+    dissolved oxygen in the water. `;
 
     // Selected cloud condition is one of the ideal cloud conditions for this fish
     if (idealCloudConditions.includes(cloudCondition))
-      helpStr += `By that same reasoning, it's good that the sky will be ${cloudCondition.toLowerCase()} because it will help keep the water temperature a little lower. `;
+      helpStr += `By that same reasoning, it's good that the sky will be ${cloudCondition.toLowerCase()} because it will help keep the water temperature down. `;
     else
       helpStr += `It doesn't help that the sky will be ${cloudCondition.toLowerCase()} because it will contribute in warming up the water. `;
   }

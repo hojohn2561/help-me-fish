@@ -139,21 +139,6 @@ function getFreshwaterSpecificHelp(
         speciesName: constants.species.rainbowTrout,
       });
       break;
-    case constants.species.smallmouthBass:
-      help.push({
-        intro: smallmouthBass.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.smallmouthBass,
-      });
-      break;
     case constants.species.redbreastSunfish:
       help.push({
         intro: redbreastSunfish.getSpecificHelpIntro(
@@ -167,6 +152,21 @@ function getFreshwaterSpecificHelp(
         ),
         lures: { types: [] },
         speciesName: constants.species.redbreastSunfish,
+      });
+      break;
+    case constants.species.smallmouthBass:
+      help.push({
+        intro: smallmouthBass.getSpecificHelpIntro(
+          cloudCondition,
+          waterClarity,
+          waterTemperature,
+          isIdealTemp,
+          idealCloudConditions,
+          idealTemperatureRange,
+          idealWaterClarities
+        ),
+        lures: { types: [] },
+        speciesName: constants.species.smallmouthBass,
       });
       break;
     default:
@@ -185,128 +185,127 @@ function getFreshwaterGeneralHelp(
   fishesData
 ) {
   const help = []; // Array to handle when multiple fish are returned
+  const fishSpeciesNames = Object.keys(fishesData);
 
-  // Conditions to suggest for brown trout
-  if (
-    isTempInFishIdealRange(
-      waterTemperature,
-      fishesData[constants.species.bluegill]
-    ) &&
-    isCloudConditionIdeal(
-      cloudCondition,
-      fishesData[constants.species.bluegill].idealCloudConditions
-    )
-  ) {
-    help.push({
-      intro: bluegill.getSpecificHelpIntro(
-        cloudCondition,
-        waterClarity,
+  // This for loop is much cleaner, reduces code duplication, and more maintainable, than have an individual if statement doing the same thing for every fish.
+  // The switch statement here though is needed in order to user the correct module.
+  // Given the user's input from the form, see which fish can be suggested to fish for based on those values.
+  for (let i = 0; i < fishSpeciesNames.length; i++) {
+    let currentFishSpecies = fishSpeciesNames[i];
+    if (
+      isTempInFishIdealRange(
         waterTemperature,
-        true, // == isIdealTemp
-        fishesData[constants.species.bluegill].idealCloudConditions,
-        fishesData[constants.species.bluegill].idealTemperatureRange
-      ),
-      lures: { types: [] },
-      speciesName: constants.species.bluegill,
-    });
-  }
-  if (
-    isTempInFishIdealRange(
-      waterTemperature,
-      fishesData[constants.species.brownTrout]
-    ) &&
-    isCloudConditionIdeal(
-      cloudCondition,
-      fishesData[constants.species.brownTrout].idealCloudConditions
-    )
-  ) {
-    help.push({
-      intro: brownTrout.getSpecificHelpIntro(
+        fishesData[currentFishSpecies]
+      ) &&
+      isCloudConditionIdeal(
         cloudCondition,
+        fishesData[currentFishSpecies].idealCloudConditions
+      ) &&
+      isWaterClarityIdeal(
         waterClarity,
-        waterTemperature,
-        true, // == isIdealTemp
-        fishesData[constants.species.brownTrout].idealCloudConditions,
-        fishesData[constants.species.brownTrout].idealTemperatureRange,
-        fishesData[constants.species.brownTrout].idealWaterClarities
-      ),
-      lures: { types: [] },
-      speciesName: constants.species.brownTrout,
-    });
-  }
-  // Conditions to suggest for channel catfish
-  if (
-    isTempInFishIdealRange(
-      waterTemperature,
-      fishesData[constants.species.channelCatfish]
-    ) &&
-    isCloudConditionIdeal(
-      cloudCondition,
-      fishesData[constants.species.channelCatfish].idealCloudConditions
-    )
-  ) {
-    help.push({
-      intro: channelCatfish.getSpecificHelpIntro(
-        cloudCondition,
-        waterClarity,
-        waterTemperature,
-        true, // == isIdealTemp
-        fishesData[constants.species.channelCatfish].idealCloudConditions,
-        fishesData[constants.species.channelCatfish].idealTemperatureRange
-      ),
-      lures: { types: [] },
-      speciesName: constants.species.channelCatfish,
-    });
-  }
+        fishesData[currentFishSpecies].idealWaterClarities
+      )
+    ) {
+      let specificHelpIntro;
+      switch (currentFishSpecies) {
+        case constants.species.bluegill:
+          specificHelpIntro = bluegill.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.brownTrout:
+          specificHelpIntro = brownTrout.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.channelCatfish:
+          specificHelpIntro = channelCatfish.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.commonCarp:
+          specificHelpIntro = commonCarp.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.largemouthBass:
+          specificHelpIntro = largemouthBass.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.northernSnakehead:
+          specificHelpIntro = northernSnakehead.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.rainbowTrout:
+          specificHelpIntro = rainbowTrout.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.redbreastSunfish:
+          specificHelpIntro = redbreastSunfish.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.smallmouthBass:
+          specificHelpIntro = smallmouthBass.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+      }
 
-  // Conditions to suggest for largemouth bass
-  if (
-    isTempInFishIdealRange(
-      waterTemperature,
-      fishesData[constants.species.largemouthBass]
-    ) &&
-    isCloudConditionIdeal(
-      cloudCondition,
-      fishesData[constants.species.largemouthBass].idealCloudConditions
-    )
-  ) {
-    help.push({
-      intro: largemouthBass.getSpecificHelpIntro(
-        cloudCondition,
-        waterClarity,
-        waterTemperature,
-        true, // == isIdealTemp
-        fishesData[constants.species.largemouthBass].idealCloudConditions,
-        fishesData[constants.species.largemouthBass].idealTemperatureRange
-      ),
-      lures: { types: [] },
-      speciesName: constants.species.largemouthBass,
-    });
-  }
-  // Conditions to suggest for brown trout
-  if (
-    isTempInFishIdealRange(
-      waterTemperature,
-      fishesData[constants.species.rainbowTrout]
-    ) &&
-    isCloudConditionIdeal(
-      cloudCondition,
-      fishesData[constants.species.rainbowTrout].idealCloudConditions
-    )
-  ) {
-    help.push({
-      intro: rainbowTrout.getSpecificHelpIntro(
-        cloudCondition,
-        waterClarity,
-        waterTemperature,
-        true, // == isIdealTemp
-        fishesData[constants.species.rainbowTrout].idealCloudConditions,
-        fishesData[constants.species.rainbowTrout].idealTemperatureRange,
-        fishesData[constants.species.rainbowTrout].idealWaterClarities
-      ),
-      lures: { types: [] },
-      speciesName: constants.species.rainbowTrout,
-    });
+      help.push({
+        intro: specificHelpIntro,
+        lures: { types: [] },
+        speciesName: currentFishSpecies,
+      });
+    }
   }
 
   return help;
