@@ -46,7 +46,11 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = bluegill.getSpecificLures(waterClarity, waterTemperature);
+      specificLures = bluegill.getSpecificLures(
+        cloudCondition,
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.brownTrout:
       specificHelpIntro = brownTrout.getSpecificHelpIntro(
@@ -59,6 +63,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = brownTrout.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -74,6 +79,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = channelCatfish.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -89,6 +95,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = commonCarp.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -104,6 +111,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = largemouthBass.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -119,6 +127,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = northernSnakehead.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -134,6 +143,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = rainbowTrout.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -149,6 +159,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = redbreastSunfish.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -164,6 +175,7 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = smallmouthBass.getSpecificLures(
+        cloudCondition,
         waterClarity,
         waterTemperature
       );

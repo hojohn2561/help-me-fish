@@ -2,6 +2,7 @@ import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import x from "../../images/x.svg";
+import indifferent from "../../images/indifferent.png";
 
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
@@ -46,124 +47,119 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {
+function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
   let luresInfo = {
     intro: fishLureStrings[constants.species.largemouthBass].intro,
     types: {},
   };
 
   const { jerkbait, crankbait, rubberWorm, jig, spinnerbait } = constants.lures;
-  let generalCrankbaitStr =
-    fishLureStrings[constants.species.largemouthBass][constants.lures.crankbait]
-      .general;
-  let generalRubberWormStr =
+
+  const { general: generalCrankbaitStr } =
+    fishLureStrings[constants.species.largemouthBass][
+      constants.lures.crankbait
+    ];
+  const { general: generalRubberWormStr, dismiss: dismissRubberWormStr } =
     fishLureStrings[constants.species.largemouthBass][
       constants.lures.rubberWorm
-    ].general;
-  let generalJerkbaitStr =
-    fishLureStrings[constants.species.largemouthBass][constants.lures.jerkbait]
-      .general;
-  let generalJigStr =
-    fishLureStrings[constants.species.largemouthBass][constants.lures.jig]
-      .general;
-  let generalSpinnerbaitStr =
+    ];
+  const {
+    general: generalJerkbaitStr,
+    prioritize: prioritizeJerkbaitStr,
+    dismissUnclearWater: dismissUnclearWaterJerkbaitStr,
+  } = fishLureStrings[constants.species.largemouthBass][
+    constants.lures.jerkbait
+  ];
+  const { general: generalJigStr, prioritize: prioritzeJigStr } =
+    fishLureStrings[constants.species.largemouthBass][constants.lures.jig];
+  const { general: generalSpinnerbaitStr } =
     fishLureStrings[constants.species.largemouthBass][
       constants.lures.spinnerbait
-    ].general;
-  let prioritizeJerkbaitStr =
-    fishLureStrings[constants.species.largemouthBass][constants.lures.jerkbait]
-      .prioritized;
-  let dismissJerkbaitStr =
-    fishLureStrings[constants.species.largemouthBass][constants.lures.jerkbait]
-      .dismissed;
+    ];
 
   let lureTypes = {};
 
-  // Jerkbait prioritized (water clarity clear, water temp < 55)
-  if (
-    waterClarity === constants.waterClarities.clear &&
-    parseInt(waterTemperature) < 55
-  ) {
-    lureTypes = {
-      [jerkbait]: {
-        message: prioritizeJerkbaitStr,
-        image: checkmark,
-      },
-      [crankbait]: {
-        message: generalCrankbaitStr,
-        image: checkmark,
-      },
-      [rubberWorm]: {
-        message: generalRubberWormStr,
-        image: checkmark,
-      },
-      [jig]: {
-        message: generalJigStr,
-        image: checkmark,
-      },
-      [spinnerbait]: {
-        message: generalSpinnerbaitStr,
-        image: checkmark,
-      },
+  lureTypes[crankbait] = {
+    message: generalCrankbaitStr,
+    image: indifferent,
+  };
+  // Jerkbait prioritized
+  if (shouldPrioritizeJerkbait(waterClarity, waterTemperature)) {
+    lureTypes[jerkbait] = {
+      message: prioritizeJerkbaitStr,
+      image: checkmark,
     };
   }
-  // Jerkbait dismissed  (water clarity clear, water temp > 60)
-  else if (
-    waterClarity !== constants.waterClarities.clear &&
-    parseInt(waterTemperature) > 60
-  ) {
-    lureTypes = {
-      [jerkbait]: {
-        message: dismissJerkbaitStr,
-        image: x,
-      },
-      [crankbait]: {
-        message: generalCrankbaitStr,
-        image: checkmark,
-      },
-      [rubberWorm]: {
-        message: generalRubberWormStr,
-        image: checkmark,
-      },
-      [jig]: {
-        message: generalJigStr,
-        image: checkmark,
-      },
-      [spinnerbait]: {
-        message: generalSpinnerbaitStr,
-        image: checkmark,
-      },
+  // Jerkbait dismissed
+  else if (shouldDismissJerkbait(waterClarity)) {
+    lureTypes[jerkbait] = {
+      message: dismissUnclearWaterJerkbaitStr,
+      image: x,
     };
   }
-  // Default largemouth bass lures
+  // Jerkbait general
   else {
-    lureTypes = {
-      [crankbait]: {
-        message: generalCrankbaitStr,
-        image: checkmark,
-      },
-      [jerkbait]: {
-        message: generalJerkbaitStr,
-        image: checkmark,
-      },
-      [rubberWorm]: {
-        message: generalRubberWormStr,
-        image: checkmark,
-      },
-      [jig]: {
-        message: generalJigStr,
-        image: checkmark,
-      },
-      [spinnerbait]: {
-        message: generalSpinnerbaitStr,
-        image: checkmark,
-      },
+    lureTypes[jerkbait] = {
+      message: generalJerkbaitStr,
+      image: x,
     };
   }
+
+  // Jig prioritized
+  if (shouldPrioritizeJig(waterClarity)) {
+    lureTypes[jig] = {
+      message: prioritzeJigStr,
+      image: checkmark,
+    };
+  }
+  // Jig general
+  else {
+    lureTypes[jig] = {
+      message: generalJigStr,
+      image: indifferent,
+    };
+  }
+
+  // Rubber worm dismissed
+  if (shouldDismissRubberWorm(cloudCondition, waterTemperature)) {
+    lureTypes[rubberWorm] = {
+      message: dismissRubberWormStr,
+      image: x,
+    };
+  } else {
+    lureTypes[rubberWorm] = {
+      message: generalRubberWormStr,
+      image: indifferent,
+    };
+  }
+
+  lureTypes[spinnerbait] = {
+    message: generalSpinnerbaitStr,
+    image: indifferent,
+  };
 
   luresInfo.types = lureTypes;
 
   return luresInfo;
 }
+
+// Conditions for prioritizing jerkbait (clear water or cold water, but no surefire cold, so just using 60)
+const shouldPrioritizeJerkbait = (waterClarity, waterTemperature) =>
+  waterClarity === constants.waterClarities.clear ||
+  parseInt(waterTemperature) < 60;
+
+// Conditions for dismissing jerkbait (when water temperature is not clear, bass can't see the action)
+const shouldDismissJerkbait = (waterClarity) =>
+  waterClarity !== constants.waterClarities.clear;
+
+// Conditions for prioritizing jig (spring and summer months, so warmer water, using arbitrary 65... or cold, arbitrary 60)
+const shouldPrioritizeJig = (waterTemperature) =>
+  parseInt(waterTemperature) > 65 || parseInt(waterTemperature) < 60;
+
+// Conditions for dismissing rubber worm (when bass are active, so let's so ideal cloud conditions: partly cloudy and mostly cloudy... and in winter, so cold water temps, abitrary 40)
+const shouldDismissRubberWorm = (cloudCondition, waterTemperature) =>
+  parseInt(waterTemperature) <= 40 ||
+  cloudCondition === constants.cloudConditions.partlyCloudy ||
+  cloudCondition === constants.cloudConditions.mostlyCloudy;
 
 export { getSpecificHelpIntro, getSpecificLures };

@@ -12,35 +12,35 @@
         "intro": "When choosing bait for common carp, "
     },
     "Largemouth Bass": {
-        "intro": "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water. The following are some recommendations based on your fishing conditions, however, that doesn't mean you have to follow them to a tee. Half the fun in fishing is trying new things, and seeing if they work!",
+        "intro": "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water. The following are some recommendations based on your fishing conditions, however, that doesn't mean you have to follow the suggestions to a tee. Half the fun in fishing is trying new things, and seeing if they work!",
         "Crankbait": {
-            "general": "Crankbaits can be used year-round and are as versatile as they come. They come in a variety of shapes, sizes, weights, and running depth, so what's important is choosing the right crankbait for the right conditions.", 
-            "prioritized": "", 
-            "dismissed": "", 
+            "general": "Crankbaits can be used year-round and are as versatile as they come. They come in a variety of shapes, sizes, weights, and running depth, so what's important is choosing the right crankbait for the right conditions. Also remember that they are \"contact\" lures, meaning that you have a higher chance of enticing a bass after it deflects off an object.", 
+            "prioritize": "", 
+            "dismiss": "", 
             "maybe": "" 
         },
         "Rubber Worm": {
             "general": "Rubber worms can be used in any weather conditions, which is why they are so popular. They can be rigged in a variety of ways, allowing them to be used in any depth of water.", 
-            "prioritized": "", 
-            "dismissed": "", 
+            "prioritize": "", 
+            "dismiss": "The only times not ideal for for rubber worm fishing is when the bass are very active, or in the winter. During those times, faster-action lures like crankbaits and spinnerbaits are better choices.", 
             "maybe": "" 
         },
         "Jerkbait": {
-            "general": "Jerkbaits work well in clear water, cold water, or when bass are actively feeding on baitfish. Weather conditions aren't that important when using a jerkbait.", 
-            "prioritized": "Jerkbaits would work well given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish. Weather conditions aren't that important when using a jerkbait.", 
-            "dismissed": "We wouldn't advise using a jerkbait given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish.", 
+            "general": "Jerkbaits work well in clear water, cold water, or when bass are actively feeding on baitfish. A jerkbait's lifelike action is what attracts the bass. Weather conditions aren't that important when using a jerkbait.", 
+            "prioritize": "Jerkbaits should work really well given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish. A jerkbait's lifelike action is what attracts the bass. Weather conditions aren't that important when using a jerkbait.", 
+            "dismissUnclearWater": "We don't advise using a jerkbait in unclear water. Bass are attracted to the lifelike action it presents, but they won't be able to see it since the water is stained. There are better choices for lures given your conditions.", 
             "maybe": "Jerkbaits might work in the conditions you specified. Of course, you never know until you try! However, we'd say save the jerkbaits for when the water is clear or cold, or when the bass are actively feeding on baitfish." 
         },
         "Jig": {
             "general": "Jigs can be fished year-round, but the spring and summer months work the best. They may also work well when the water temperature is cold and fishing has slowed down. It is best to cast jigs around structure or natural cover (logs, grass, etc.).", 
-            "prioritized": "", 
-            "dismissed": "", 
+            "prioritize": "Jigs work best in the spring and summer months, meaning when the water is warmer. They may also work well when the water temperature is cold and fishing has slowed down.", 
+            "dismiss": "", 
             "maybe": "" 
         },
         "Spinnerbait": {
             "general": "Spinnerbaits can be used year-round. They are very durable and aren't prone to snagging, so you can use them to get to hard to reach places where bass may be hiding. It is best to cast them around structure or natural cover (logs, grass, etc.).", 
-            "prioritized": "", 
-            "dismissed": "", 
+            "prioritize": "", 
+            "dismiss": "", 
             "maybe": "" 
         }
     },
