@@ -1,3 +1,6 @@
+import fishLureStrings from "../fishLureStrings.json";
+import constants from "../constants.json";
+
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
   cloudCondition,

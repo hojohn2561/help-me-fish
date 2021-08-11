@@ -1,3 +1,6 @@
+import fishLureStrings from "../fishLureStrings.json";
+import constants from "../constants.json";
+
 // Called when user selected in form that they have a target species in mind
 function getSpecificHelpIntro(
   cloudCondition,

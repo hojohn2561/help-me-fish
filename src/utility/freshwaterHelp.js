@@ -30,148 +30,153 @@ function getFreshwaterSpecificHelp(
     waterTemperature,
     idealTemperatureRange
   );
+  let specificHelpIntro;
+  let specificLures;
 
   switch (speciesName) {
     // Find a way to remove this code duplication if possible.
     // Inheritance and overidding in the traditional sense of parent/child isn't possible/recommended in React because of components, and these aren't classes.
     case constants.species.bluegill:
-      help.push({
-        intro: bluegill.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.bluegill,
-      });
+      specificHelpIntro = bluegill.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = bluegill.getSpecificLures(waterClarity, waterTemperature);
       break;
     case constants.species.brownTrout:
-      help.push({
-        intro: brownTrout.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.brownTrout,
-      });
+      specificHelpIntro = brownTrout.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = brownTrout.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.channelCatfish:
-      help.push({
-        intro: channelCatfish.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.channelCatfish,
-      });
+      specificHelpIntro = channelCatfish.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = channelCatfish.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.commonCarp:
-      help.push({
-        intro: commonCarp.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.commonCarp,
-      });
+      specificHelpIntro = commonCarp.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = commonCarp.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.largemouthBass:
-      help.push({
-        intro: largemouthBass.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.largemouthBass,
-      });
+      specificHelpIntro = largemouthBass.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = largemouthBass.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.northernSnakehead:
-      help.push({
-        intro: northernSnakehead.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.northernSnakehead,
-      });
+      specificHelpIntro = northernSnakehead.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = northernSnakehead.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.rainbowTrout:
-      help.push({
-        intro: rainbowTrout.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.rainbowTrout,
-      });
+      specificHelpIntro = rainbowTrout.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = rainbowTrout.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.redbreastSunfish:
-      help.push({
-        intro: redbreastSunfish.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.redbreastSunfish,
-      });
+      specificHelpIntro = redbreastSunfish.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = redbreastSunfish.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     case constants.species.smallmouthBass:
-      help.push({
-        intro: smallmouthBass.getSpecificHelpIntro(
-          cloudCondition,
-          waterClarity,
-          waterTemperature,
-          isIdealTemp,
-          idealCloudConditions,
-          idealTemperatureRange,
-          idealWaterClarities
-        ),
-        lures: { types: [] },
-        speciesName: constants.species.smallmouthBass,
-      });
+      specificHelpIntro = smallmouthBass.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = smallmouthBass.getSpecificLures(
+        waterClarity,
+        waterTemperature
+      );
       break;
     default:
       break;
   }
+
+  help.push({
+    intro: specificHelpIntro,
+    lures: specificLures,
+    speciesName: constants.species.smallmouthBass,
+  });
 
   return help;
 }

@@ -49,6 +49,7 @@ export default function AssistantModal({
       targetFishData.idealWaterClarities
     );
 
+    if (!help[0]) return null;
     // If user had a target species, display info about that particular species
     if (selectedTargetSpecies)
       return (

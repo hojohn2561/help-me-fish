@@ -1,3 +1,6 @@
+import fishLureStrings from "../fishLureStrings.json";
+import constants from "../constants.json";
+
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
   cloudCondition,
@@ -43,6 +46,13 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {}
+function getSpecificLures(waterClarity, waterTemperature) {
+  let luresInfo = {
+    intro: fishLureStrings[constants.species.brownTrout].intro,
+    types: {},
+  };
+
+  return luresInfo;
+}
 
 export { getSpecificHelpIntro, getSpecificLures };

@@ -1,12 +1,15 @@
 {
+    "Bluegill": {
+        "intro": "When choosing a lure for bluegill, "
+    },
     "Brown Trout": {
         "intro": "When choosing a lure for brown trout, "
     },
     "Channel Catfish": {
-        "intro": ""
+        "intro": "When choosing bait for channel catfish,"
     },
     "Common Carp": {
-        "intro": ""
+        "intro": "When choosing bait for common carp, "
     },
     "Largemouth Bass": {
         "intro": "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water.",
@@ -47,6 +50,9 @@
     },
     "Rainbow Trout": {
         "intro": "When choosing a lure for rainbow trout, "
+    },
+    "Redbreast Sunfish": {
+        "intro": "When choosing bait for redbreast sunfish, "
     },
     "Smallmouth Bass": {
         "intro": "When choosing a lure for smallmouth bass, "
