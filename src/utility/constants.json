@@ -11,6 +11,9 @@
         "smallmouthBass": "Smallmouth Bass"
     },
     "lures": {
+        "inlineSpinner" : "Inline Spinner",
+        "roosterTail": "Rooster Tail",
+        "troutMagnet": "Trout Magnet",
         "jerkbait": "Jerkbait",
         "crankbait": "Crankbait",
         "rubberWorm": "Rubber Worm",

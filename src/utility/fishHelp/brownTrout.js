@@ -1,5 +1,7 @@
 import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
+import checkmark from "../../images/checkmark.svg";
+import indifferent from "../../images/indifferent.png";
 
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
@@ -46,13 +48,64 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {
+function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
   let luresInfo = {
     intro: fishLureStrings[constants.species.brownTrout].intro,
     types: {},
   };
 
+  const { inlineSpinner, roosterTail, troutMagnet } = constants.lures;
+
+  const {
+    general: generalInlineSpinnerStr,
+    prioritize: prioritizeInlineSpinnerStr,
+  } =
+    fishLureStrings[constants.species.brownTrout][
+      constants.lures.inlineSpinner
+    ];
+  const {
+    general: generalRoosterTailStr,
+    prioritize: prioritizeRoosterTailStr,
+  } =
+    fishLureStrings[constants.species.brownTrout][constants.lures.roosterTail];
+  const { general: generalTroutMagnetStr } =
+    fishLureStrings[constants.species.brownTrout][constants.lures.troutMagnet];
+
+  let lureTypes = {};
+
+  // Spinner/Rooster tail prioritized
+  if (shouldPrioritizeInlineSpinner(cloudCondition)) {
+    lureTypes[inlineSpinner] = {
+      message: prioritizeInlineSpinnerStr,
+      image: checkmark,
+    };
+    lureTypes[roosterTail] = {
+      message: prioritizeRoosterTailStr,
+      image: checkmark,
+    };
+  } else {
+    lureTypes[inlineSpinner] = {
+      message: generalInlineSpinnerStr,
+      image: indifferent,
+    };
+    lureTypes[roosterTail] = {
+      message: generalRoosterTailStr,
+      image: indifferent,
+    };
+  }
+
+  lureTypes[troutMagnet] = {
+    message: generalTroutMagnetStr,
+    image: indifferent,
+  };
+
+  luresInfo.types = lureTypes;
+
   return luresInfo;
 }
+
+const shouldPrioritizeInlineSpinner = (cloudCondition) =>
+  cloudCondition === constants.cloudConditions.partlyCloudy ||
+  cloudCondition === constants.cloudConditions.mostlyCloudy;
 
 export { getSpecificHelpIntro, getSpecificLures };

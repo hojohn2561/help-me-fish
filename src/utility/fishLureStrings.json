@@ -3,7 +3,25 @@
         "intro": "When choosing a lure for bluegill, "
     },
     "Brown Trout": {
-        "intro": "When choosing a lure for brown trout, "
+        "intro": "When choosing a lure for brown trout, rather than focusing on the type of lure to use, because they're all effective anyway, you want to focus on the color and size of the lure. When choosing the color, you want to \"match the hatch,\" meaning you want it to closely resemable what the trout naturally feeds on in that area.",
+        "Inline Spinner": {
+            "general": "Spinners are extremely versatile, and extremely effective. The flash off of the blade as the spinner is being reeled is meant to mimic the scales of a baitfish catching the sun. This is one thing that attracts trout. Some spinners also have a vibration component built into them, which is another feature that attracts trout. ",
+            "prioritize": "Spinners work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Rooster Tail": {
+            "general": "The appearance is similar to spinners, but rooster tails have a skirt, which resembles the tail of a rooster, hence the name. While retrieving, the tail mimics the body of a baitfish, which is what attracts trout.",
+            "prioritize": "Rooster tails work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Trout Magnet": {
+            "general": "Trout magnets are simple yet effective. Just hook them onto a jig head with a bobber, and fish it just off the bottom (by a foot or two). You can either retrieve and pause, cast and twitch (reeling in the slack after each twitch), or just cast and let it float.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        }
     },
     "Channel Catfish": {
         "intro": "When choosing bait for channel catfish,"
@@ -49,7 +67,25 @@
         "Topwater Frog": ""
     },
     "Rainbow Trout": {
-        "intro": "When choosing a lure for rainbow trout, "
+        "intro": "When choosing a lure for rainbow trout, rather than focusing on the type of lure to use, because they're all effective anyway, you want to focus on the color and size of the lure. In other words, the presentation. When choosing the color, you want to \"match the hatch,\" meaning you want it to closely resemable what the trout naturally feeds on in that area. If the water you're fishing in is dirty, go a little larger on the lure size.",
+        "Inline Spinner": {
+            "general": "Spinners are extremely versatile, and extremely effective. The flash off of the blade as the spinner is being reeled is meant to mimic the scales of a baitfish catching the sun. This is one thing that attracts trout. Some spinners also have a vibration component built into them, which is another feature that attracts trout. ",
+            "prioritize": "Spinners work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Rooster Tail": {
+            "general": "The appearance is similar to spinners, but rooster tails have a skirt, which resembles the tail of a rooster, hence the name. While retrieving, the tail mimics the body of a baitfish, which is what attracts trout.",
+            "prioritize": "Rooster tails work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Trout Magnet": {
+            "general": "Trout magnets are simple yet effective. Just hook them onto a jig head with a bobber, and fish it just off the bottom (by a foot or two). You can either retrieve and pause, cast and twitch (reeling in the slack after each twitch), or just cast and let it float.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        }
     },
     "Redbreast Sunfish": {
         "intro": "When choosing bait for redbreast sunfish, "

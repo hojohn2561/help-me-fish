@@ -1,8 +1,8 @@
 import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
-import x from "../../images/x.svg";
 import indifferent from "../../images/indifferent.png";
+import x from "../../images/x.svg";
 
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
