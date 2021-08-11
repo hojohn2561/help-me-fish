@@ -80,7 +80,7 @@ export default function AssistantModal({
                   <span className="lure-header">
                     <h3 className="lure-header-text">{key}</h3>
                     <img
-                      alt={key}
+                      alt={`${key}-reccomendation-status`}
                       className="status-image"
                       src={help[0].lures.types[key].image}
                     />
