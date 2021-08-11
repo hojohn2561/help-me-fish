@@ -14,6 +14,38 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
       </Modal>
     );
 
+  const createIntroSection = () =>
+    fishData.intro ? (
+      <>
+        <h2>Introduction</h2>
+        <p className="info-paragraph">{fishData.intro}</p>
+      </>
+    ) : null;
+
+  const createFishingTipsSection = () =>
+    fishData.fishingTips ? (
+      <>
+        <h2>Fishing Tips</h2>
+        <p className="info-paragraph">{fishData.fishingTips}</p>
+      </>
+    ) : null;
+
+  const createSpawnBehaviorSection = () =>
+    fishData.spawnBehavior ? (
+      <>
+        <h2>Spawning</h2>
+        <p className="info-paragraph">{fishData.spawnBehavior}</p>
+      </>
+    ) : null;
+
+  const createIdentificationSection = () =>
+    fishData.identification ? (
+      <>
+        <h2>Identification</h2>
+        <p className="info-paragraph">{fishData.identification}</p>
+      </>
+    ) : null;
+
   // Fish data does exist, if generalInfo does too, display it on the modal, otherwise, return null
   return (
     <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
@@ -27,10 +59,10 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
           />
         </div>
         <div className="info">
-          <p className="info-paragraph">{fishData.intro}</p>
-          <p className="info-paragraph">{fishData.fishingTips}</p>
-          <p className="info-paragraph">{fishData.spawnBehavior}</p>
-          <p className="info-paragraph">{fishData.identification}</p>
+          {createIntroSection()}
+          {createFishingTipsSection()}
+          {createSpawnBehaviorSection()}
+          {createIdentificationSection()}
         </div>
         {fishData.sources ? (
           <div className="sources">

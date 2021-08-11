@@ -2,8 +2,6 @@ import React from "react";
 import Modal from "./Modal";
 
 import constants from "../../utility/constants.json";
-import useFreshwaterFishData from "../../hooks/useFreshwaterFishData";
-import useSaltwaterFishData from "./../../hooks/useSaltwaterFishData";
 import {
   getFreshwaterSpecificHelp,
   getFreshwaterGeneralHelp,
@@ -19,11 +17,7 @@ export default function AssistantModal({
   isVisible,
   onClose,
 }) {
-  const { freshwaterFishData } = useFreshwaterFishData();
-  const { saltwaterFishData } = useSaltwaterFishData();
-
   console.log(formResponses);
-  console.log(targetFishData);
 
   // If form still has null values, don't display the modal yet
   if (
