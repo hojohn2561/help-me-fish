@@ -47,37 +47,32 @@ function getSpecificHelpIntro(
 }
 
 function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
+  const { smallmouthBass } = constants.species;
+
   let luresInfo = {
-    intro: fishLureStrings[constants.species.smallmouthBass].intro,
+    intro: fishLureStrings[smallmouthBass].intro,
     types: {},
   };
 
   const { jerkbait, crankbait, rubberWorm, jig, spinnerbait } = constants.lures;
 
   const { general: generalCrankbaitStr } =
-    fishLureStrings[constants.species.smallmouthBass][
-      constants.lures.crankbait
-    ];
+    fishLureStrings[smallmouthBass][crankbait];
   const { general: generalRubberWormStr, dismiss: dismissRubberWormStr } =
-    fishLureStrings[constants.species.smallmouthBass][
-      constants.lures.rubberWorm
-    ];
+    fishLureStrings[smallmouthBass][rubberWorm];
   const {
     general: generalJerkbaitStr,
     prioritize: prioritizeJerkbaitStr,
     dismissUnclearWater: dismissUnclearWaterJerkbaitStr,
-  } = fishLureStrings[constants.species.smallmouthBass][
-    constants.lures.jerkbait
-  ];
+  } = fishLureStrings[smallmouthBass][jerkbait];
   const { general: generalJigStr, prioritize: prioritzeJigStr } =
-    fishLureStrings[constants.species.smallmouthBass][constants.lures.jig];
+    fishLureStrings[smallmouthBass][jig];
   const { general: generalSpinnerbaitStr } =
-    fishLureStrings[constants.species.smallmouthBass][
-      constants.lures.spinnerbait
-    ];
+    fishLureStrings[smallmouthBass][spinnerbait];
 
   let lureTypes = {};
 
+  // Choosing which description for the lures to display, based on the user's input to the form
   lureTypes[crankbait] = {
     message: generalCrankbaitStr,
     image: indifferent,

@@ -63,8 +63,19 @@
         }
     },
     "Northern Snakehead": {
-        "intro": "When choosing a lure for northern snakeheads, ",
-        "Topwater Frog": ""
+        "intro": "Northern snakeheads are ferocious predators, so in addition to artifical lures, live bait is also a good option. They feed on the same type of prey as bass, so whatever lures you use for bass will most likely work for snakeheads as well.",
+        "Swim Bait": {
+            "general": "Both hard and soft swim baits work well for snakeheads. Ideally, use them in open water and make sure the swimbait you're using resembles their prey, such as banded killifish, mummichog minnow, and other small fish species.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Topwater Frog": {
+            "general": "Topwater frogs are arguably the most popular lure for snakeheads, and for good reason. They give you good casting distance, aren't prone to snagging, and you get to witness one of the best freshwater topwater blowups.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        }
     },
     "Rainbow Trout": {
         "intro": "When choosing a lure for rainbow trout, rather than focusing on the type of lure to use, because they're all effective anyway, you want to focus on the color and size of the lure. In other words, the presentation. When choosing the color, you want to \"match the hatch,\" meaning you want it to closely resemable what the trout naturally feeds on in that area. If the water you're fishing in is dirty, go a little larger on the lure size.",

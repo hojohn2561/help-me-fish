@@ -51,35 +51,32 @@ function getSpecificHelpIntro(
 }
 
 function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
+  const { rainbowTrout } = constants.species;
+
   let luresInfo = {
-    intro: fishLureStrings[constants.species.rainbowTrout].intro,
+    intro: fishLureStrings[rainbowTrout].intro,
     types: {},
   };
 
+  // Lure names
   const { inlineSpinner, roosterTail, troutMagnet } = constants.lures;
 
+  // Strings describing the lures
   const {
     general: generalInlineSpinnerStr,
     prioritize: prioritizeInlineSpinnerStr,
-  } =
-    fishLureStrings[constants.species.rainbowTrout][
-      constants.lures.inlineSpinner
-    ];
+  } = fishLureStrings[rainbowTrout][inlineSpinner];
   const {
     general: generalRoosterTailStr,
     prioritize: prioritizeRoosterTailStr,
-  } =
-    fishLureStrings[constants.species.rainbowTrout][
-      constants.lures.roosterTail
-    ];
+  } = fishLureStrings[rainbowTrout][roosterTail];
   const { general: generalTroutMagnetStr } =
-    fishLureStrings[constants.species.rainbowTrout][
-      constants.lures.troutMagnet
-    ];
+    fishLureStrings[rainbowTrout][troutMagnet];
 
   let lureTypes = {};
 
-  // Spinner/Rooster tail prioritized
+  // Choosing which description to display, based on the user's input to the form
+  // If spinner/Rooster tail should be prioritized, display the prioritized message. Otherwise, display the general message
   if (shouldPrioritizeInlineSpinner(cloudCondition)) {
     lureTypes[inlineSpinner] = {
       message: prioritizeInlineSpinnerStr,

@@ -18,7 +18,9 @@
         "crankbait": "Crankbait",
         "rubberWorm": "Rubber Worm",
         "jig": "Jig",
-        "spinnerbait": "Spinnerbait"
+        "spinnerbait": "Spinnerbait",
+        "swimBait": "Swim Bait",
+        "topwaterFrog": "Topwater Frog"
     },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",
