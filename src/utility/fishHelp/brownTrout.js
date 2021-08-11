@@ -48,7 +48,7 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
+function getSpecificLures(cloudCondition) {
   const { brownTrout } = constants.species;
 
   let luresInfo = {

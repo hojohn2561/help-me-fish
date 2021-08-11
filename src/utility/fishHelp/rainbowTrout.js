@@ -50,7 +50,7 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
+function getSpecificLures(cloudCondition) {
   const { rainbowTrout } = constants.species;
 
   let luresInfo = {

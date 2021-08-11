@@ -46,11 +46,7 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = bluegill.getSpecificLures(
-        cloudCondition,
-        waterClarity,
-        waterTemperature
-      );
+      specificLures = bluegill.getSpecificLures();
       break;
     case constants.species.brownTrout:
       specificHelpIntro = brownTrout.getSpecificHelpIntro(
@@ -62,11 +58,7 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = brownTrout.getSpecificLures(
-        cloudCondition,
-        waterClarity,
-        waterTemperature
-      );
+      specificLures = brownTrout.getSpecificLures(cloudCondition);
       break;
     case constants.species.channelCatfish:
       specificHelpIntro = channelCatfish.getSpecificHelpIntro(
@@ -126,11 +118,7 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = northernSnakehead.getSpecificLures(
-        cloudCondition,
-        waterClarity,
-        waterTemperature
-      );
+      specificLures = northernSnakehead.getSpecificLures();
       break;
     case constants.species.rainbowTrout:
       specificHelpIntro = rainbowTrout.getSpecificHelpIntro(
@@ -142,11 +130,7 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = rainbowTrout.getSpecificLures(
-        cloudCondition,
-        waterClarity,
-        waterTemperature
-      );
+      specificLures = rainbowTrout.getSpecificLures(cloudCondition);
       break;
     case constants.species.redbreastSunfish:
       specificHelpIntro = redbreastSunfish.getSpecificHelpIntro(
@@ -158,11 +142,7 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = redbreastSunfish.getSpecificLures(
-        cloudCondition,
-        waterClarity,
-        waterTemperature
-      );
+      specificLures = redbreastSunfish.getSpecificLures();
       break;
     case constants.species.smallmouthBass:
       specificHelpIntro = smallmouthBass.getSpecificHelpIntro(

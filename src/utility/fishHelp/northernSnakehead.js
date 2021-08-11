@@ -2,7 +2,6 @@ import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
-import x from "../../images/x.svg";
 
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
@@ -45,7 +44,7 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {
+function getSpecificLures() {
   const { northernSnakehead } = constants.species;
 
   let luresInfo = {
@@ -65,12 +64,12 @@ function getSpecificLures(waterClarity, waterTemperature) {
   let lureTypes = {};
 
   // Choosing which description to display, based on the user's input to the form
-  lureTypes[swimBait] = {
-    message: generalSwimBaitStr,
-    image: indifferent,
-  };
   lureTypes[topwaterFrog] = {
     message: generalTopwaterFrogStr,
+    image: checkmark,
+  };
+  lureTypes[swimBait] = {
+    message: generalSwimBaitStr,
     image: indifferent,
   };
   luresInfo.types = lureTypes;

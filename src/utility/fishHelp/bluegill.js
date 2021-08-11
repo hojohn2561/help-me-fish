@@ -45,7 +45,7 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {
+function getSpecificLures() {
   const { bluegill } = constants.species;
 
   let luresInfo = {
@@ -64,6 +64,7 @@ function getSpecificLures(waterClarity, waterTemperature) {
 
   let lureTypes = {};
 
+  // Choosing which description to display, based on the user's input to the form
   lureTypes[worms] = {
     message: generalWormsStr,
     image: checkmark,
