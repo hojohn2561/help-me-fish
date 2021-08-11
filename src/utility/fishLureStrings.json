@@ -1,6 +1,24 @@
 {
     "Bluegill": {
-        "intro": "When choosing a lure for bluegill, "
+        "intro": "When fishing for bluegill, live bait is the most common approach. They have small mouths, even as adults, so keep the hooks small (e.g., a number 6 hook), and use light to ultra-light tackle. With any of the following bait options, you can still fish with either or bobber or let it sink to the bottom.",
+        "Worms": {
+            "general": "The most common live baits for bluegills are worms and night crawlers because they are easily attainable and are very effective. Use just a piece of the worm, enough to cover the hook.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Crickets": {
+            "general": "Crickets are also a popular bait for bluegills. As always, with bluegill, just remember to keep it small and light.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Grasshoppers": {
+            "general": "Grasshoppers are also a popular bait for bluegills.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        }
     },
     "Brown Trout": {
         "intro": "When choosing a lure for brown trout, rather than focusing on the type of lure to use, because they're all effective anyway, you want to focus on the color and size of the lure. When choosing the color, you want to \"match the hatch,\" meaning you want it to closely resemable what the trout naturally feeds on in that area.",
@@ -99,7 +117,25 @@
         }
     },
     "Redbreast Sunfish": {
-        "intro": "When choosing bait for redbreast sunfish, "
+        "intro": "Like bluegill and other sunfish, when fishing for redbreast sunfish, live bait is the most common approach. They have small mouths, even as adults, so keep the hooks small (e.g., a number 6 hook), and use light to ultra-light tackle. With any of the following bait options, you can still fish with either or bobber or let it sink to the bottom.",
+        "Worms": {
+            "general": "The most common live baits for redbreast sunfish, and sunfish in general, are worms and night crawlers because they are easily attainable and are very effective. Use just a piece of the worm, enough to cover the hook.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Crickets": {
+            "general": "Crickets are also a popular bait for sunfish. Just remember to keep it small and light.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Grasshoppers": {
+            "general": "Grasshoppers are also a popular bait for sunfish.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        }
     },
     "Smallmouth Bass": {
         "intro": "When choosing a lure for smallmouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water. The following are some recommendations based on your fishing conditions, however, that doesn't mean you have to follow the suggestions to a tee. Half the fun in fishing is trying new things, and seeing if they work!",

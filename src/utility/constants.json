@@ -20,7 +20,10 @@
         "jig": "Jig",
         "spinnerbait": "Spinnerbait",
         "swimBait": "Swim Bait",
-        "topwaterFrog": "Topwater Frog"
+        "topwaterFrog": "Topwater Frog",
+        "worms": "Worms",
+        "grasshoppers": "Grasshoppers",
+        "crickets": "Crickets"
     },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",
