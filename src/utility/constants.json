@@ -26,7 +26,11 @@
         "crickets": "Crickets",
         "shrimp": "Shrimp",
         "stinkBait": "Stink Bait",
-        "chickenLiver": "Chicken Liver"
+        "chickenLiver": "Chicken Liver",
+        "cannedSweetCorn": "Canned Sweet Corn",
+        "bread": "Bread",
+        "boilies": "Boilies"
+
     },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",

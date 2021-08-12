@@ -85,11 +85,7 @@ function getFreshwaterSpecificHelp(
         idealTemperatureRange,
         idealWaterClarities
       );
-      specificLures = commonCarp.getSpecificLures(
-        cloudCondition,
-        waterClarity,
-        waterTemperature
-      );
+      specificLures = commonCarp.getSpecificLures();
       break;
     case constants.species.largemouthBass:
       specificHelpIntro = largemouthBass.getSpecificHelpIntro(

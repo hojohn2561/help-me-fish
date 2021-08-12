@@ -4,20 +4,17 @@
         "Worms": {
             "general": "The most common live baits for bluegills are worms and night crawlers because they are easily attainable and are very effective. Use just a piece of the worm, enough to cover the hook.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": "" 
         },
         "Crickets": {
             "general": "Crickets are also a popular bait for bluegills. As always, with bluegill, just remember to keep it small and light.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": "" 
         },
         "Grasshoppers": {
             "general": "Grasshoppers are also a popular bait for bluegills.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Brown Trout": {
@@ -25,20 +22,17 @@
         "Inline Spinner": {
             "general": "Spinners are extremely versatile, and extremely effective. The flash off of the blade as the spinner is being reeled is meant to mimic the scales of a baitfish catching the sun. This is one thing that attracts trout. Some spinners also have a vibration component built into them, which is another feature that attracts trout. ",
             "prioritize": "Spinners work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Rooster Tail": {
             "general": "The appearance is similar to spinners, but rooster tails have a skirt, which resembles the tail of a rooster, hence the name. While retrieving, the tail mimics the body of a baitfish, which is what attracts trout.",
             "prioritize": "Rooster tails work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Trout Magnet": {
             "general": "Trout magnets are simple yet effective. Just hook them onto a jig head with a bobber, and fish it just off the bottom (by a foot or two). You can either retrieve and pause, cast and twitch (reeling in the slack after each twitch), or just cast and let it float.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Channel Catfish": {
@@ -46,64 +40,75 @@
         "Worms": {
             "general": "Like a lot of other fish, you can't go wrong with worms or night crawlers as live bait. They are easily attainable, yet still so effective.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Shrimp": {
             "general": "Raw shrimp is another good choice of bait for channel cats, suitable for any weather conditions.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Stink Bait": {
             "general": "Stink baits are used primarily for catfish, and is a good bait to use under the right conditions. Don't be afraid to pull it out when the water is warm or has low visibility.",
             "prioritizeWarmWater": "Stink baits are used primarily for catfish, and is a good bait to when the water is warm.", 
             "prioritizeUnclearWater": "Stink baits are used primarily for catfish, and is a good bait to when the water has low visibility. If the catfish don't see the bait, they will definitely be able to pick it up with their keen sense of smell.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Chicken Liver": {
             "general": "Chicken liver, like stink baits, may smell bad to us if they're past the date to use by, but that smell signals dinner to catfish. The worse it smells the better, that is why many anglers take the extra step to soak it in another strong smelling ingredient to give it an added kick.",
             "prioritizeWarmWater": "Like stink baits, chicken liver may be a good bait to use when the water is warm.", 
             "prioritizeUnclearWater": "Like stink baits, chicken liver is an excellent bait to use when the water has low visibility. If the catfish don't see the bait, they will definitely be able to pick the scent using their sense of smell.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Common Carp": {
-        "intro": "When choosing bait for common carp, "
+        "intro": "There are many baits you can use for common carp. Using a circle hook will ensure that the bait doesn't fall off easily, as well as fit better in the carp's mouth. Circle hooks also have the added bonus of basically setting the hook for you when the fish begins to pull away.",
+        "Canned Sweet Corn": {
+            "general": "Canned sweet corn is one of the most popular baits to use for carp. Slide a few kernals onto the hook and then cast where you think the carp may be hanging, and wait for a bite. If you have extra that you aren't afraid to use, you can also an area of water before casting into that area. There are also artificial corn baits you can use if you choose to go that route.",
+            "prioritize": "", 
+            "dismiss": ""
+        },
+        "Bread": {
+            "general": "Bread is another easily attainable food that humans eat and can be used as carp bait. Any type of bread works, as long as you can ball it up into a ball and put it on the hook.",
+            "prioritize": "", 
+            "dismiss": ""
+        },
+        "Worms": {
+            "general": "It should be of no suprise that worms can also catch carp. Worms and nightcrawlers are probably the most versatile bait you can possibly use and is a good go-to at anytime.",
+            "prioritize": "", 
+            "dismiss": ""
+        },
+        "Boilies": {
+            "general": "Boilies are a popular pre-made carp bait, named after the process that's used to make them. Flour and cornmeal are mixed with a binder, formed into balls, and then boiled. They are typically used to catch bigger carp.",
+            "prioritize": "", 
+            "dismiss": ""
+        }
     },
     "Largemouth Bass": {
         "intro": "When choosing a lure for largemouth bass, a variety of factors come into play, such as water depth, clarity of the water, and temperature of the water. The following are some recommendations based on your fishing conditions, however, that doesn't mean you have to follow the suggestions to a tee. Half the fun in fishing is trying new things, and seeing if they work!",
         "Crankbait": {
             "general": "Crankbaits can be used year-round and are as versatile as they come. They come in a variety of shapes, sizes, weights, and running depth, so what's important is choosing the right crankbait for the right conditions. Also remember that they are \"contact\" lures, meaning that you have a higher chance of enticing a bass after it deflects off an object.", 
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Rubber Worm": {
             "general": "Rubber worms can be used in any weather conditions, which is why they are so popular. They can be rigged in a variety of ways, allowing them to be used in any depth of water.", 
             "prioritize": "", 
-            "dismiss": "The only times not ideal for for rubber worm fishing is when the bass are very active, or in the winter. During those times, faster-action lures like crankbaits and spinnerbaits are better choices.", 
-            "maybe": "" 
+            "dismiss": "The only times not ideal for for rubber worm fishing is when the bass are very active, or in the winter. During those times, faster-action lures like crankbaits and spinnerbaits are better choices."
         },
         "Jerkbait": {
             "general": "Jerkbaits work well in clear water, cold water, or when bass are actively feeding on baitfish. A jerkbait's lifelike action is what attracts the bass. Weather conditions aren't that important when using a jerkbait.", 
             "prioritize": "Jerkbaits should work really well given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish. A jerkbait's lifelike action is what attracts the bass. Weather conditions aren't that important when using a jerkbait.", 
-            "dismissUnclearWater": "We don't advise using a jerkbait in unclear water. Bass are attracted to the lifelike action it presents, but they won't be able to see it since the water is stained. There are better choices for lures given your conditions.", 
-            "maybe": "Jerkbaits might work in the conditions you specified. Of course, you never know until you try! However, we'd say save the jerkbaits for when the water is clear or cold, or when the bass are actively feeding on baitfish." 
+            "dismissUnclearWater": "We don't advise using a jerkbait in unclear water. Bass are attracted to the lifelike action it presents, but they won't be able to see it since the water is stained. There are better choices for lures given your conditions."
         },
         "Jig": {
             "general": "Jigs can be fished year-round, but the spring and summer months work the best. They may also work well when the water temperature is cold and fishing has slowed down. It is best to cast jigs around structure or natural cover (logs, grass, etc.).", 
             "prioritize": "Jigs work best in the spring and summer months, meaning when the water is warmer. They may also work well when the water temperature is cold and fishing has slowed down.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": "" 
         },
         "Spinnerbait": {
             "general": "Spinnerbaits can be used year-round. They are very durable and aren't prone to snagging, so you can use them to get to hard to reach places where bass may be hiding. It is best to cast them around structure or natural cover (logs, grass, etc.).", 
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Northern Snakehead": {
@@ -111,14 +116,12 @@
         "Swim Bait": {
             "general": "Both hard and soft swim baits work well for snakeheads. Ideally, use them in open water and make sure the swimbait you're using resembles their prey, such as banded killifish, mummichog minnow, and other small fish species.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Topwater Frog": {
             "general": "Topwater frogs are arguably the most popular lure for snakeheads, and for good reason. They give you good casting distance, aren't prone to snagging, and allow you to witness one of the best freshwater topwater blowups.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Rainbow Trout": {
@@ -126,20 +129,17 @@
         "Inline Spinner": {
             "general": "Spinners are extremely versatile, and extremely effective. The flash off of the blade as the spinner is being reeled is meant to mimic the scales of a baitfish catching the sun. This is one thing that attracts trout. Some spinners also have a vibration component built into them, which is another feature that attracts trout. ",
             "prioritize": "Spinners work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Rooster Tail": {
             "general": "The appearance is similar to spinners, but rooster tails have a skirt, which resembles the tail of a rooster, hence the name. While retrieving, the tail mimics the body of a baitfish, which is what attracts trout.",
             "prioritize": "Rooster tails work excellent in low light conditions such as early mornings, evenings, or cloudy skies, because these are the times when the flashes off the blade stand out best.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Trout Magnet": {
             "general": "Trout magnets are simple yet effective. Just hook them onto a jig head with a bobber, and fish it just off the bottom (by a foot or two). You can either retrieve and pause, cast and twitch (reeling in the slack after each twitch), or just cast and let it float.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Redbreast Sunfish": {
@@ -147,20 +147,17 @@
         "Worms": {
             "general": "The most common live baits for redbreast sunfish, and sunfish in general, are worms and night crawlers because they are easily attainable and are very effective. Use just a piece of the worm, enough to cover the hook.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Crickets": {
             "general": "Crickets are also a popular bait for sunfish. Just remember to keep it small and light.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Grasshoppers": {
             "general": "Grasshoppers are also a popular bait for sunfish.",
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     },
     "Smallmouth Bass": {
@@ -168,32 +165,27 @@
         "Crankbait": {
             "general": "Crankbaits can be used year-round and are as versatile as they come. They come in a variety of shapes, sizes, weights, and running depth, so what's important is choosing the right crankbait for the right conditions. Also remember that they are \"contact\" lures, meaning that you have a higher chance of enticing a bass after it deflects off an object.", 
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         },
         "Rubber Worm": {
             "general": "Rubber worms can be used in any weather conditions, which is why they are so popular. They can be rigged in a variety of ways, allowing them to be used in any depth of water.", 
             "prioritize": "", 
-            "dismiss": "The only times not ideal for for rubber worm fishing is when the bass are very active, or in the winter. During those times, faster-action lures like crankbaits and spinnerbaits are better choices.", 
-            "maybe": "" 
+            "dismiss": "The only times not ideal for for rubber worm fishing is when the bass are very active, or in the winter. During those times, faster-action lures like crankbaits and spinnerbaits are better choices."
         },
         "Jerkbait": {
             "general": "Jerkbaits work well in clear water, cold water, or when bass are actively feeding on baitfish. A jerkbait's lifelike action is what attracts the bass. Weather conditions aren't that important when using a jerkbait.", 
             "prioritize": "Jerkbaits should work really well given the conditions you specified. They work well in clear water, colder water, or when bass are actively feeding on baitfish. A jerkbait's lifelike action is what attracts the bass. Weather conditions aren't that important when using a jerkbait.", 
-            "dismissUnclearWater": "We don't advise using a jerkbait in unclear water. Bass are attracted to the lifelike action it presents, but they won't be able to see it since the water is stained. There are better choices for lures given your conditions.", 
-            "maybe": "Jerkbaits might work in the conditions you specified. Of course, you never know until you try! However, we'd say save the jerkbaits for when the water is clear or cold, or when the bass are actively feeding on baitfish." 
+            "dismissUnclearWater": "We don't advise using a jerkbait in unclear water. Bass are attracted to the lifelike action it presents, but they won't be able to see it since the water is stained. There are better choices for lures given your conditions."
         },
         "Jig": {
             "general": "Jigs can be fished year-round, but the spring and summer months work the best. They may also work well when the water temperature is cold and fishing has slowed down. It is best to cast jigs around structure or natural cover (logs, grass, etc.).", 
             "prioritize": "Jigs work best in the spring and summer months, meaning when the water is warmer. They may also work well when the water temperature is cold and fishing has slowed down.", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": "" 
         },
         "Spinnerbait": {
             "general": "Spinnerbaits can be used year-round. They are very durable and aren't prone to snagging, so you can use them to get to hard to reach places where bass may be hiding. It is best to cast them around structure or natural cover (logs, grass, etc.).", 
             "prioritize": "", 
-            "dismiss": "", 
-            "maybe": "" 
+            "dismiss": ""
         }
     }
 }

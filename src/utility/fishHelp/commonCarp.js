@@ -1,5 +1,7 @@
 import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
+import checkmark from "../../images/checkmark.svg";
+import indifferent from "../../images/indifferent.png";
 
 // Called when user selected in form that they have a target species in mind
 function getSpecificHelpIntro(
@@ -50,6 +52,47 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {}
+function getSpecificLures() {
+  const { commonCarp } = constants.species;
+
+  let luresInfo = {
+    intro: fishLureStrings[commonCarp].intro,
+    types: {},
+  };
+
+  // Lure names
+  const { cannedSweetCorn, boilies, bread, worms } = constants.lures;
+
+  // Strings describing the lures
+  const { general: generalCannedSweetCornStr } =
+    fishLureStrings[commonCarp][cannedSweetCorn];
+  const { general: generalBoiliesStr } = fishLureStrings[commonCarp][boilies];
+  const { general: generalBreadStr } = fishLureStrings[commonCarp][bread];
+  const { general: generalWormsStr } = fishLureStrings[commonCarp][worms];
+
+  let lureTypes = {};
+
+  // Choosing which description to display, based on the user's input to the form
+  lureTypes[cannedSweetCorn] = {
+    message: generalCannedSweetCornStr,
+    image: checkmark,
+  };
+  lureTypes[bread] = {
+    message: generalBreadStr,
+    image: indifferent,
+  };
+  lureTypes[worms] = {
+    message: generalWormsStr,
+    image: indifferent,
+  };
+  lureTypes[boilies] = {
+    message: generalBoiliesStr,
+    image: indifferent,
+  };
+
+  luresInfo.types = lureTypes;
+
+  return luresInfo;
+}
 
 export { getSpecificHelpIntro, getSpecificLures };
