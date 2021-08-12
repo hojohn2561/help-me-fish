@@ -1,5 +1,7 @@
 import fishLureStrings from "../fishLureStrings.json";
 import constants from "../constants.json";
+import checkmark from "../../images/checkmark.svg";
+import indifferent from "../../images/indifferent.png";
 
 // Called to get intro paragraph for help modal for fishing for this fish
 function getSpecificHelpIntro(
@@ -29,6 +31,81 @@ function getSpecificHelpIntro(
   return helpStr;
 }
 
-function getSpecificLures(waterClarity, waterTemperature) {}
+function getSpecificLures(waterClarity, waterTemperature) {
+  const { channelCatfish } = constants.species;
+
+  let luresInfo = {
+    intro: fishLureStrings[channelCatfish].intro,
+    types: {},
+  };
+
+  // Lure names
+  const { chickenLiver, shrimp, stinkBait, worms } = constants.lures;
+
+  // Strings describing the lures
+  const { general: generalWormsStr } = fishLureStrings[channelCatfish][worms];
+  const { general: generalShrimpStr } = fishLureStrings[channelCatfish][shrimp];
+  const {
+    general: generalStinkBaitStr,
+    prioritizeWarmWater: prioritizeWarmWaterStinkBaitStr,
+    prioritizeUnclearWater: prioritizeUnclearWaterStinkBaitStr,
+  } = fishLureStrings[channelCatfish][stinkBait];
+  const {
+    general: generalChickenLiverStr,
+    prioritizeWarmWater: prioritizeWarmWaterChickenLiverStr,
+    prioritizeUnclearWater: prioritizeUnclearWaterChickenLiverStr,
+  } = fishLureStrings[channelCatfish][chickenLiver];
+
+  let lureTypes = {};
+
+  // Choosing which description to display, based on the user's input to the form
+  lureTypes[worms] = {
+    message: generalWormsStr,
+    image: checkmark,
+  };
+  lureTypes[shrimp] = {
+    message: generalShrimpStr,
+    image: indifferent,
+  };
+  // Stink bait prioritized when water is warm or has low visibility
+  if (shouldPrioritizeUnclearWaterStinkBait(waterClarity)) {
+    lureTypes[stinkBait] = {
+      message: prioritizeUnclearWaterStinkBaitStr,
+      image: checkmark,
+    };
+    lureTypes[chickenLiver] = {
+      message: prioritizeUnclearWaterChickenLiverStr,
+      image: checkmark,
+    };
+  } else if (shouldPrioritizeWarmWaterStinkBait(waterTemperature)) {
+    lureTypes[stinkBait] = {
+      message: prioritizeWarmWaterStinkBaitStr,
+      image: checkmark,
+    };
+    lureTypes[chickenLiver] = {
+      message: prioritizeWarmWaterChickenLiverStr,
+      image: checkmark,
+    };
+  } else {
+    lureTypes[stinkBait] = {
+      message: generalStinkBaitStr,
+      image: indifferent,
+    };
+    lureTypes[chickenLiver] = {
+      message: generalChickenLiverStr,
+      image: indifferent,
+    };
+  }
+
+  luresInfo.types = lureTypes;
+
+  return luresInfo;
+}
+
+// Conditions for prioritizing stink bait (warm water, but no warm cold, so just using 70, or water with low visibility)
+const shouldPrioritizeWarmWaterStinkBait = (waterTemperature) =>
+  parseInt(waterTemperature) >= 70;
+const shouldPrioritizeUnclearWaterStinkBait = (waterClarity) =>
+  waterClarity === constants.waterClarities.stained;
 
 export { getSpecificHelpIntro, getSpecificLures };

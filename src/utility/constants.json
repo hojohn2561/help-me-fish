@@ -23,7 +23,10 @@
         "topwaterFrog": "Topwater Frog",
         "worms": "Worms",
         "grasshoppers": "Grasshoppers",
-        "crickets": "Crickets"
+        "crickets": "Crickets",
+        "shrimp": "Shrimp",
+        "stinkBait": "Stink Bait",
+        "chickenLiver": "Chicken Liver"
     },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",

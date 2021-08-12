@@ -42,7 +42,33 @@
         }
     },
     "Channel Catfish": {
-        "intro": "When choosing bait for channel catfish,"
+        "intro": "When choosing bait for channel catfish, ",
+        "Worms": {
+            "general": "Like a lot of other fish, you can't go wrong with worms or night crawlers as live bait. They are easily attainable, yet still so effective.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Shrimp": {
+            "general": "Raw shrimp is another good choice of bait for channel cats, suitable for any weather conditions.",
+            "prioritize": "", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Stink Bait": {
+            "general": "Stink baits are used primarily for catfish, and is a good bait to use under the right conditions. Don't be afraid to pull it out when the water is warm or has low visibility.",
+            "prioritizeWarmWater": "Stink baits are used primarily for catfish, and is a good bait to when the water is warm.", 
+            "prioritizeUnclearWater": "Stink baits are used primarily for catfish, and is a good bait to when the water has low visibility. If the catfish don't see the bait, they will definitely be able to pick it up with their keen sense of smell.", 
+            "dismiss": "", 
+            "maybe": "" 
+        },
+        "Chicken Liver": {
+            "general": "Chicken liver, like stink baits, may smell bad to us if they're past the date to use by, but that smell signals dinner to catfish. The worse it smells the better, that is why many anglers take the extra step to soak it in another strong smelling ingredient to give it an added kick.",
+            "prioritizeWarmWater": "Like stink baits, chicken liver may be a good bait to use when the water is warm.", 
+            "prioritizeUnclearWater": "Like stink baits, chicken liver is an excellent bait to use when the water has low visibility. If the catfish don't see the bait, they will definitely be able to pick the scent using their sense of smell.", 
+            "dismiss": "", 
+            "maybe": "" 
+        }
     },
     "Common Carp": {
         "intro": "When choosing bait for common carp, "

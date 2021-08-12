@@ -71,7 +71,6 @@ function getFreshwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = channelCatfish.getSpecificLures(
-        cloudCondition,
         waterClarity,
         waterTemperature
       );
@@ -167,7 +166,7 @@ function getFreshwaterSpecificHelp(
   help.push({
     intro: specificHelpIntro,
     lures: specificLures,
-    speciesName: constants.species.smallmouthBass,
+    // speciesName: constants.species.smallmouthBass, // Not needed for specific help
   });
 
   return help;

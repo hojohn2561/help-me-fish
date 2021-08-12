@@ -50,6 +50,8 @@ export default function AssistantModal({
     );
 
     if (!help[0]) return null;
+
+    console.log(help);
     // If user had a target species, display info about that particular species
     if (selectedTargetSpecies)
       return (
@@ -110,7 +112,7 @@ export default function AssistantModal({
         fishesData
       );
     }
-    // Get saltwater general fish help info");
+    // Get saltwater general fish help info;
     else {
       help = getFreshwaterGeneralHelp(
         selectedCloudCondition,
