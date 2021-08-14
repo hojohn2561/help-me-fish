@@ -1,6 +1,22 @@
 {
+    "Atlantic Croaker": {
+        "intro": "When fishing for croakers,",
+        "Worms": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        }
+    },
     "Bluefish": {
         "intro": "When fishing for bluefish,",
+        "Worms": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        }
+    },
+    "Spot": {
+        "intro": "When fishing for spot,",
         "Worms": {
             "general": "",
             "prioritize": "", 
@@ -26,6 +42,22 @@
         },
         "Worms": {
             "general": "Worms, the most versatile bait in fishing, also works for stripers. More specifically, it wold be better if you could get your hands on bloodworms or sandworms.",
+            "prioritize": "", 
+            "dismiss": "" 
+        }
+    },
+    "Summer Flounder": {
+        "intro": "When fishing for summer flounder,",
+        "Worms": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        }
+    },
+    "Tautog": {
+        "intro": "When fishing for tog,",
+        "Worms": {
+            "general": "",
             "prioritize": "", 
             "dismiss": "" 
         }
