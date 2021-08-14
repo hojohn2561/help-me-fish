@@ -1,24 +1,44 @@
 {
     "Atlantic Croaker": {
-        "intro": "When fishing for croakers,",
+        "intro": "Dead bait is most often used to catch croakers. They are bottom feeders, so a hi-lo rig with a sinker, tipped with your bait of choice will suffice. Just remember to go small for hooks because they have small mouths. Also be open to switching up baits, as a particular bait might not work one day, but will another.",
+        "Fishbites": {
+            "general": "Fishbites (Bag O' Worms) is a common alternative when bloodworms aren't available. From personal experience, they vary in effectiveness. On some days, they will be extremely effective and will work just as well, if not better, than the real thing. Other days, it will be difficult in enticing a croaker to bite. However, sometimes it works the other way around too. So, it is important to experiment to really get a feel on what they are biting on on that particular day.",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Shrimp": {
+            "general": "Croakers' natural prey are crustaceans, so shrimp is definitely a good bait to use. ",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
         "Worms": {
-            "general": "",
+            "general": "As always, you can't go wrong with worms, particularly bloodworms. They are probably the most used bait when targetting croakers.",
             "prioritize": "", 
             "dismiss": "" 
         }
     },
     "Bluefish": {
         "intro": "When fishing for bluefish,",
-        "Worms": {
+        "Diamond Jig": {
             "general": "",
             "prioritize": "", 
             "dismiss": "" 
         }
     },
     "Spot": {
-        "intro": "When fishing for spot,",
+        "intro": "Dead bait is most often used to catch spot. They are bottom feeders, so a hi-lo rig with a sinker, tipped with your bait of choice will suffice. Just remember to go small for hooks because they have small mouths. Also be open to switching up baits, as a particular bait might not work one day, but will another.",
+        "Fishbites": {
+            "general": "Fishbites (Bag O' Worms) is a common alternative when bloodworms aren't available. From personal experience, they vary in effectiveness. On some days, they will be extremely effective and will work just as well, if not better, than the real thing. Other days, it will be difficult in enticing a spot to bite. However, sometimes it works the other way around too. So, it is important to experiment to really get a feel on what they are biting on on that particular day.",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Shrimp": {
+            "general": "Spots' natural prey are crustaceans, so shrimp is definitely a good bait to use. ",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
         "Worms": {
-            "general": "",
+            "general": "As always, you can't go wrong with worms, particularly bloodworms. They are probably the most used bait when targetting spot.",
             "prioritize": "", 
             "dismiss": "" 
         }
