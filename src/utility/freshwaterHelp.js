@@ -207,7 +207,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.brownTrout:
@@ -217,7 +218,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.channelCatfish:
@@ -227,7 +229,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.commonCarp:
@@ -237,7 +240,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.largemouthBass:
@@ -247,7 +251,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.northernSnakehead:
@@ -257,7 +262,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.rainbowTrout:
@@ -267,7 +273,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.redbreastSunfish:
@@ -277,7 +284,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
         case constants.species.smallmouthBass:
@@ -287,7 +295,8 @@ function getFreshwaterGeneralHelp(
             waterTemperature,
             true, // == isIdealTemp
             fishesData[currentFishSpecies].idealCloudConditions,
-            fishesData[currentFishSpecies].idealTemperatureRange
+            fishesData[currentFishSpecies].idealTemperatureRange,
+            fishesData[currentFishSpecies].idealWaterClarities
           );
           break;
       }

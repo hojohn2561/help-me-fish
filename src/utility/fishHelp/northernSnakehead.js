@@ -1,4 +1,4 @@
-import fishLureStrings from "../fishLureStrings.json";
+import freshwaterFishLureStrings from "../freshwaterFishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
@@ -48,7 +48,7 @@ function getSpecificLures() {
   const { northernSnakehead } = constants.species;
 
   let luresInfo = {
-    intro: fishLureStrings[northernSnakehead].intro,
+    intro: freshwaterFishLureStrings[northernSnakehead].intro,
     types: {},
   };
 
@@ -57,9 +57,9 @@ function getSpecificLures() {
 
   // Strings describing the lures
   const { general: generalSwimBaitStr } =
-    fishLureStrings[northernSnakehead][swimBait];
+    freshwaterFishLureStrings[northernSnakehead][swimBait];
   const { general: generalTopwaterFrogStr } =
-    fishLureStrings[northernSnakehead][topwaterFrog];
+    freshwaterFishLureStrings[northernSnakehead][topwaterFrog];
 
   let lureTypes = {};
 

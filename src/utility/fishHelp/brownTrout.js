@@ -1,4 +1,4 @@
-import fishLureStrings from "../fishLureStrings.json";
+import freshwaterFishLureStrings from "../freshwaterFishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
@@ -52,7 +52,7 @@ function getSpecificLures(cloudCondition) {
   const { brownTrout } = constants.species;
 
   let luresInfo = {
-    intro: fishLureStrings[brownTrout].intro,
+    intro: freshwaterFishLureStrings[brownTrout].intro,
     types: {},
   };
 
@@ -61,13 +61,13 @@ function getSpecificLures(cloudCondition) {
   const {
     general: generalInlineSpinnerStr,
     prioritize: prioritizeInlineSpinnerStr,
-  } = fishLureStrings[brownTrout][inlineSpinner];
+  } = freshwaterFishLureStrings[brownTrout][inlineSpinner];
   const {
     general: generalRoosterTailStr,
     prioritize: prioritizeRoosterTailStr,
-  } = fishLureStrings[brownTrout][roosterTail];
+  } = freshwaterFishLureStrings[brownTrout][roosterTail];
   const { general: generalTroutMagnetStr } =
-    fishLureStrings[brownTrout][troutMagnet];
+    freshwaterFishLureStrings[brownTrout][troutMagnet];
 
   let lureTypes = {};
 

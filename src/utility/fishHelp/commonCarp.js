@@ -1,4 +1,4 @@
-import fishLureStrings from "../fishLureStrings.json";
+import freshwaterFishLureStrings from "../freshwaterFishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
@@ -56,7 +56,7 @@ function getSpecificLures() {
   const { commonCarp } = constants.species;
 
   let luresInfo = {
-    intro: fishLureStrings[commonCarp].intro,
+    intro: freshwaterFishLureStrings[commonCarp].intro,
     types: {},
   };
 
@@ -65,10 +65,13 @@ function getSpecificLures() {
 
   // Strings describing the lures
   const { general: generalCannedSweetCornStr } =
-    fishLureStrings[commonCarp][cannedSweetCorn];
-  const { general: generalBoiliesStr } = fishLureStrings[commonCarp][boilies];
-  const { general: generalBreadStr } = fishLureStrings[commonCarp][bread];
-  const { general: generalWormsStr } = fishLureStrings[commonCarp][worms];
+    freshwaterFishLureStrings[commonCarp][cannedSweetCorn];
+  const { general: generalBoiliesStr } =
+    freshwaterFishLureStrings[commonCarp][boilies];
+  const { general: generalBreadStr } =
+    freshwaterFishLureStrings[commonCarp][bread];
+  const { general: generalWormsStr } =
+    freshwaterFishLureStrings[commonCarp][worms];
 
   let lureTypes = {};
 

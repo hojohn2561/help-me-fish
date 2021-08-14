@@ -7,6 +7,11 @@ import {
   getFreshwaterGeneralHelp,
 } from "../../utility/freshwaterHelp";
 
+import {
+  getSaltwaterSpecificHelp,
+  getSaltwaterGeneralHelp,
+} from "../../utility/saltwaterHelp";
+
 import "./assistantModal.scss";
 
 export default function AssistantModal({
@@ -39,15 +44,33 @@ export default function AssistantModal({
 
   // If fishData exists, target species was selected
   if (targetFishData) {
-    const help = getFreshwaterSpecificHelp(
-      selectedTargetSpecies,
-      selectedCloudCondition,
-      selectedWaterTemperature,
-      selectedWaterClarity,
-      targetFishData.idealCloudConditions,
-      targetFishData.idealTemperatureRange,
-      targetFishData.idealWaterClarities
-    );
+    let help;
+
+    // Get freshwater specific fish help info
+    if (selectedWaterType === constants.waterTypes.freshwater) {
+      console.log("call getFreshwaterGeneralHelp");
+      help = getFreshwaterSpecificHelp(
+        selectedTargetSpecies,
+        selectedCloudCondition,
+        selectedWaterTemperature,
+        selectedWaterClarity,
+        targetFishData.idealCloudConditions,
+        targetFishData.idealTemperatureRange,
+        targetFishData.idealWaterClarities
+      );
+    }
+    // Get saltwater specific fish help info;
+    else {
+      help = getSaltwaterSpecificHelp(
+        selectedTargetSpecies,
+        selectedCloudCondition,
+        selectedWaterTemperature,
+        selectedWaterClarity,
+        targetFishData.idealCloudConditions,
+        targetFishData.idealTemperatureRange,
+        targetFishData.idealWaterClarities
+      );
+    }
 
     if (!help[0]) return null;
 
@@ -114,7 +137,7 @@ export default function AssistantModal({
     }
     // Get saltwater general fish help info;
     else {
-      help = getFreshwaterGeneralHelp(
+      help = getSaltwaterGeneralHelp(
         selectedCloudCondition,
         selectedWaterTemperature,
         selectedWaterClarity,

@@ -1,4 +1,4 @@
-import fishLureStrings from "../fishLureStrings.json";
+import freshwaterFishLureStrings from "../freshwaterFishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
@@ -49,7 +49,7 @@ function getSpecificLures() {
   const { redbreastSunfish } = constants.species;
 
   let luresInfo = {
-    intro: fishLureStrings[redbreastSunfish].intro,
+    intro: freshwaterFishLureStrings[redbreastSunfish].intro,
     types: {},
   };
 
@@ -58,10 +58,11 @@ function getSpecificLures() {
 
   // Strings describing the lures
   const { general: generalCricketsStr } =
-    fishLureStrings[redbreastSunfish][crickets];
+    freshwaterFishLureStrings[redbreastSunfish][crickets];
   const { general: generalGrasshoppersStr } =
-    fishLureStrings[redbreastSunfish][grasshoppers];
-  const { general: generalWormsStr } = fishLureStrings[redbreastSunfish][worms];
+    freshwaterFishLureStrings[redbreastSunfish][grasshoppers];
+  const { general: generalWormsStr } =
+    freshwaterFishLureStrings[redbreastSunfish][worms];
 
   let lureTypes = {};
 

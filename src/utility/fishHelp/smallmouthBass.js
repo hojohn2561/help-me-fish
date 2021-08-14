@@ -1,4 +1,4 @@
-import fishLureStrings from "../fishLureStrings.json";
+import freshwaterFishLureStrings from "../freshwaterFishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
@@ -50,25 +50,25 @@ function getSpecificLures(cloudCondition, waterClarity, waterTemperature) {
   const { smallmouthBass } = constants.species;
 
   let luresInfo = {
-    intro: fishLureStrings[smallmouthBass].intro,
+    intro: freshwaterFishLureStrings[smallmouthBass].intro,
     types: {},
   };
 
   const { jerkbait, crankbait, rubberWorm, jig, spinnerbait } = constants.lures;
 
   const { general: generalCrankbaitStr } =
-    fishLureStrings[smallmouthBass][crankbait];
+    freshwaterFishLureStrings[smallmouthBass][crankbait];
   const { general: generalRubberWormStr, dismiss: dismissRubberWormStr } =
-    fishLureStrings[smallmouthBass][rubberWorm];
+    freshwaterFishLureStrings[smallmouthBass][rubberWorm];
   const {
     general: generalJerkbaitStr,
     prioritize: prioritizeJerkbaitStr,
     dismissUnclearWater: dismissUnclearWaterJerkbaitStr,
-  } = fishLureStrings[smallmouthBass][jerkbait];
+  } = freshwaterFishLureStrings[smallmouthBass][jerkbait];
   const { general: generalJigStr, prioritize: prioritzeJigStr } =
-    fishLureStrings[smallmouthBass][jig];
+    freshwaterFishLureStrings[smallmouthBass][jig];
   const { general: generalSpinnerbaitStr } =
-    fishLureStrings[smallmouthBass][spinnerbait];
+    freshwaterFishLureStrings[smallmouthBass][spinnerbait];
 
   let lureTypes = {};
 

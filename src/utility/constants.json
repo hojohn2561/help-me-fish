@@ -1,5 +1,7 @@
 {
     "species": {
+        "atlanticCroaker": "Atlantic Croaker",
+        "bluefish": "Bluefish",
         "bluegill": "Bluegill",
         "brownTrout": "Brown Trout",
         "channelCatfish": "Channel Catfish",
@@ -8,7 +10,11 @@
         "northernSnakehead": "Northern Snakehead",
         "rainbowTrout": "Rainbow Trout",
         "redbreastSunfish": "Redbreast Sunfish",
-        "smallmouthBass": "Smallmouth Bass"
+        "smallmouthBass": "Smallmouth Bass",
+        "spot": "Spot",
+        "stripedBass": "Striped Bass",
+        "summerFlounder": "Summer Flounder",
+        "tautog": "Tautog"
     },
     "lures": {
         "inlineSpinner" : "Inline Spinner",

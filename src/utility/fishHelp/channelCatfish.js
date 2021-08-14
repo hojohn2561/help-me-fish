@@ -1,4 +1,4 @@
-import fishLureStrings from "../fishLureStrings.json";
+import freshwaterFishLureStrings from "../freshwaterFishLureStrings.json";
 import constants from "../constants.json";
 import checkmark from "../../images/checkmark.svg";
 import indifferent from "../../images/indifferent.png";
@@ -35,7 +35,7 @@ function getSpecificLures(waterClarity, waterTemperature) {
   const { channelCatfish } = constants.species;
 
   let luresInfo = {
-    intro: fishLureStrings[channelCatfish].intro,
+    intro: freshwaterFishLureStrings[channelCatfish].intro,
     types: {},
   };
 
@@ -43,18 +43,20 @@ function getSpecificLures(waterClarity, waterTemperature) {
   const { chickenLiver, shrimp, stinkBait, worms } = constants.lures;
 
   // Strings describing the lures
-  const { general: generalWormsStr } = fishLureStrings[channelCatfish][worms];
-  const { general: generalShrimpStr } = fishLureStrings[channelCatfish][shrimp];
+  const { general: generalWormsStr } =
+    freshwaterFishLureStrings[channelCatfish][worms];
+  const { general: generalShrimpStr } =
+    freshwaterFishLureStrings[channelCatfish][shrimp];
   const {
     general: generalStinkBaitStr,
     prioritizeWarmWater: prioritizeWarmWaterStinkBaitStr,
     prioritizeUnclearWater: prioritizeUnclearWaterStinkBaitStr,
-  } = fishLureStrings[channelCatfish][stinkBait];
+  } = freshwaterFishLureStrings[channelCatfish][stinkBait];
   const {
     general: generalChickenLiverStr,
     prioritizeWarmWater: prioritizeWarmWaterChickenLiverStr,
     prioritizeUnclearWater: prioritizeUnclearWaterChickenLiverStr,
-  } = fishLureStrings[channelCatfish][chickenLiver];
+  } = freshwaterFishLureStrings[channelCatfish][chickenLiver];
 
   let lureTypes = {};
 

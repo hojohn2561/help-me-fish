@@ -48,7 +48,7 @@ export default function FishInfoModal({ name, fishData, isVisible, onClose }) {
 
   // Fish data does exist, if generalInfo does too, display it on the modal, otherwise, return null
   return (
-    <Modal isVisible={isVisible} onClose={onClose} height="75%" width="75%">
+    <Modal isVisible={isVisible} onClose={onClose} height="70%" width="70%">
       <div className="info-content">
         <h1>{name}</h1>
         <div className="image-container">

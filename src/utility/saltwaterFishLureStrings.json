@@ -1,0 +1,33 @@
+{
+    "Bluefish": {
+        "intro": "When fishing for bluefish,",
+        "Worms": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        }
+    },
+    "Striped Bass": {
+        "intro": "When fishing for striped bass,",
+        "Bunker": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Mackeral": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Squid": {
+            "general": "",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Worms": {
+            "general": "Worms, the most versatile bait in fishing, also works for stripers. More specifically, it wold be better if you could get your hands on bloodworms or sandworms.",
+            "prioritize": "", 
+            "dismiss": "" 
+        }
+    }
+}
