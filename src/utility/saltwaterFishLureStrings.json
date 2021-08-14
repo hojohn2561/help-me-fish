@@ -75,9 +75,9 @@
         }
     },
     "Tautog": {
-        "intro": "When fishing for tog,",
-        "Worms": {
-            "general": "",
+        "intro": "Bait for tog typically consists of a variety of crabs, because they are easily obtainable (at a tackle shop or found on the beach) and are part of a tog's natural diet. Some other crustaceans work as well, but from personal experience, aren't as effective.",
+        "Crabs": {
+            "general": "They most common types of crabs used as bait for tog are green crabs, white-legger crabs, and asian crabs. It is easier to put a crab onto the hook when the claws and legs have been removed, so remember to bring a pair of scissors.",
             "prioritize": "", 
             "dismiss": "" 
         }
