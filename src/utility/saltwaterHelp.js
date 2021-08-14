@@ -1,4 +1,9 @@
+import * as atlanticCroaker from "./fishHelp/atlanticCroaker";
+import * as bluefish from "./fishHelp/bluefish";
+import * as spot from "./fishHelp/spot";
 import * as stripedBass from "./fishHelp/stripedBass";
+import * as summerFlounder from "./fishHelp/summerFlounder";
+import * as tautog from "./fishHelp/tautog";
 import { isCloudConditionIdeal } from "./cloudCondition";
 import { isTemperatureInRange } from "./temperature";
 import { isWaterClarityIdeal } from "./waterClarity";
@@ -28,6 +33,42 @@ function getSaltwaterSpecificHelp(
   switch (speciesName) {
     // Find a way to remove this code duplication if possible.
     // Inheritance and overidding in the traditional sense of parent/child isn't possible/recommended in React because of components, and these aren't classes.
+    case constants.species.atlanticCroaker:
+      specificHelpIntro = atlanticCroaker.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = atlanticCroaker.getSpecificLures();
+      break;
+    case constants.species.bluefish:
+      specificHelpIntro = bluefish.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = bluefish.getSpecificLures();
+      break;
+    case constants.species.spot:
+      specificHelpIntro = spot.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = spot.getSpecificLures();
+      break;
     case constants.species.stripedBass:
       specificHelpIntro = stripedBass.getSpecificHelpIntro(
         cloudCondition,
@@ -39,6 +80,30 @@ function getSaltwaterSpecificHelp(
         idealWaterClarities
       );
       specificLures = stripedBass.getSpecificLures();
+      break;
+    case constants.species.summerFlounder:
+      specificHelpIntro = summerFlounder.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = summerFlounder.getSpecificLures();
+      break;
+    case constants.species.tautog:
+      specificHelpIntro = tautog.getSpecificHelpIntro(
+        cloudCondition,
+        waterClarity,
+        waterTemperature,
+        isIdealTemp,
+        idealCloudConditions,
+        idealTemperatureRange,
+        idealWaterClarities
+      );
+      specificLures = tautog.getSpecificLures();
       break;
     default:
       break;
@@ -85,8 +150,58 @@ function getSaltwaterGeneralHelp(
     ) {
       let specificHelpIntro;
       switch (currentFishSpecies) {
+        case constants.species.atlanticCroaker:
+          specificHelpIntro = atlanticCroaker.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.bluefish:
+          specificHelpIntro = bluefish.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.spot:
+          specificHelpIntro = spot.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
         case constants.species.stripedBass:
           specificHelpIntro = stripedBass.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.summerFlounder:
+          specificHelpIntro = summerFlounder.getSpecificHelpIntro(
+            cloudCondition,
+            waterClarity,
+            waterTemperature,
+            true, // == isIdealTemp
+            fishesData[currentFishSpecies].idealCloudConditions,
+            fishesData[currentFishSpecies].idealTemperatureRange
+          );
+          break;
+        case constants.species.tautog:
+          specificHelpIntro = tautog.getSpecificHelpIntro(
             cloudCondition,
             waterClarity,
             waterTemperature,
