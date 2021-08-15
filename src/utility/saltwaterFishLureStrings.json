@@ -18,9 +18,19 @@
         }
     },
     "Bluefish": {
-        "intro": "When fishing for bluefish,",
+        "intro": "Bluefish are ravenous predators and during their well-known blitzes, they will eat pretty anything that's in front of them. When that's not the case, here are a few suggestions on what you can use to catch these ferocious creatures.",
         "Diamond Jig": {
-            "general": "",
+            "general": "When using a diamond jig for bluefish, you can either go with the version with or without a skirt/trailer. The key is to have it be heavy enough to reach the bottom and jig it while you're retrieving.",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Poppers": {
+            "general": "To a bluefish, a popper imitates a frantic baitfish swimming across the surface. This action is irresistible to most bluefish. To use, simply cast out, and with a moderate to fast retrieve, jig hard to imitate a baitfish.",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Bucktails": {
+            "general": "When fishing with a bucktail, you want to tip it with either a 6\" Gulp! Grub or Otter Tail. Cast out, and retrieve fast while jigging to get the attention of bluefish.",
             "prioritize": "", 
             "dismiss": "" 
         }
@@ -69,7 +79,7 @@
             "dismiss": "" 
         },
         "Bucktails": {
-            "general": "Another popular way to fish for fluke is by using a bucktail. A 2oz SPRO bucktail tipped with a Gulp! Swimming Mullet is a classic way to catch fluke. Have fun with experimenting with the color combinations and find which ones work best, as they may differ from day to day.",
+            "general": "Another popular way to fish for fluke is by using a bucktail. A 2oz SPRO bucktail tipped with a Gulp! Swimming Mullet is a classic way to catch fluke. Have fun with experimenting with the color combinations and find which ones work best, as they may differ from day to day. To use, simply cast out and retrieve at a moderate speed while jigging.",
             "prioritize": "", 
             "dismiss": "" 
         },
