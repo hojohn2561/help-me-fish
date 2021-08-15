@@ -19,14 +19,17 @@
     "lures": {
         "boilies": "Boilies",
         "bread": "Bread",
+        "bucktails": "Bucktails",
         "cannedSweetCorn": "Canned Sweet Corn",
         "chickenLiver": "Chicken Liver",
         "crankbait": "Crankbait",
         "crabs": "Crabs",
         "crickets": "Crickets",
+        "croakers": "Croakers",
         "diamondJig": "Diamond Jig",
         "fishbites": "Fishbites",
         "grasshoppers": "Grasshoppers",
+        "gulp": "Gulp!",
         "inlineSpinner" : "Inline Spinner",
         "jerkbait": "Jerkbait",
         "jig": "Jig",
@@ -40,7 +43,6 @@
         "topwaterFrog": "Topwater Frog",
         "troutMagnet": "Trout Magnet",
         "worms": "Worms"
-
     },
     "cloudConditions": {
         "mostlySunny": "Mostly Sunny",

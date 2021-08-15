@@ -59,17 +59,22 @@
             "general": "",
             "prioritize": "", 
             "dismiss": "" 
-        },
-        "Worms": {
-            "general": "Worms, the most versatile bait in fishing, also works for stripers. More specifically, it wold be better if you could get your hands on bloodworms or sandworms.",
-            "prioritize": "", 
-            "dismiss": "" 
         }
     },
     "Summer Flounder": {
-        "intro": "When fishing for summer flounder,",
-        "Worms": {
-            "general": "",
+        "intro": "Artificial lures and live bait work best when specficially targetting summer flounder. It also shouldn't be ruled out that you might accidentally catch one when using dead bait for a different species. As with many other species, adaptability is important, so bring variety of lures/baits if possible. Also, keep in mind that you always want your bait/lure to be in the strike zone, which is at or near the bottom, as that's where the flounders reside. ",
+        "Gulp!": {
+            "general": "There are a few Gulp! products you can use to target fluke. Swimming Mullet can be put on a bucktail and be fished with a variety of techniques, a popular one is just twitching while retrieving at a moderate speed. Or, you can drift fish. With a hi-lo rig, tipped with a Gulp! products of your choice (Swimming Mullet, Grub, and Shrimp are popular choices), let the current take control while you just jig it at the bottom. Popular Swimming Mullet colors are chartreuse, pink, white, and \"nuclear chicken\".",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Bucktails": {
+            "general": "Another popular way to fish for fluke is by using a bucktail. A 2oz SPRO bucktail tipped with a Gulp! Swimming Mullet is a classic way to catch fluke. Have fun with experimenting with the color combinations and find which ones work best, as they may differ from day to day.",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
+        "Croakers": {
+            "general": "Small croakers or spot croakers are a popular option to use as live bait to catch doormat fluke.",
             "prioritize": "", 
             "dismiss": "" 
         }
