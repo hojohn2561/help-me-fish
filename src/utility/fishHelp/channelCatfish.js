@@ -18,7 +18,7 @@ function getSpecificHelpIntro(
 
   // Selected water temperature is inside the fish's ideal range
   if (isIdealTemp) {
-    helpStr += ` is a good idea.`;
+    helpStr += ` is a good idea. `;
   } else {
     helpStr += `may be difficult. Ideally, you'd want the water temperature to be ${idealTemperatureRange}. `;
   }
