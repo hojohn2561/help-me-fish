@@ -25,7 +25,7 @@
             "dismiss": "" 
         },
         "Poppers": {
-            "general": "To a bluefish, a popper imitates a frantic baitfish swimming across the surface. This action is irresistible to most bluefish. To use, simply cast out, and with a moderate to fast retrieve, jig hard to imitate a baitfish.",
+            "general": "To a bluefish, a popper imitates a injured/frantic baitfish swimming across the surface. This action is irresistible to most bluefish. To use, simply cast out, and with a moderate to fast retrieve, jig hard to imitate a baitfish.",
             "prioritize": "", 
             "dismiss": "" 
         },
@@ -43,30 +43,25 @@
             "dismiss": "" 
         },
         "Shrimp": {
-            "general": "Spots' natural prey are crustaceans, so shrimp is definitely a good bait to use. ",
+            "general": "Spots' natural prey are crustaceans, so shrimp is definitely a good bait to use. However, from personal experience, they are either hit or miss. They might work some days, other days, the spot will show no interest.",
             "prioritize": "", 
             "dismiss": "" 
         },
         "Worms": {
-            "general": "As always, you can't go wrong with worms, particularly bloodworms. They are probably the most used bait when targetting spot.",
+            "general": "As always, you can't go wrong with worms, particularly bloodworms. They are the most used bait when targetting spot, and for good reason. They are extremely effective.",
             "prioritize": "", 
             "dismiss": "" 
         }
     },
     "Striped Bass": {
-        "intro": "When fishing for striped bass,",
+        "intro": "When fishing for striped bass, bait or artificial lures can be used. In the beginning and late in the season, schoolie stripers are abundant, so a hi-lo rig with bait is a popular option because it allows anglers to catch multiple fish at once. Otherwise, artificial lures are the other popular option because it offers many advantages as it allows you to adapt to the weather conditions.",
+        "Poppers": {
+            "general": "To a striper, a jigging a popper imitates a injured/frantic baitfish swimming across the surface. The commotion this causes gets the striper's attention and may entice it to bite",
+            "prioritize": "", 
+            "dismiss": "" 
+        },
         "Bunker": {
-            "general": "",
-            "prioritize": "", 
-            "dismiss": "" 
-        },
-        "Mackeral": {
-            "general": "",
-            "prioritize": "", 
-            "dismiss": "" 
-        },
-        "Squid": {
-            "general": "",
+            "general": "Live bunker is a common bait that is thrown to catch stripers because it is what they naturally feed on. Other baitfish would work as well. Other baits that may work are eels, bloodworms, sandworms, clams, and squid. As always, it's good to experiment because you never know what they are biting on on that particular day until you try.",
             "prioritize": "", 
             "dismiss": "" 
         }
