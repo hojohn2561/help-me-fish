@@ -35,7 +35,7 @@
 
 3. Create corresponding module in `/public/src/utility/fishHelp`
 
-4. Define the three functions `getGeneralHelpIntro` `getSpecificHelpIntro` `getSpecificLures`, used to create the help info strings, and export them.
+4. Define the two functions `getSpecificHelpIntro` and `getSpecificLures`, used to create the help info strings, and export them.
 
 5. In either `freshwaterHelp.js` or `saltwaterHelp.js`, depending on the fish, add its case to the switch statement to call and create the help info string when appropriate.
  
