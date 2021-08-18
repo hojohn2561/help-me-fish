@@ -3,10 +3,10 @@
 </div>
 <div align="center">
   A small web app designed to help fishermen decide what fish to target, what bait/lures to use, and just learn more about fish and fishing.</br>
-  This project was built using <a href="https://reactjs.org/">React</a>.
+  This project was built using <a href="https://reactjs.org/">React</a> and <a href="https://firebase.google.com/">Firebase</a>.
 </div>
 <div align="center">
-  View it <a href="https://help-me-fish.web.app/">here</a>!
+  View the live version <a href="https://help-me-fish.web.app/">here</a>!
 </div>
 </br>
 
